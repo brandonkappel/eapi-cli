@@ -92,6 +92,10 @@ namespace YP.SassyMQ.Lib.RabbitMQ
                         this.OnDeveloperDoSomethingElseReceived(payload, bdea);
                         break;
                     
+                    case "crudcoordinator.crud.guest.getplanproducts":
+                        this.OnGuestGetPlanProductsReceived(payload, bdea);
+                        break;
+                    
                     case "crudcoordinator.crud.effortlessproxydatacoordinator.addplanproduct":
                         this.OnEffortlessProxyDataCoordinatorAddPlanProductReceived(payload, bdea);
                         break;
@@ -304,56 +308,52 @@ namespace YP.SassyMQ.Lib.RabbitMQ
                         this.OnCRUDCoordinatorDeleteColumnValueReceived(payload, bdea);
                         break;
                     
-                    case "crudcoordinator.crud.guest.getportfolioitems":
-                        this.OnGuestGetPortfolioItemsReceived(payload, bdea);
+                    case "crudcoordinator.crud.effortlessproxydatacoordinator.addportfolioitemretired":
+                        this.OnEffortlessProxyDataCoordinatorAddPortfolioItemRETIREDReceived(payload, bdea);
                         break;
                     
-                    case "crudcoordinator.crud.effortlessproxydatacoordinator.addportfolioitem":
-                        this.OnEffortlessProxyDataCoordinatorAddPortfolioItemReceived(payload, bdea);
+                    case "crudcoordinator.crud.effortlessproxydatacoordinator.getportfolioitemsretired":
+                        this.OnEffortlessProxyDataCoordinatorGetPortfolioItemsRETIREDReceived(payload, bdea);
                         break;
                     
-                    case "crudcoordinator.crud.effortlessproxydatacoordinator.getportfolioitems":
-                        this.OnEffortlessProxyDataCoordinatorGetPortfolioItemsReceived(payload, bdea);
+                    case "crudcoordinator.crud.effortlessproxydatacoordinator.updateportfolioitemretired":
+                        this.OnEffortlessProxyDataCoordinatorUpdatePortfolioItemRETIREDReceived(payload, bdea);
                         break;
                     
-                    case "crudcoordinator.crud.effortlessproxydatacoordinator.updateportfolioitem":
-                        this.OnEffortlessProxyDataCoordinatorUpdatePortfolioItemReceived(payload, bdea);
+                    case "crudcoordinator.crud.effortlessproxydatacoordinator.deleteportfolioitemretired":
+                        this.OnEffortlessProxyDataCoordinatorDeletePortfolioItemRETIREDReceived(payload, bdea);
                         break;
                     
-                    case "crudcoordinator.crud.effortlessproxydatacoordinator.deleteportfolioitem":
-                        this.OnEffortlessProxyDataCoordinatorDeletePortfolioItemReceived(payload, bdea);
+                    case "crudcoordinator.crud.admin.addportfolioitemretired":
+                        this.OnAdminAddPortfolioItemRETIREDReceived(payload, bdea);
                         break;
                     
-                    case "crudcoordinator.crud.admin.addportfolioitem":
-                        this.OnAdminAddPortfolioItemReceived(payload, bdea);
+                    case "crudcoordinator.crud.admin.getportfolioitemsretired":
+                        this.OnAdminGetPortfolioItemsRETIREDReceived(payload, bdea);
                         break;
                     
-                    case "crudcoordinator.crud.admin.getportfolioitems":
-                        this.OnAdminGetPortfolioItemsReceived(payload, bdea);
+                    case "crudcoordinator.crud.admin.updateportfolioitemretired":
+                        this.OnAdminUpdatePortfolioItemRETIREDReceived(payload, bdea);
                         break;
                     
-                    case "crudcoordinator.crud.admin.updateportfolioitem":
-                        this.OnAdminUpdatePortfolioItemReceived(payload, bdea);
+                    case "crudcoordinator.crud.admin.deleteportfolioitemretired":
+                        this.OnAdminDeletePortfolioItemRETIREDReceived(payload, bdea);
                         break;
                     
-                    case "crudcoordinator.crud.admin.deleteportfolioitem":
-                        this.OnAdminDeletePortfolioItemReceived(payload, bdea);
+                    case "crudcoordinator.crud.crudcoordinator.addportfolioitemretired":
+                        this.OnCRUDCoordinatorAddPortfolioItemRETIREDReceived(payload, bdea);
                         break;
                     
-                    case "crudcoordinator.crud.crudcoordinator.addportfolioitem":
-                        this.OnCRUDCoordinatorAddPortfolioItemReceived(payload, bdea);
+                    case "crudcoordinator.crud.crudcoordinator.getportfolioitemsretired":
+                        this.OnCRUDCoordinatorGetPortfolioItemsRETIREDReceived(payload, bdea);
                         break;
                     
-                    case "crudcoordinator.crud.crudcoordinator.getportfolioitems":
-                        this.OnCRUDCoordinatorGetPortfolioItemsReceived(payload, bdea);
+                    case "crudcoordinator.crud.crudcoordinator.updateportfolioitemretired":
+                        this.OnCRUDCoordinatorUpdatePortfolioItemRETIREDReceived(payload, bdea);
                         break;
                     
-                    case "crudcoordinator.crud.crudcoordinator.updateportfolioitem":
-                        this.OnCRUDCoordinatorUpdatePortfolioItemReceived(payload, bdea);
-                        break;
-                    
-                    case "crudcoordinator.crud.crudcoordinator.deleteportfolioitem":
-                        this.OnCRUDCoordinatorDeletePortfolioItemReceived(payload, bdea);
+                    case "crudcoordinator.crud.crudcoordinator.deleteportfolioitemretired":
+                        this.OnCRUDCoordinatorDeletePortfolioItemRETIREDReceived(payload, bdea);
                         break;
                     
                     case "crudcoordinator.crud.effortlessproxydatacoordinator.addprojectstage":
@@ -542,6 +542,10 @@ namespace YP.SassyMQ.Lib.RabbitMQ
                     
                     case "crudcoordinator.crud.crudcoordinator.deleteprojectrole":
                         this.OnCRUDCoordinatorDeleteProjectRoleReceived(payload, bdea);
+                        break;
+                    
+                    case "crudcoordinator.crud.guest.getservicehostendpoints":
+                        this.OnGuestGetServiceHostEndpointsReceived(payload, bdea);
                         break;
                     
                     case "crudcoordinator.crud.effortlessproxydatacoordinator.addservicehostendpoint":
@@ -780,56 +784,52 @@ namespace YP.SassyMQ.Lib.RabbitMQ
                         this.OnCRUDCoordinatorDeleteProjectLexiconTermReceived(payload, bdea);
                         break;
                     
-                    case "crudcoordinator.crud.guest.getportfolios":
-                        this.OnGuestGetPortfoliosReceived(payload, bdea);
+                    case "crudcoordinator.crud.effortlessproxydatacoordinator.addportfolioretired":
+                        this.OnEffortlessProxyDataCoordinatorAddPortfolioRETIREDReceived(payload, bdea);
                         break;
                     
-                    case "crudcoordinator.crud.effortlessproxydatacoordinator.addportfolio":
-                        this.OnEffortlessProxyDataCoordinatorAddPortfolioReceived(payload, bdea);
+                    case "crudcoordinator.crud.effortlessproxydatacoordinator.getportfoliosretired":
+                        this.OnEffortlessProxyDataCoordinatorGetPortfoliosRETIREDReceived(payload, bdea);
                         break;
                     
-                    case "crudcoordinator.crud.effortlessproxydatacoordinator.getportfolios":
-                        this.OnEffortlessProxyDataCoordinatorGetPortfoliosReceived(payload, bdea);
+                    case "crudcoordinator.crud.effortlessproxydatacoordinator.updateportfolioretired":
+                        this.OnEffortlessProxyDataCoordinatorUpdatePortfolioRETIREDReceived(payload, bdea);
                         break;
                     
-                    case "crudcoordinator.crud.effortlessproxydatacoordinator.updateportfolio":
-                        this.OnEffortlessProxyDataCoordinatorUpdatePortfolioReceived(payload, bdea);
+                    case "crudcoordinator.crud.effortlessproxydatacoordinator.deleteportfolioretired":
+                        this.OnEffortlessProxyDataCoordinatorDeletePortfolioRETIREDReceived(payload, bdea);
                         break;
                     
-                    case "crudcoordinator.crud.effortlessproxydatacoordinator.deleteportfolio":
-                        this.OnEffortlessProxyDataCoordinatorDeletePortfolioReceived(payload, bdea);
+                    case "crudcoordinator.crud.admin.addportfolioretired":
+                        this.OnAdminAddPortfolioRETIREDReceived(payload, bdea);
                         break;
                     
-                    case "crudcoordinator.crud.admin.addportfolio":
-                        this.OnAdminAddPortfolioReceived(payload, bdea);
+                    case "crudcoordinator.crud.admin.getportfoliosretired":
+                        this.OnAdminGetPortfoliosRETIREDReceived(payload, bdea);
                         break;
                     
-                    case "crudcoordinator.crud.admin.getportfolios":
-                        this.OnAdminGetPortfoliosReceived(payload, bdea);
+                    case "crudcoordinator.crud.admin.updateportfolioretired":
+                        this.OnAdminUpdatePortfolioRETIREDReceived(payload, bdea);
                         break;
                     
-                    case "crudcoordinator.crud.admin.updateportfolio":
-                        this.OnAdminUpdatePortfolioReceived(payload, bdea);
+                    case "crudcoordinator.crud.admin.deleteportfolioretired":
+                        this.OnAdminDeletePortfolioRETIREDReceived(payload, bdea);
                         break;
                     
-                    case "crudcoordinator.crud.admin.deleteportfolio":
-                        this.OnAdminDeletePortfolioReceived(payload, bdea);
+                    case "crudcoordinator.crud.crudcoordinator.addportfolioretired":
+                        this.OnCRUDCoordinatorAddPortfolioRETIREDReceived(payload, bdea);
                         break;
                     
-                    case "crudcoordinator.crud.crudcoordinator.addportfolio":
-                        this.OnCRUDCoordinatorAddPortfolioReceived(payload, bdea);
+                    case "crudcoordinator.crud.crudcoordinator.getportfoliosretired":
+                        this.OnCRUDCoordinatorGetPortfoliosRETIREDReceived(payload, bdea);
                         break;
                     
-                    case "crudcoordinator.crud.crudcoordinator.getportfolios":
-                        this.OnCRUDCoordinatorGetPortfoliosReceived(payload, bdea);
+                    case "crudcoordinator.crud.crudcoordinator.updateportfolioretired":
+                        this.OnCRUDCoordinatorUpdatePortfolioRETIREDReceived(payload, bdea);
                         break;
                     
-                    case "crudcoordinator.crud.crudcoordinator.updateportfolio":
-                        this.OnCRUDCoordinatorUpdatePortfolioReceived(payload, bdea);
-                        break;
-                    
-                    case "crudcoordinator.crud.crudcoordinator.deleteportfolio":
-                        this.OnCRUDCoordinatorDeletePortfolioReceived(payload, bdea);
+                    case "crudcoordinator.crud.crudcoordinator.deleteportfolioretired":
+                        this.OnCRUDCoordinatorDeletePortfolioRETIREDReceived(payload, bdea);
                         break;
                     
                     case "crudcoordinator.crud.effortlessproxydatacoordinator.addprojectemail":
@@ -954,6 +954,10 @@ namespace YP.SassyMQ.Lib.RabbitMQ
                     
                     case "crudcoordinator.crud.crudcoordinator.deleteprojectversion":
                         this.OnCRUDCoordinatorDeleteProjectVersionReceived(payload, bdea);
+                        break;
+                    
+                    case "crudcoordinator.crud.guest.getservicehosttypes":
+                        this.OnGuestGetServiceHostTypesReceived(payload, bdea);
                         break;
                     
                     case "crudcoordinator.crud.effortlessproxydatacoordinator.addservicehosttype":
@@ -1116,6 +1120,10 @@ namespace YP.SassyMQ.Lib.RabbitMQ
                         this.OnCRUDCoordinatorDeleteEffortlessAPIAccountReceived(payload, bdea);
                         break;
                     
+                    case "crudcoordinator.crud.guest.getserviceproducts":
+                        this.OnGuestGetServiceProductsReceived(payload, bdea);
+                        break;
+                    
                     case "crudcoordinator.crud.effortlessproxydatacoordinator.addserviceproduct":
                         this.OnEffortlessProxyDataCoordinatorAddServiceProductReceived(payload, bdea);
                         break;
@@ -1262,6 +1270,10 @@ namespace YP.SassyMQ.Lib.RabbitMQ
                     
                     case "crudcoordinator.crud.crudcoordinator.deleteprojectrequestsummary":
                         this.OnCRUDCoordinatorDeleteProjectRequestSummaryReceived(payload, bdea);
+                        break;
+                    
+                    case "crudcoordinator.crud.guest.getserviceplans":
+                        this.OnGuestGetServicePlansReceived(payload, bdea);
                         break;
                     
                     case "crudcoordinator.crud.effortlessproxydatacoordinator.addserviceplan":
@@ -1620,6 +1632,10 @@ namespace YP.SassyMQ.Lib.RabbitMQ
                         this.OnCRUDCoordinatorDeleteColumnRoleCRUDReceived(payload, bdea);
                         break;
                     
+                    case "crudcoordinator.crud.guest.getsdklanguages":
+                        this.OnGuestGetSDKLanguagesReceived(payload, bdea);
+                        break;
+                    
                     case "crudcoordinator.crud.effortlessproxydatacoordinator.addsdklanguage":
                         this.OnEffortlessProxyDataCoordinatorAddSDKLanguageReceived(payload, bdea);
                         break;
@@ -1716,6 +1732,54 @@ namespace YP.SassyMQ.Lib.RabbitMQ
                         this.OnCRUDCoordinatorDeleteServiceKeyReceived(payload, bdea);
                         break;
                     
+                    case "crudcoordinator.crud.effortlessproxydatacoordinator.addcustomertype":
+                        this.OnEffortlessProxyDataCoordinatorAddCustomerTypeReceived(payload, bdea);
+                        break;
+                    
+                    case "crudcoordinator.crud.effortlessproxydatacoordinator.getcustomertypes":
+                        this.OnEffortlessProxyDataCoordinatorGetCustomerTypesReceived(payload, bdea);
+                        break;
+                    
+                    case "crudcoordinator.crud.effortlessproxydatacoordinator.updatecustomertype":
+                        this.OnEffortlessProxyDataCoordinatorUpdateCustomerTypeReceived(payload, bdea);
+                        break;
+                    
+                    case "crudcoordinator.crud.effortlessproxydatacoordinator.deletecustomertype":
+                        this.OnEffortlessProxyDataCoordinatorDeleteCustomerTypeReceived(payload, bdea);
+                        break;
+                    
+                    case "crudcoordinator.crud.admin.addcustomertype":
+                        this.OnAdminAddCustomerTypeReceived(payload, bdea);
+                        break;
+                    
+                    case "crudcoordinator.crud.admin.getcustomertypes":
+                        this.OnAdminGetCustomerTypesReceived(payload, bdea);
+                        break;
+                    
+                    case "crudcoordinator.crud.admin.updatecustomertype":
+                        this.OnAdminUpdateCustomerTypeReceived(payload, bdea);
+                        break;
+                    
+                    case "crudcoordinator.crud.admin.deletecustomertype":
+                        this.OnAdminDeleteCustomerTypeReceived(payload, bdea);
+                        break;
+                    
+                    case "crudcoordinator.crud.crudcoordinator.addcustomertype":
+                        this.OnCRUDCoordinatorAddCustomerTypeReceived(payload, bdea);
+                        break;
+                    
+                    case "crudcoordinator.crud.crudcoordinator.getcustomertypes":
+                        this.OnCRUDCoordinatorGetCustomerTypesReceived(payload, bdea);
+                        break;
+                    
+                    case "crudcoordinator.crud.crudcoordinator.updatecustomertype":
+                        this.OnCRUDCoordinatorUpdateCustomerTypeReceived(payload, bdea);
+                        break;
+                    
+                    case "crudcoordinator.crud.crudcoordinator.deletecustomertype":
+                        this.OnCRUDCoordinatorDeleteCustomerTypeReceived(payload, bdea);
+                        break;
+                    
                 }
 
             }
@@ -1723,8 +1787,10 @@ namespace YP.SassyMQ.Lib.RabbitMQ
             {
                 payload.ErrorMessage = ex.Message;
             }
-            if (payload.AccessToken == originalAccessToken) payload.AccessToken = null;            
-            this.Reply(payload, bdea.BasicProperties);
+            var reply = payload.ReplyPayload is null ? payload  : payload.ReplyPayload;
+            reply.IsHandled = payload.IsHandled;
+            if (reply.AccessToken == originalAccessToken) reply.AccessToken = null;            
+            this.Reply(reply, bdea.BasicProperties);
         }
 
         
@@ -1963,6 +2029,20 @@ namespace YP.SassyMQ.Lib.RabbitMQ
             {
                 plea.Payload.IsHandled = true;
                 this.DeveloperDoSomethingElseReceived(this, plea);
+            }
+        }
+
+        /// <summary>
+        /// Responds to: GetPlanProducts from Guest
+        /// </summary>
+        public event EventHandler<PayloadEventArgs> GuestGetPlanProductsReceived;
+        protected virtual void OnGuestGetPlanProductsReceived(StandardPayload payload, BasicDeliverEventArgs bdea)
+        {
+            var plea = new PayloadEventArgs(payload, bdea);
+            if (!ReferenceEquals(this.GuestGetPlanProductsReceived, null))
+            {
+                plea.Payload.IsHandled = true;
+                this.GuestGetPlanProductsReceived(this, plea);
             }
         }
 
@@ -2709,184 +2789,170 @@ namespace YP.SassyMQ.Lib.RabbitMQ
         }
 
         /// <summary>
-        /// Responds to: GetPortfolioItems from Guest
+        /// Responds to: AddPortfolioItemRETIRED from EffortlessProxyDataCoordinator
         /// </summary>
-        public event EventHandler<PayloadEventArgs> GuestGetPortfolioItemsReceived;
-        protected virtual void OnGuestGetPortfolioItemsReceived(StandardPayload payload, BasicDeliverEventArgs bdea)
+        public event EventHandler<PayloadEventArgs> EffortlessProxyDataCoordinatorAddPortfolioItemRETIREDReceived;
+        protected virtual void OnEffortlessProxyDataCoordinatorAddPortfolioItemRETIREDReceived(StandardPayload payload, BasicDeliverEventArgs bdea)
         {
             var plea = new PayloadEventArgs(payload, bdea);
-            if (!ReferenceEquals(this.GuestGetPortfolioItemsReceived, null))
+            if (!ReferenceEquals(this.EffortlessProxyDataCoordinatorAddPortfolioItemRETIREDReceived, null))
             {
                 plea.Payload.IsHandled = true;
-                this.GuestGetPortfolioItemsReceived(this, plea);
+                this.EffortlessProxyDataCoordinatorAddPortfolioItemRETIREDReceived(this, plea);
             }
         }
 
         /// <summary>
-        /// Responds to: AddPortfolioItem from EffortlessProxyDataCoordinator
+        /// Responds to: GetPortfolioItemsRETIRED from EffortlessProxyDataCoordinator
         /// </summary>
-        public event EventHandler<PayloadEventArgs> EffortlessProxyDataCoordinatorAddPortfolioItemReceived;
-        protected virtual void OnEffortlessProxyDataCoordinatorAddPortfolioItemReceived(StandardPayload payload, BasicDeliverEventArgs bdea)
+        public event EventHandler<PayloadEventArgs> EffortlessProxyDataCoordinatorGetPortfolioItemsRETIREDReceived;
+        protected virtual void OnEffortlessProxyDataCoordinatorGetPortfolioItemsRETIREDReceived(StandardPayload payload, BasicDeliverEventArgs bdea)
         {
             var plea = new PayloadEventArgs(payload, bdea);
-            if (!ReferenceEquals(this.EffortlessProxyDataCoordinatorAddPortfolioItemReceived, null))
+            if (!ReferenceEquals(this.EffortlessProxyDataCoordinatorGetPortfolioItemsRETIREDReceived, null))
             {
                 plea.Payload.IsHandled = true;
-                this.EffortlessProxyDataCoordinatorAddPortfolioItemReceived(this, plea);
+                this.EffortlessProxyDataCoordinatorGetPortfolioItemsRETIREDReceived(this, plea);
             }
         }
 
         /// <summary>
-        /// Responds to: GetPortfolioItems from EffortlessProxyDataCoordinator
+        /// Responds to: UpdatePortfolioItemRETIRED from EffortlessProxyDataCoordinator
         /// </summary>
-        public event EventHandler<PayloadEventArgs> EffortlessProxyDataCoordinatorGetPortfolioItemsReceived;
-        protected virtual void OnEffortlessProxyDataCoordinatorGetPortfolioItemsReceived(StandardPayload payload, BasicDeliverEventArgs bdea)
+        public event EventHandler<PayloadEventArgs> EffortlessProxyDataCoordinatorUpdatePortfolioItemRETIREDReceived;
+        protected virtual void OnEffortlessProxyDataCoordinatorUpdatePortfolioItemRETIREDReceived(StandardPayload payload, BasicDeliverEventArgs bdea)
         {
             var plea = new PayloadEventArgs(payload, bdea);
-            if (!ReferenceEquals(this.EffortlessProxyDataCoordinatorGetPortfolioItemsReceived, null))
+            if (!ReferenceEquals(this.EffortlessProxyDataCoordinatorUpdatePortfolioItemRETIREDReceived, null))
             {
                 plea.Payload.IsHandled = true;
-                this.EffortlessProxyDataCoordinatorGetPortfolioItemsReceived(this, plea);
+                this.EffortlessProxyDataCoordinatorUpdatePortfolioItemRETIREDReceived(this, plea);
             }
         }
 
         /// <summary>
-        /// Responds to: UpdatePortfolioItem from EffortlessProxyDataCoordinator
+        /// Responds to: DeletePortfolioItemRETIRED from EffortlessProxyDataCoordinator
         /// </summary>
-        public event EventHandler<PayloadEventArgs> EffortlessProxyDataCoordinatorUpdatePortfolioItemReceived;
-        protected virtual void OnEffortlessProxyDataCoordinatorUpdatePortfolioItemReceived(StandardPayload payload, BasicDeliverEventArgs bdea)
+        public event EventHandler<PayloadEventArgs> EffortlessProxyDataCoordinatorDeletePortfolioItemRETIREDReceived;
+        protected virtual void OnEffortlessProxyDataCoordinatorDeletePortfolioItemRETIREDReceived(StandardPayload payload, BasicDeliverEventArgs bdea)
         {
             var plea = new PayloadEventArgs(payload, bdea);
-            if (!ReferenceEquals(this.EffortlessProxyDataCoordinatorUpdatePortfolioItemReceived, null))
+            if (!ReferenceEquals(this.EffortlessProxyDataCoordinatorDeletePortfolioItemRETIREDReceived, null))
             {
                 plea.Payload.IsHandled = true;
-                this.EffortlessProxyDataCoordinatorUpdatePortfolioItemReceived(this, plea);
+                this.EffortlessProxyDataCoordinatorDeletePortfolioItemRETIREDReceived(this, plea);
             }
         }
 
         /// <summary>
-        /// Responds to: DeletePortfolioItem from EffortlessProxyDataCoordinator
+        /// Responds to: AddPortfolioItemRETIRED from Admin
         /// </summary>
-        public event EventHandler<PayloadEventArgs> EffortlessProxyDataCoordinatorDeletePortfolioItemReceived;
-        protected virtual void OnEffortlessProxyDataCoordinatorDeletePortfolioItemReceived(StandardPayload payload, BasicDeliverEventArgs bdea)
+        public event EventHandler<PayloadEventArgs> AdminAddPortfolioItemRETIREDReceived;
+        protected virtual void OnAdminAddPortfolioItemRETIREDReceived(StandardPayload payload, BasicDeliverEventArgs bdea)
         {
             var plea = new PayloadEventArgs(payload, bdea);
-            if (!ReferenceEquals(this.EffortlessProxyDataCoordinatorDeletePortfolioItemReceived, null))
+            if (!ReferenceEquals(this.AdminAddPortfolioItemRETIREDReceived, null))
             {
                 plea.Payload.IsHandled = true;
-                this.EffortlessProxyDataCoordinatorDeletePortfolioItemReceived(this, plea);
+                this.AdminAddPortfolioItemRETIREDReceived(this, plea);
             }
         }
 
         /// <summary>
-        /// Responds to: AddPortfolioItem from Admin
+        /// Responds to: GetPortfolioItemsRETIRED from Admin
         /// </summary>
-        public event EventHandler<PayloadEventArgs> AdminAddPortfolioItemReceived;
-        protected virtual void OnAdminAddPortfolioItemReceived(StandardPayload payload, BasicDeliverEventArgs bdea)
+        public event EventHandler<PayloadEventArgs> AdminGetPortfolioItemsRETIREDReceived;
+        protected virtual void OnAdminGetPortfolioItemsRETIREDReceived(StandardPayload payload, BasicDeliverEventArgs bdea)
         {
             var plea = new PayloadEventArgs(payload, bdea);
-            if (!ReferenceEquals(this.AdminAddPortfolioItemReceived, null))
+            if (!ReferenceEquals(this.AdminGetPortfolioItemsRETIREDReceived, null))
             {
                 plea.Payload.IsHandled = true;
-                this.AdminAddPortfolioItemReceived(this, plea);
+                this.AdminGetPortfolioItemsRETIREDReceived(this, plea);
             }
         }
 
         /// <summary>
-        /// Responds to: GetPortfolioItems from Admin
+        /// Responds to: UpdatePortfolioItemRETIRED from Admin
         /// </summary>
-        public event EventHandler<PayloadEventArgs> AdminGetPortfolioItemsReceived;
-        protected virtual void OnAdminGetPortfolioItemsReceived(StandardPayload payload, BasicDeliverEventArgs bdea)
+        public event EventHandler<PayloadEventArgs> AdminUpdatePortfolioItemRETIREDReceived;
+        protected virtual void OnAdminUpdatePortfolioItemRETIREDReceived(StandardPayload payload, BasicDeliverEventArgs bdea)
         {
             var plea = new PayloadEventArgs(payload, bdea);
-            if (!ReferenceEquals(this.AdminGetPortfolioItemsReceived, null))
+            if (!ReferenceEquals(this.AdminUpdatePortfolioItemRETIREDReceived, null))
             {
                 plea.Payload.IsHandled = true;
-                this.AdminGetPortfolioItemsReceived(this, plea);
+                this.AdminUpdatePortfolioItemRETIREDReceived(this, plea);
             }
         }
 
         /// <summary>
-        /// Responds to: UpdatePortfolioItem from Admin
+        /// Responds to: DeletePortfolioItemRETIRED from Admin
         /// </summary>
-        public event EventHandler<PayloadEventArgs> AdminUpdatePortfolioItemReceived;
-        protected virtual void OnAdminUpdatePortfolioItemReceived(StandardPayload payload, BasicDeliverEventArgs bdea)
+        public event EventHandler<PayloadEventArgs> AdminDeletePortfolioItemRETIREDReceived;
+        protected virtual void OnAdminDeletePortfolioItemRETIREDReceived(StandardPayload payload, BasicDeliverEventArgs bdea)
         {
             var plea = new PayloadEventArgs(payload, bdea);
-            if (!ReferenceEquals(this.AdminUpdatePortfolioItemReceived, null))
+            if (!ReferenceEquals(this.AdminDeletePortfolioItemRETIREDReceived, null))
             {
                 plea.Payload.IsHandled = true;
-                this.AdminUpdatePortfolioItemReceived(this, plea);
+                this.AdminDeletePortfolioItemRETIREDReceived(this, plea);
             }
         }
 
         /// <summary>
-        /// Responds to: DeletePortfolioItem from Admin
+        /// Responds to: AddPortfolioItemRETIRED from CRUDCoordinator
         /// </summary>
-        public event EventHandler<PayloadEventArgs> AdminDeletePortfolioItemReceived;
-        protected virtual void OnAdminDeletePortfolioItemReceived(StandardPayload payload, BasicDeliverEventArgs bdea)
+        public event EventHandler<PayloadEventArgs> CRUDCoordinatorAddPortfolioItemRETIREDReceived;
+        protected virtual void OnCRUDCoordinatorAddPortfolioItemRETIREDReceived(StandardPayload payload, BasicDeliverEventArgs bdea)
         {
             var plea = new PayloadEventArgs(payload, bdea);
-            if (!ReferenceEquals(this.AdminDeletePortfolioItemReceived, null))
+            if (!ReferenceEquals(this.CRUDCoordinatorAddPortfolioItemRETIREDReceived, null))
             {
                 plea.Payload.IsHandled = true;
-                this.AdminDeletePortfolioItemReceived(this, plea);
+                this.CRUDCoordinatorAddPortfolioItemRETIREDReceived(this, plea);
             }
         }
 
         /// <summary>
-        /// Responds to: AddPortfolioItem from CRUDCoordinator
+        /// Responds to: GetPortfolioItemsRETIRED from CRUDCoordinator
         /// </summary>
-        public event EventHandler<PayloadEventArgs> CRUDCoordinatorAddPortfolioItemReceived;
-        protected virtual void OnCRUDCoordinatorAddPortfolioItemReceived(StandardPayload payload, BasicDeliverEventArgs bdea)
+        public event EventHandler<PayloadEventArgs> CRUDCoordinatorGetPortfolioItemsRETIREDReceived;
+        protected virtual void OnCRUDCoordinatorGetPortfolioItemsRETIREDReceived(StandardPayload payload, BasicDeliverEventArgs bdea)
         {
             var plea = new PayloadEventArgs(payload, bdea);
-            if (!ReferenceEquals(this.CRUDCoordinatorAddPortfolioItemReceived, null))
+            if (!ReferenceEquals(this.CRUDCoordinatorGetPortfolioItemsRETIREDReceived, null))
             {
                 plea.Payload.IsHandled = true;
-                this.CRUDCoordinatorAddPortfolioItemReceived(this, plea);
+                this.CRUDCoordinatorGetPortfolioItemsRETIREDReceived(this, plea);
             }
         }
 
         /// <summary>
-        /// Responds to: GetPortfolioItems from CRUDCoordinator
+        /// Responds to: UpdatePortfolioItemRETIRED from CRUDCoordinator
         /// </summary>
-        public event EventHandler<PayloadEventArgs> CRUDCoordinatorGetPortfolioItemsReceived;
-        protected virtual void OnCRUDCoordinatorGetPortfolioItemsReceived(StandardPayload payload, BasicDeliverEventArgs bdea)
+        public event EventHandler<PayloadEventArgs> CRUDCoordinatorUpdatePortfolioItemRETIREDReceived;
+        protected virtual void OnCRUDCoordinatorUpdatePortfolioItemRETIREDReceived(StandardPayload payload, BasicDeliverEventArgs bdea)
         {
             var plea = new PayloadEventArgs(payload, bdea);
-            if (!ReferenceEquals(this.CRUDCoordinatorGetPortfolioItemsReceived, null))
+            if (!ReferenceEquals(this.CRUDCoordinatorUpdatePortfolioItemRETIREDReceived, null))
             {
                 plea.Payload.IsHandled = true;
-                this.CRUDCoordinatorGetPortfolioItemsReceived(this, plea);
+                this.CRUDCoordinatorUpdatePortfolioItemRETIREDReceived(this, plea);
             }
         }
 
         /// <summary>
-        /// Responds to: UpdatePortfolioItem from CRUDCoordinator
+        /// Responds to: DeletePortfolioItemRETIRED from CRUDCoordinator
         /// </summary>
-        public event EventHandler<PayloadEventArgs> CRUDCoordinatorUpdatePortfolioItemReceived;
-        protected virtual void OnCRUDCoordinatorUpdatePortfolioItemReceived(StandardPayload payload, BasicDeliverEventArgs bdea)
+        public event EventHandler<PayloadEventArgs> CRUDCoordinatorDeletePortfolioItemRETIREDReceived;
+        protected virtual void OnCRUDCoordinatorDeletePortfolioItemRETIREDReceived(StandardPayload payload, BasicDeliverEventArgs bdea)
         {
             var plea = new PayloadEventArgs(payload, bdea);
-            if (!ReferenceEquals(this.CRUDCoordinatorUpdatePortfolioItemReceived, null))
+            if (!ReferenceEquals(this.CRUDCoordinatorDeletePortfolioItemRETIREDReceived, null))
             {
                 plea.Payload.IsHandled = true;
-                this.CRUDCoordinatorUpdatePortfolioItemReceived(this, plea);
-            }
-        }
-
-        /// <summary>
-        /// Responds to: DeletePortfolioItem from CRUDCoordinator
-        /// </summary>
-        public event EventHandler<PayloadEventArgs> CRUDCoordinatorDeletePortfolioItemReceived;
-        protected virtual void OnCRUDCoordinatorDeletePortfolioItemReceived(StandardPayload payload, BasicDeliverEventArgs bdea)
-        {
-            var plea = new PayloadEventArgs(payload, bdea);
-            if (!ReferenceEquals(this.CRUDCoordinatorDeletePortfolioItemReceived, null))
-            {
-                plea.Payload.IsHandled = true;
-                this.CRUDCoordinatorDeletePortfolioItemReceived(this, plea);
+                this.CRUDCoordinatorDeletePortfolioItemRETIREDReceived(this, plea);
             }
         }
 
@@ -3545,6 +3611,20 @@ namespace YP.SassyMQ.Lib.RabbitMQ
             {
                 plea.Payload.IsHandled = true;
                 this.CRUDCoordinatorDeleteProjectRoleReceived(this, plea);
+            }
+        }
+
+        /// <summary>
+        /// Responds to: GetServiceHostEndpoints from Guest
+        /// </summary>
+        public event EventHandler<PayloadEventArgs> GuestGetServiceHostEndpointsReceived;
+        protected virtual void OnGuestGetServiceHostEndpointsReceived(StandardPayload payload, BasicDeliverEventArgs bdea)
+        {
+            var plea = new PayloadEventArgs(payload, bdea);
+            if (!ReferenceEquals(this.GuestGetServiceHostEndpointsReceived, null))
+            {
+                plea.Payload.IsHandled = true;
+                this.GuestGetServiceHostEndpointsReceived(this, plea);
             }
         }
 
@@ -4375,184 +4455,170 @@ namespace YP.SassyMQ.Lib.RabbitMQ
         }
 
         /// <summary>
-        /// Responds to: GetPortfolios from Guest
+        /// Responds to: AddPortfolioRETIRED from EffortlessProxyDataCoordinator
         /// </summary>
-        public event EventHandler<PayloadEventArgs> GuestGetPortfoliosReceived;
-        protected virtual void OnGuestGetPortfoliosReceived(StandardPayload payload, BasicDeliverEventArgs bdea)
+        public event EventHandler<PayloadEventArgs> EffortlessProxyDataCoordinatorAddPortfolioRETIREDReceived;
+        protected virtual void OnEffortlessProxyDataCoordinatorAddPortfolioRETIREDReceived(StandardPayload payload, BasicDeliverEventArgs bdea)
         {
             var plea = new PayloadEventArgs(payload, bdea);
-            if (!ReferenceEquals(this.GuestGetPortfoliosReceived, null))
+            if (!ReferenceEquals(this.EffortlessProxyDataCoordinatorAddPortfolioRETIREDReceived, null))
             {
                 plea.Payload.IsHandled = true;
-                this.GuestGetPortfoliosReceived(this, plea);
+                this.EffortlessProxyDataCoordinatorAddPortfolioRETIREDReceived(this, plea);
             }
         }
 
         /// <summary>
-        /// Responds to: AddPortfolio from EffortlessProxyDataCoordinator
+        /// Responds to: GetPortfoliosRETIRED from EffortlessProxyDataCoordinator
         /// </summary>
-        public event EventHandler<PayloadEventArgs> EffortlessProxyDataCoordinatorAddPortfolioReceived;
-        protected virtual void OnEffortlessProxyDataCoordinatorAddPortfolioReceived(StandardPayload payload, BasicDeliverEventArgs bdea)
+        public event EventHandler<PayloadEventArgs> EffortlessProxyDataCoordinatorGetPortfoliosRETIREDReceived;
+        protected virtual void OnEffortlessProxyDataCoordinatorGetPortfoliosRETIREDReceived(StandardPayload payload, BasicDeliverEventArgs bdea)
         {
             var plea = new PayloadEventArgs(payload, bdea);
-            if (!ReferenceEquals(this.EffortlessProxyDataCoordinatorAddPortfolioReceived, null))
+            if (!ReferenceEquals(this.EffortlessProxyDataCoordinatorGetPortfoliosRETIREDReceived, null))
             {
                 plea.Payload.IsHandled = true;
-                this.EffortlessProxyDataCoordinatorAddPortfolioReceived(this, plea);
+                this.EffortlessProxyDataCoordinatorGetPortfoliosRETIREDReceived(this, plea);
             }
         }
 
         /// <summary>
-        /// Responds to: GetPortfolios from EffortlessProxyDataCoordinator
+        /// Responds to: UpdatePortfolioRETIRED from EffortlessProxyDataCoordinator
         /// </summary>
-        public event EventHandler<PayloadEventArgs> EffortlessProxyDataCoordinatorGetPortfoliosReceived;
-        protected virtual void OnEffortlessProxyDataCoordinatorGetPortfoliosReceived(StandardPayload payload, BasicDeliverEventArgs bdea)
+        public event EventHandler<PayloadEventArgs> EffortlessProxyDataCoordinatorUpdatePortfolioRETIREDReceived;
+        protected virtual void OnEffortlessProxyDataCoordinatorUpdatePortfolioRETIREDReceived(StandardPayload payload, BasicDeliverEventArgs bdea)
         {
             var plea = new PayloadEventArgs(payload, bdea);
-            if (!ReferenceEquals(this.EffortlessProxyDataCoordinatorGetPortfoliosReceived, null))
+            if (!ReferenceEquals(this.EffortlessProxyDataCoordinatorUpdatePortfolioRETIREDReceived, null))
             {
                 plea.Payload.IsHandled = true;
-                this.EffortlessProxyDataCoordinatorGetPortfoliosReceived(this, plea);
+                this.EffortlessProxyDataCoordinatorUpdatePortfolioRETIREDReceived(this, plea);
             }
         }
 
         /// <summary>
-        /// Responds to: UpdatePortfolio from EffortlessProxyDataCoordinator
+        /// Responds to: DeletePortfolioRETIRED from EffortlessProxyDataCoordinator
         /// </summary>
-        public event EventHandler<PayloadEventArgs> EffortlessProxyDataCoordinatorUpdatePortfolioReceived;
-        protected virtual void OnEffortlessProxyDataCoordinatorUpdatePortfolioReceived(StandardPayload payload, BasicDeliverEventArgs bdea)
+        public event EventHandler<PayloadEventArgs> EffortlessProxyDataCoordinatorDeletePortfolioRETIREDReceived;
+        protected virtual void OnEffortlessProxyDataCoordinatorDeletePortfolioRETIREDReceived(StandardPayload payload, BasicDeliverEventArgs bdea)
         {
             var plea = new PayloadEventArgs(payload, bdea);
-            if (!ReferenceEquals(this.EffortlessProxyDataCoordinatorUpdatePortfolioReceived, null))
+            if (!ReferenceEquals(this.EffortlessProxyDataCoordinatorDeletePortfolioRETIREDReceived, null))
             {
                 plea.Payload.IsHandled = true;
-                this.EffortlessProxyDataCoordinatorUpdatePortfolioReceived(this, plea);
+                this.EffortlessProxyDataCoordinatorDeletePortfolioRETIREDReceived(this, plea);
             }
         }
 
         /// <summary>
-        /// Responds to: DeletePortfolio from EffortlessProxyDataCoordinator
+        /// Responds to: AddPortfolioRETIRED from Admin
         /// </summary>
-        public event EventHandler<PayloadEventArgs> EffortlessProxyDataCoordinatorDeletePortfolioReceived;
-        protected virtual void OnEffortlessProxyDataCoordinatorDeletePortfolioReceived(StandardPayload payload, BasicDeliverEventArgs bdea)
+        public event EventHandler<PayloadEventArgs> AdminAddPortfolioRETIREDReceived;
+        protected virtual void OnAdminAddPortfolioRETIREDReceived(StandardPayload payload, BasicDeliverEventArgs bdea)
         {
             var plea = new PayloadEventArgs(payload, bdea);
-            if (!ReferenceEquals(this.EffortlessProxyDataCoordinatorDeletePortfolioReceived, null))
+            if (!ReferenceEquals(this.AdminAddPortfolioRETIREDReceived, null))
             {
                 plea.Payload.IsHandled = true;
-                this.EffortlessProxyDataCoordinatorDeletePortfolioReceived(this, plea);
+                this.AdminAddPortfolioRETIREDReceived(this, plea);
             }
         }
 
         /// <summary>
-        /// Responds to: AddPortfolio from Admin
+        /// Responds to: GetPortfoliosRETIRED from Admin
         /// </summary>
-        public event EventHandler<PayloadEventArgs> AdminAddPortfolioReceived;
-        protected virtual void OnAdminAddPortfolioReceived(StandardPayload payload, BasicDeliverEventArgs bdea)
+        public event EventHandler<PayloadEventArgs> AdminGetPortfoliosRETIREDReceived;
+        protected virtual void OnAdminGetPortfoliosRETIREDReceived(StandardPayload payload, BasicDeliverEventArgs bdea)
         {
             var plea = new PayloadEventArgs(payload, bdea);
-            if (!ReferenceEquals(this.AdminAddPortfolioReceived, null))
+            if (!ReferenceEquals(this.AdminGetPortfoliosRETIREDReceived, null))
             {
                 plea.Payload.IsHandled = true;
-                this.AdminAddPortfolioReceived(this, plea);
+                this.AdminGetPortfoliosRETIREDReceived(this, plea);
             }
         }
 
         /// <summary>
-        /// Responds to: GetPortfolios from Admin
+        /// Responds to: UpdatePortfolioRETIRED from Admin
         /// </summary>
-        public event EventHandler<PayloadEventArgs> AdminGetPortfoliosReceived;
-        protected virtual void OnAdminGetPortfoliosReceived(StandardPayload payload, BasicDeliverEventArgs bdea)
+        public event EventHandler<PayloadEventArgs> AdminUpdatePortfolioRETIREDReceived;
+        protected virtual void OnAdminUpdatePortfolioRETIREDReceived(StandardPayload payload, BasicDeliverEventArgs bdea)
         {
             var plea = new PayloadEventArgs(payload, bdea);
-            if (!ReferenceEquals(this.AdminGetPortfoliosReceived, null))
+            if (!ReferenceEquals(this.AdminUpdatePortfolioRETIREDReceived, null))
             {
                 plea.Payload.IsHandled = true;
-                this.AdminGetPortfoliosReceived(this, plea);
+                this.AdminUpdatePortfolioRETIREDReceived(this, plea);
             }
         }
 
         /// <summary>
-        /// Responds to: UpdatePortfolio from Admin
+        /// Responds to: DeletePortfolioRETIRED from Admin
         /// </summary>
-        public event EventHandler<PayloadEventArgs> AdminUpdatePortfolioReceived;
-        protected virtual void OnAdminUpdatePortfolioReceived(StandardPayload payload, BasicDeliverEventArgs bdea)
+        public event EventHandler<PayloadEventArgs> AdminDeletePortfolioRETIREDReceived;
+        protected virtual void OnAdminDeletePortfolioRETIREDReceived(StandardPayload payload, BasicDeliverEventArgs bdea)
         {
             var plea = new PayloadEventArgs(payload, bdea);
-            if (!ReferenceEquals(this.AdminUpdatePortfolioReceived, null))
+            if (!ReferenceEquals(this.AdminDeletePortfolioRETIREDReceived, null))
             {
                 plea.Payload.IsHandled = true;
-                this.AdminUpdatePortfolioReceived(this, plea);
+                this.AdminDeletePortfolioRETIREDReceived(this, plea);
             }
         }
 
         /// <summary>
-        /// Responds to: DeletePortfolio from Admin
+        /// Responds to: AddPortfolioRETIRED from CRUDCoordinator
         /// </summary>
-        public event EventHandler<PayloadEventArgs> AdminDeletePortfolioReceived;
-        protected virtual void OnAdminDeletePortfolioReceived(StandardPayload payload, BasicDeliverEventArgs bdea)
+        public event EventHandler<PayloadEventArgs> CRUDCoordinatorAddPortfolioRETIREDReceived;
+        protected virtual void OnCRUDCoordinatorAddPortfolioRETIREDReceived(StandardPayload payload, BasicDeliverEventArgs bdea)
         {
             var plea = new PayloadEventArgs(payload, bdea);
-            if (!ReferenceEquals(this.AdminDeletePortfolioReceived, null))
+            if (!ReferenceEquals(this.CRUDCoordinatorAddPortfolioRETIREDReceived, null))
             {
                 plea.Payload.IsHandled = true;
-                this.AdminDeletePortfolioReceived(this, plea);
+                this.CRUDCoordinatorAddPortfolioRETIREDReceived(this, plea);
             }
         }
 
         /// <summary>
-        /// Responds to: AddPortfolio from CRUDCoordinator
+        /// Responds to: GetPortfoliosRETIRED from CRUDCoordinator
         /// </summary>
-        public event EventHandler<PayloadEventArgs> CRUDCoordinatorAddPortfolioReceived;
-        protected virtual void OnCRUDCoordinatorAddPortfolioReceived(StandardPayload payload, BasicDeliverEventArgs bdea)
+        public event EventHandler<PayloadEventArgs> CRUDCoordinatorGetPortfoliosRETIREDReceived;
+        protected virtual void OnCRUDCoordinatorGetPortfoliosRETIREDReceived(StandardPayload payload, BasicDeliverEventArgs bdea)
         {
             var plea = new PayloadEventArgs(payload, bdea);
-            if (!ReferenceEquals(this.CRUDCoordinatorAddPortfolioReceived, null))
+            if (!ReferenceEquals(this.CRUDCoordinatorGetPortfoliosRETIREDReceived, null))
             {
                 plea.Payload.IsHandled = true;
-                this.CRUDCoordinatorAddPortfolioReceived(this, plea);
+                this.CRUDCoordinatorGetPortfoliosRETIREDReceived(this, plea);
             }
         }
 
         /// <summary>
-        /// Responds to: GetPortfolios from CRUDCoordinator
+        /// Responds to: UpdatePortfolioRETIRED from CRUDCoordinator
         /// </summary>
-        public event EventHandler<PayloadEventArgs> CRUDCoordinatorGetPortfoliosReceived;
-        protected virtual void OnCRUDCoordinatorGetPortfoliosReceived(StandardPayload payload, BasicDeliverEventArgs bdea)
+        public event EventHandler<PayloadEventArgs> CRUDCoordinatorUpdatePortfolioRETIREDReceived;
+        protected virtual void OnCRUDCoordinatorUpdatePortfolioRETIREDReceived(StandardPayload payload, BasicDeliverEventArgs bdea)
         {
             var plea = new PayloadEventArgs(payload, bdea);
-            if (!ReferenceEquals(this.CRUDCoordinatorGetPortfoliosReceived, null))
+            if (!ReferenceEquals(this.CRUDCoordinatorUpdatePortfolioRETIREDReceived, null))
             {
                 plea.Payload.IsHandled = true;
-                this.CRUDCoordinatorGetPortfoliosReceived(this, plea);
+                this.CRUDCoordinatorUpdatePortfolioRETIREDReceived(this, plea);
             }
         }
 
         /// <summary>
-        /// Responds to: UpdatePortfolio from CRUDCoordinator
+        /// Responds to: DeletePortfolioRETIRED from CRUDCoordinator
         /// </summary>
-        public event EventHandler<PayloadEventArgs> CRUDCoordinatorUpdatePortfolioReceived;
-        protected virtual void OnCRUDCoordinatorUpdatePortfolioReceived(StandardPayload payload, BasicDeliverEventArgs bdea)
+        public event EventHandler<PayloadEventArgs> CRUDCoordinatorDeletePortfolioRETIREDReceived;
+        protected virtual void OnCRUDCoordinatorDeletePortfolioRETIREDReceived(StandardPayload payload, BasicDeliverEventArgs bdea)
         {
             var plea = new PayloadEventArgs(payload, bdea);
-            if (!ReferenceEquals(this.CRUDCoordinatorUpdatePortfolioReceived, null))
+            if (!ReferenceEquals(this.CRUDCoordinatorDeletePortfolioRETIREDReceived, null))
             {
                 plea.Payload.IsHandled = true;
-                this.CRUDCoordinatorUpdatePortfolioReceived(this, plea);
-            }
-        }
-
-        /// <summary>
-        /// Responds to: DeletePortfolio from CRUDCoordinator
-        /// </summary>
-        public event EventHandler<PayloadEventArgs> CRUDCoordinatorDeletePortfolioReceived;
-        protected virtual void OnCRUDCoordinatorDeletePortfolioReceived(StandardPayload payload, BasicDeliverEventArgs bdea)
-        {
-            var plea = new PayloadEventArgs(payload, bdea);
-            if (!ReferenceEquals(this.CRUDCoordinatorDeletePortfolioReceived, null))
-            {
-                plea.Payload.IsHandled = true;
-                this.CRUDCoordinatorDeletePortfolioReceived(this, plea);
+                this.CRUDCoordinatorDeletePortfolioRETIREDReceived(this, plea);
             }
         }
 
@@ -4987,6 +5053,20 @@ namespace YP.SassyMQ.Lib.RabbitMQ
             {
                 plea.Payload.IsHandled = true;
                 this.CRUDCoordinatorDeleteProjectVersionReceived(this, plea);
+            }
+        }
+
+        /// <summary>
+        /// Responds to: GetServiceHostTypes from Guest
+        /// </summary>
+        public event EventHandler<PayloadEventArgs> GuestGetServiceHostTypesReceived;
+        protected virtual void OnGuestGetServiceHostTypesReceived(StandardPayload payload, BasicDeliverEventArgs bdea)
+        {
+            var plea = new PayloadEventArgs(payload, bdea);
+            if (!ReferenceEquals(this.GuestGetServiceHostTypesReceived, null))
+            {
+                plea.Payload.IsHandled = true;
+                this.GuestGetServiceHostTypesReceived(this, plea);
             }
         }
 
@@ -5551,6 +5631,20 @@ namespace YP.SassyMQ.Lib.RabbitMQ
         }
 
         /// <summary>
+        /// Responds to: GetServiceProducts from Guest
+        /// </summary>
+        public event EventHandler<PayloadEventArgs> GuestGetServiceProductsReceived;
+        protected virtual void OnGuestGetServiceProductsReceived(StandardPayload payload, BasicDeliverEventArgs bdea)
+        {
+            var plea = new PayloadEventArgs(payload, bdea);
+            if (!ReferenceEquals(this.GuestGetServiceProductsReceived, null))
+            {
+                plea.Payload.IsHandled = true;
+                this.GuestGetServiceProductsReceived(this, plea);
+            }
+        }
+
+        /// <summary>
         /// Responds to: AddServiceProduct from EffortlessProxyDataCoordinator
         /// </summary>
         public event EventHandler<PayloadEventArgs> EffortlessProxyDataCoordinatorAddServiceProductReceived;
@@ -6065,6 +6159,20 @@ namespace YP.SassyMQ.Lib.RabbitMQ
             {
                 plea.Payload.IsHandled = true;
                 this.CRUDCoordinatorDeleteProjectRequestSummaryReceived(this, plea);
+            }
+        }
+
+        /// <summary>
+        /// Responds to: GetServicePlans from Guest
+        /// </summary>
+        public event EventHandler<PayloadEventArgs> GuestGetServicePlansReceived;
+        protected virtual void OnGuestGetServicePlansReceived(StandardPayload payload, BasicDeliverEventArgs bdea)
+        {
+            var plea = new PayloadEventArgs(payload, bdea);
+            if (!ReferenceEquals(this.GuestGetServicePlansReceived, null))
+            {
+                plea.Payload.IsHandled = true;
+                this.GuestGetServicePlansReceived(this, plea);
             }
         }
 
@@ -7315,6 +7423,20 @@ namespace YP.SassyMQ.Lib.RabbitMQ
         }
 
         /// <summary>
+        /// Responds to: GetSDKLanguages from Guest
+        /// </summary>
+        public event EventHandler<PayloadEventArgs> GuestGetSDKLanguagesReceived;
+        protected virtual void OnGuestGetSDKLanguagesReceived(StandardPayload payload, BasicDeliverEventArgs bdea)
+        {
+            var plea = new PayloadEventArgs(payload, bdea);
+            if (!ReferenceEquals(this.GuestGetSDKLanguagesReceived, null))
+            {
+                plea.Payload.IsHandled = true;
+                this.GuestGetSDKLanguagesReceived(this, plea);
+            }
+        }
+
+        /// <summary>
         /// Responds to: AddSDKLanguage from EffortlessProxyDataCoordinator
         /// </summary>
         public event EventHandler<PayloadEventArgs> EffortlessProxyDataCoordinatorAddSDKLanguageReceived;
@@ -7647,6 +7769,174 @@ namespace YP.SassyMQ.Lib.RabbitMQ
             {
                 plea.Payload.IsHandled = true;
                 this.CRUDCoordinatorDeleteServiceKeyReceived(this, plea);
+            }
+        }
+
+        /// <summary>
+        /// Responds to: AddCustomerType from EffortlessProxyDataCoordinator
+        /// </summary>
+        public event EventHandler<PayloadEventArgs> EffortlessProxyDataCoordinatorAddCustomerTypeReceived;
+        protected virtual void OnEffortlessProxyDataCoordinatorAddCustomerTypeReceived(StandardPayload payload, BasicDeliverEventArgs bdea)
+        {
+            var plea = new PayloadEventArgs(payload, bdea);
+            if (!ReferenceEquals(this.EffortlessProxyDataCoordinatorAddCustomerTypeReceived, null))
+            {
+                plea.Payload.IsHandled = true;
+                this.EffortlessProxyDataCoordinatorAddCustomerTypeReceived(this, plea);
+            }
+        }
+
+        /// <summary>
+        /// Responds to: GetCustomerTypes from EffortlessProxyDataCoordinator
+        /// </summary>
+        public event EventHandler<PayloadEventArgs> EffortlessProxyDataCoordinatorGetCustomerTypesReceived;
+        protected virtual void OnEffortlessProxyDataCoordinatorGetCustomerTypesReceived(StandardPayload payload, BasicDeliverEventArgs bdea)
+        {
+            var plea = new PayloadEventArgs(payload, bdea);
+            if (!ReferenceEquals(this.EffortlessProxyDataCoordinatorGetCustomerTypesReceived, null))
+            {
+                plea.Payload.IsHandled = true;
+                this.EffortlessProxyDataCoordinatorGetCustomerTypesReceived(this, plea);
+            }
+        }
+
+        /// <summary>
+        /// Responds to: UpdateCustomerType from EffortlessProxyDataCoordinator
+        /// </summary>
+        public event EventHandler<PayloadEventArgs> EffortlessProxyDataCoordinatorUpdateCustomerTypeReceived;
+        protected virtual void OnEffortlessProxyDataCoordinatorUpdateCustomerTypeReceived(StandardPayload payload, BasicDeliverEventArgs bdea)
+        {
+            var plea = new PayloadEventArgs(payload, bdea);
+            if (!ReferenceEquals(this.EffortlessProxyDataCoordinatorUpdateCustomerTypeReceived, null))
+            {
+                plea.Payload.IsHandled = true;
+                this.EffortlessProxyDataCoordinatorUpdateCustomerTypeReceived(this, plea);
+            }
+        }
+
+        /// <summary>
+        /// Responds to: DeleteCustomerType from EffortlessProxyDataCoordinator
+        /// </summary>
+        public event EventHandler<PayloadEventArgs> EffortlessProxyDataCoordinatorDeleteCustomerTypeReceived;
+        protected virtual void OnEffortlessProxyDataCoordinatorDeleteCustomerTypeReceived(StandardPayload payload, BasicDeliverEventArgs bdea)
+        {
+            var plea = new PayloadEventArgs(payload, bdea);
+            if (!ReferenceEquals(this.EffortlessProxyDataCoordinatorDeleteCustomerTypeReceived, null))
+            {
+                plea.Payload.IsHandled = true;
+                this.EffortlessProxyDataCoordinatorDeleteCustomerTypeReceived(this, plea);
+            }
+        }
+
+        /// <summary>
+        /// Responds to: AddCustomerType from Admin
+        /// </summary>
+        public event EventHandler<PayloadEventArgs> AdminAddCustomerTypeReceived;
+        protected virtual void OnAdminAddCustomerTypeReceived(StandardPayload payload, BasicDeliverEventArgs bdea)
+        {
+            var plea = new PayloadEventArgs(payload, bdea);
+            if (!ReferenceEquals(this.AdminAddCustomerTypeReceived, null))
+            {
+                plea.Payload.IsHandled = true;
+                this.AdminAddCustomerTypeReceived(this, plea);
+            }
+        }
+
+        /// <summary>
+        /// Responds to: GetCustomerTypes from Admin
+        /// </summary>
+        public event EventHandler<PayloadEventArgs> AdminGetCustomerTypesReceived;
+        protected virtual void OnAdminGetCustomerTypesReceived(StandardPayload payload, BasicDeliverEventArgs bdea)
+        {
+            var plea = new PayloadEventArgs(payload, bdea);
+            if (!ReferenceEquals(this.AdminGetCustomerTypesReceived, null))
+            {
+                plea.Payload.IsHandled = true;
+                this.AdminGetCustomerTypesReceived(this, plea);
+            }
+        }
+
+        /// <summary>
+        /// Responds to: UpdateCustomerType from Admin
+        /// </summary>
+        public event EventHandler<PayloadEventArgs> AdminUpdateCustomerTypeReceived;
+        protected virtual void OnAdminUpdateCustomerTypeReceived(StandardPayload payload, BasicDeliverEventArgs bdea)
+        {
+            var plea = new PayloadEventArgs(payload, bdea);
+            if (!ReferenceEquals(this.AdminUpdateCustomerTypeReceived, null))
+            {
+                plea.Payload.IsHandled = true;
+                this.AdminUpdateCustomerTypeReceived(this, plea);
+            }
+        }
+
+        /// <summary>
+        /// Responds to: DeleteCustomerType from Admin
+        /// </summary>
+        public event EventHandler<PayloadEventArgs> AdminDeleteCustomerTypeReceived;
+        protected virtual void OnAdminDeleteCustomerTypeReceived(StandardPayload payload, BasicDeliverEventArgs bdea)
+        {
+            var plea = new PayloadEventArgs(payload, bdea);
+            if (!ReferenceEquals(this.AdminDeleteCustomerTypeReceived, null))
+            {
+                plea.Payload.IsHandled = true;
+                this.AdminDeleteCustomerTypeReceived(this, plea);
+            }
+        }
+
+        /// <summary>
+        /// Responds to: AddCustomerType from CRUDCoordinator
+        /// </summary>
+        public event EventHandler<PayloadEventArgs> CRUDCoordinatorAddCustomerTypeReceived;
+        protected virtual void OnCRUDCoordinatorAddCustomerTypeReceived(StandardPayload payload, BasicDeliverEventArgs bdea)
+        {
+            var plea = new PayloadEventArgs(payload, bdea);
+            if (!ReferenceEquals(this.CRUDCoordinatorAddCustomerTypeReceived, null))
+            {
+                plea.Payload.IsHandled = true;
+                this.CRUDCoordinatorAddCustomerTypeReceived(this, plea);
+            }
+        }
+
+        /// <summary>
+        /// Responds to: GetCustomerTypes from CRUDCoordinator
+        /// </summary>
+        public event EventHandler<PayloadEventArgs> CRUDCoordinatorGetCustomerTypesReceived;
+        protected virtual void OnCRUDCoordinatorGetCustomerTypesReceived(StandardPayload payload, BasicDeliverEventArgs bdea)
+        {
+            var plea = new PayloadEventArgs(payload, bdea);
+            if (!ReferenceEquals(this.CRUDCoordinatorGetCustomerTypesReceived, null))
+            {
+                plea.Payload.IsHandled = true;
+                this.CRUDCoordinatorGetCustomerTypesReceived(this, plea);
+            }
+        }
+
+        /// <summary>
+        /// Responds to: UpdateCustomerType from CRUDCoordinator
+        /// </summary>
+        public event EventHandler<PayloadEventArgs> CRUDCoordinatorUpdateCustomerTypeReceived;
+        protected virtual void OnCRUDCoordinatorUpdateCustomerTypeReceived(StandardPayload payload, BasicDeliverEventArgs bdea)
+        {
+            var plea = new PayloadEventArgs(payload, bdea);
+            if (!ReferenceEquals(this.CRUDCoordinatorUpdateCustomerTypeReceived, null))
+            {
+                plea.Payload.IsHandled = true;
+                this.CRUDCoordinatorUpdateCustomerTypeReceived(this, plea);
+            }
+        }
+
+        /// <summary>
+        /// Responds to: DeleteCustomerType from CRUDCoordinator
+        /// </summary>
+        public event EventHandler<PayloadEventArgs> CRUDCoordinatorDeleteCustomerTypeReceived;
+        protected virtual void OnCRUDCoordinatorDeleteCustomerTypeReceived(StandardPayload payload, BasicDeliverEventArgs bdea)
+        {
+            var plea = new PayloadEventArgs(payload, bdea);
+            if (!ReferenceEquals(this.CRUDCoordinatorDeleteCustomerTypeReceived, null))
+            {
+                plea.Payload.IsHandled = true;
+                this.CRUDCoordinatorDeleteCustomerTypeReceived(this, plea);
             }
         }
 
@@ -8189,110 +8479,110 @@ namespace YP.SassyMQ.Lib.RabbitMQ
         
         
         /// <summary>
-        /// AddPortfolioItem - 
+        /// AddPortfolioItemRETIRED - 
         /// </summary>
-        public Task AddPortfolioItem(PayloadHandler replyHandler = null, PayloadHandler timeoutHandler = null, int waitTimeout = StandardPayload.DEFAULT_TIMEOUT)
+        public Task AddPortfolioItemRETIRED(PayloadHandler replyHandler = null, PayloadHandler timeoutHandler = null, int waitTimeout = StandardPayload.DEFAULT_TIMEOUT)
         {
-            return this.AddPortfolioItem(this.CreatePayload(), replyHandler, timeoutHandler, waitTimeout);
+            return this.AddPortfolioItemRETIRED(this.CreatePayload(), replyHandler, timeoutHandler, waitTimeout);
         }
 
         /// <summary>
-        /// AddPortfolioItem - 
+        /// AddPortfolioItemRETIRED - 
         /// </summary>
-        public Task AddPortfolioItem(String content, PayloadHandler replyHandler = null, PayloadHandler timeoutHandler = null, int waitTimeout = StandardPayload.DEFAULT_TIMEOUT)
+        public Task AddPortfolioItemRETIRED(String content, PayloadHandler replyHandler = null, PayloadHandler timeoutHandler = null, int waitTimeout = StandardPayload.DEFAULT_TIMEOUT)
         {
             var payload = this.CreatePayload(content);
-            return this.AddPortfolioItem(payload, replyHandler, timeoutHandler, waitTimeout);
+            return this.AddPortfolioItemRETIRED(payload, replyHandler, timeoutHandler, waitTimeout);
         }
     
         
         /// <summary>
-        /// AddPortfolioItem - 
+        /// AddPortfolioItemRETIRED - 
         /// </summary>
-        public Task AddPortfolioItem(StandardPayload payload, PayloadHandler replyHandler = null, PayloadHandler timeoutHandler = null, int waitTimeout = StandardPayload.DEFAULT_TIMEOUT)
+        public Task AddPortfolioItemRETIRED(StandardPayload payload, PayloadHandler replyHandler = null, PayloadHandler timeoutHandler = null, int waitTimeout = StandardPayload.DEFAULT_TIMEOUT)
         {
-            return this.SendMessage("crudcoordinator.crud.crudcoordinator.addportfolioitem", payload, replyHandler, timeoutHandler, waitTimeout);
+            return this.SendMessage("crudcoordinator.crud.crudcoordinator.addportfolioitemretired", payload, replyHandler, timeoutHandler, waitTimeout);
         }
         
         
         /// <summary>
-        /// GetPortfolioItems - 
+        /// GetPortfolioItemsRETIRED - 
         /// </summary>
-        public Task GetPortfolioItems(PayloadHandler replyHandler = null, PayloadHandler timeoutHandler = null, int waitTimeout = StandardPayload.DEFAULT_TIMEOUT)
+        public Task GetPortfolioItemsRETIRED(PayloadHandler replyHandler = null, PayloadHandler timeoutHandler = null, int waitTimeout = StandardPayload.DEFAULT_TIMEOUT)
         {
-            return this.GetPortfolioItems(this.CreatePayload(), replyHandler, timeoutHandler, waitTimeout);
+            return this.GetPortfolioItemsRETIRED(this.CreatePayload(), replyHandler, timeoutHandler, waitTimeout);
         }
 
         /// <summary>
-        /// GetPortfolioItems - 
+        /// GetPortfolioItemsRETIRED - 
         /// </summary>
-        public Task GetPortfolioItems(String content, PayloadHandler replyHandler = null, PayloadHandler timeoutHandler = null, int waitTimeout = StandardPayload.DEFAULT_TIMEOUT)
+        public Task GetPortfolioItemsRETIRED(String content, PayloadHandler replyHandler = null, PayloadHandler timeoutHandler = null, int waitTimeout = StandardPayload.DEFAULT_TIMEOUT)
         {
             var payload = this.CreatePayload(content);
-            return this.GetPortfolioItems(payload, replyHandler, timeoutHandler, waitTimeout);
+            return this.GetPortfolioItemsRETIRED(payload, replyHandler, timeoutHandler, waitTimeout);
         }
     
         
         /// <summary>
-        /// GetPortfolioItems - 
+        /// GetPortfolioItemsRETIRED - 
         /// </summary>
-        public Task GetPortfolioItems(StandardPayload payload, PayloadHandler replyHandler = null, PayloadHandler timeoutHandler = null, int waitTimeout = StandardPayload.DEFAULT_TIMEOUT)
+        public Task GetPortfolioItemsRETIRED(StandardPayload payload, PayloadHandler replyHandler = null, PayloadHandler timeoutHandler = null, int waitTimeout = StandardPayload.DEFAULT_TIMEOUT)
         {
-            return this.SendMessage("crudcoordinator.crud.crudcoordinator.getportfolioitems", payload, replyHandler, timeoutHandler, waitTimeout);
+            return this.SendMessage("crudcoordinator.crud.crudcoordinator.getportfolioitemsretired", payload, replyHandler, timeoutHandler, waitTimeout);
         }
         
         
         /// <summary>
-        /// UpdatePortfolioItem - 
+        /// UpdatePortfolioItemRETIRED - 
         /// </summary>
-        public Task UpdatePortfolioItem(PayloadHandler replyHandler = null, PayloadHandler timeoutHandler = null, int waitTimeout = StandardPayload.DEFAULT_TIMEOUT)
+        public Task UpdatePortfolioItemRETIRED(PayloadHandler replyHandler = null, PayloadHandler timeoutHandler = null, int waitTimeout = StandardPayload.DEFAULT_TIMEOUT)
         {
-            return this.UpdatePortfolioItem(this.CreatePayload(), replyHandler, timeoutHandler, waitTimeout);
+            return this.UpdatePortfolioItemRETIRED(this.CreatePayload(), replyHandler, timeoutHandler, waitTimeout);
         }
 
         /// <summary>
-        /// UpdatePortfolioItem - 
+        /// UpdatePortfolioItemRETIRED - 
         /// </summary>
-        public Task UpdatePortfolioItem(String content, PayloadHandler replyHandler = null, PayloadHandler timeoutHandler = null, int waitTimeout = StandardPayload.DEFAULT_TIMEOUT)
+        public Task UpdatePortfolioItemRETIRED(String content, PayloadHandler replyHandler = null, PayloadHandler timeoutHandler = null, int waitTimeout = StandardPayload.DEFAULT_TIMEOUT)
         {
             var payload = this.CreatePayload(content);
-            return this.UpdatePortfolioItem(payload, replyHandler, timeoutHandler, waitTimeout);
+            return this.UpdatePortfolioItemRETIRED(payload, replyHandler, timeoutHandler, waitTimeout);
         }
     
         
         /// <summary>
-        /// UpdatePortfolioItem - 
+        /// UpdatePortfolioItemRETIRED - 
         /// </summary>
-        public Task UpdatePortfolioItem(StandardPayload payload, PayloadHandler replyHandler = null, PayloadHandler timeoutHandler = null, int waitTimeout = StandardPayload.DEFAULT_TIMEOUT)
+        public Task UpdatePortfolioItemRETIRED(StandardPayload payload, PayloadHandler replyHandler = null, PayloadHandler timeoutHandler = null, int waitTimeout = StandardPayload.DEFAULT_TIMEOUT)
         {
-            return this.SendMessage("crudcoordinator.crud.crudcoordinator.updateportfolioitem", payload, replyHandler, timeoutHandler, waitTimeout);
+            return this.SendMessage("crudcoordinator.crud.crudcoordinator.updateportfolioitemretired", payload, replyHandler, timeoutHandler, waitTimeout);
         }
         
         
         /// <summary>
-        /// DeletePortfolioItem - 
+        /// DeletePortfolioItemRETIRED - 
         /// </summary>
-        public Task DeletePortfolioItem(PayloadHandler replyHandler = null, PayloadHandler timeoutHandler = null, int waitTimeout = StandardPayload.DEFAULT_TIMEOUT)
+        public Task DeletePortfolioItemRETIRED(PayloadHandler replyHandler = null, PayloadHandler timeoutHandler = null, int waitTimeout = StandardPayload.DEFAULT_TIMEOUT)
         {
-            return this.DeletePortfolioItem(this.CreatePayload(), replyHandler, timeoutHandler, waitTimeout);
+            return this.DeletePortfolioItemRETIRED(this.CreatePayload(), replyHandler, timeoutHandler, waitTimeout);
         }
 
         /// <summary>
-        /// DeletePortfolioItem - 
+        /// DeletePortfolioItemRETIRED - 
         /// </summary>
-        public Task DeletePortfolioItem(String content, PayloadHandler replyHandler = null, PayloadHandler timeoutHandler = null, int waitTimeout = StandardPayload.DEFAULT_TIMEOUT)
+        public Task DeletePortfolioItemRETIRED(String content, PayloadHandler replyHandler = null, PayloadHandler timeoutHandler = null, int waitTimeout = StandardPayload.DEFAULT_TIMEOUT)
         {
             var payload = this.CreatePayload(content);
-            return this.DeletePortfolioItem(payload, replyHandler, timeoutHandler, waitTimeout);
+            return this.DeletePortfolioItemRETIRED(payload, replyHandler, timeoutHandler, waitTimeout);
         }
     
         
         /// <summary>
-        /// DeletePortfolioItem - 
+        /// DeletePortfolioItemRETIRED - 
         /// </summary>
-        public Task DeletePortfolioItem(StandardPayload payload, PayloadHandler replyHandler = null, PayloadHandler timeoutHandler = null, int waitTimeout = StandardPayload.DEFAULT_TIMEOUT)
+        public Task DeletePortfolioItemRETIRED(StandardPayload payload, PayloadHandler replyHandler = null, PayloadHandler timeoutHandler = null, int waitTimeout = StandardPayload.DEFAULT_TIMEOUT)
         {
-            return this.SendMessage("crudcoordinator.crud.crudcoordinator.deleteportfolioitem", payload, replyHandler, timeoutHandler, waitTimeout);
+            return this.SendMessage("crudcoordinator.crud.crudcoordinator.deleteportfolioitemretired", payload, replyHandler, timeoutHandler, waitTimeout);
         }
         
         
@@ -9053,110 +9343,110 @@ namespace YP.SassyMQ.Lib.RabbitMQ
         
         
         /// <summary>
-        /// AddPortfolio - 
+        /// AddPortfolioRETIRED - 
         /// </summary>
-        public Task AddPortfolio(PayloadHandler replyHandler = null, PayloadHandler timeoutHandler = null, int waitTimeout = StandardPayload.DEFAULT_TIMEOUT)
+        public Task AddPortfolioRETIRED(PayloadHandler replyHandler = null, PayloadHandler timeoutHandler = null, int waitTimeout = StandardPayload.DEFAULT_TIMEOUT)
         {
-            return this.AddPortfolio(this.CreatePayload(), replyHandler, timeoutHandler, waitTimeout);
+            return this.AddPortfolioRETIRED(this.CreatePayload(), replyHandler, timeoutHandler, waitTimeout);
         }
 
         /// <summary>
-        /// AddPortfolio - 
+        /// AddPortfolioRETIRED - 
         /// </summary>
-        public Task AddPortfolio(String content, PayloadHandler replyHandler = null, PayloadHandler timeoutHandler = null, int waitTimeout = StandardPayload.DEFAULT_TIMEOUT)
+        public Task AddPortfolioRETIRED(String content, PayloadHandler replyHandler = null, PayloadHandler timeoutHandler = null, int waitTimeout = StandardPayload.DEFAULT_TIMEOUT)
         {
             var payload = this.CreatePayload(content);
-            return this.AddPortfolio(payload, replyHandler, timeoutHandler, waitTimeout);
+            return this.AddPortfolioRETIRED(payload, replyHandler, timeoutHandler, waitTimeout);
         }
     
         
         /// <summary>
-        /// AddPortfolio - 
+        /// AddPortfolioRETIRED - 
         /// </summary>
-        public Task AddPortfolio(StandardPayload payload, PayloadHandler replyHandler = null, PayloadHandler timeoutHandler = null, int waitTimeout = StandardPayload.DEFAULT_TIMEOUT)
+        public Task AddPortfolioRETIRED(StandardPayload payload, PayloadHandler replyHandler = null, PayloadHandler timeoutHandler = null, int waitTimeout = StandardPayload.DEFAULT_TIMEOUT)
         {
-            return this.SendMessage("crudcoordinator.crud.crudcoordinator.addportfolio", payload, replyHandler, timeoutHandler, waitTimeout);
+            return this.SendMessage("crudcoordinator.crud.crudcoordinator.addportfolioretired", payload, replyHandler, timeoutHandler, waitTimeout);
         }
         
         
         /// <summary>
-        /// GetPortfolios - 
+        /// GetPortfoliosRETIRED - 
         /// </summary>
-        public Task GetPortfolios(PayloadHandler replyHandler = null, PayloadHandler timeoutHandler = null, int waitTimeout = StandardPayload.DEFAULT_TIMEOUT)
+        public Task GetPortfoliosRETIRED(PayloadHandler replyHandler = null, PayloadHandler timeoutHandler = null, int waitTimeout = StandardPayload.DEFAULT_TIMEOUT)
         {
-            return this.GetPortfolios(this.CreatePayload(), replyHandler, timeoutHandler, waitTimeout);
+            return this.GetPortfoliosRETIRED(this.CreatePayload(), replyHandler, timeoutHandler, waitTimeout);
         }
 
         /// <summary>
-        /// GetPortfolios - 
+        /// GetPortfoliosRETIRED - 
         /// </summary>
-        public Task GetPortfolios(String content, PayloadHandler replyHandler = null, PayloadHandler timeoutHandler = null, int waitTimeout = StandardPayload.DEFAULT_TIMEOUT)
+        public Task GetPortfoliosRETIRED(String content, PayloadHandler replyHandler = null, PayloadHandler timeoutHandler = null, int waitTimeout = StandardPayload.DEFAULT_TIMEOUT)
         {
             var payload = this.CreatePayload(content);
-            return this.GetPortfolios(payload, replyHandler, timeoutHandler, waitTimeout);
+            return this.GetPortfoliosRETIRED(payload, replyHandler, timeoutHandler, waitTimeout);
         }
     
         
         /// <summary>
-        /// GetPortfolios - 
+        /// GetPortfoliosRETIRED - 
         /// </summary>
-        public Task GetPortfolios(StandardPayload payload, PayloadHandler replyHandler = null, PayloadHandler timeoutHandler = null, int waitTimeout = StandardPayload.DEFAULT_TIMEOUT)
+        public Task GetPortfoliosRETIRED(StandardPayload payload, PayloadHandler replyHandler = null, PayloadHandler timeoutHandler = null, int waitTimeout = StandardPayload.DEFAULT_TIMEOUT)
         {
-            return this.SendMessage("crudcoordinator.crud.crudcoordinator.getportfolios", payload, replyHandler, timeoutHandler, waitTimeout);
+            return this.SendMessage("crudcoordinator.crud.crudcoordinator.getportfoliosretired", payload, replyHandler, timeoutHandler, waitTimeout);
         }
         
         
         /// <summary>
-        /// UpdatePortfolio - 
+        /// UpdatePortfolioRETIRED - 
         /// </summary>
-        public Task UpdatePortfolio(PayloadHandler replyHandler = null, PayloadHandler timeoutHandler = null, int waitTimeout = StandardPayload.DEFAULT_TIMEOUT)
+        public Task UpdatePortfolioRETIRED(PayloadHandler replyHandler = null, PayloadHandler timeoutHandler = null, int waitTimeout = StandardPayload.DEFAULT_TIMEOUT)
         {
-            return this.UpdatePortfolio(this.CreatePayload(), replyHandler, timeoutHandler, waitTimeout);
+            return this.UpdatePortfolioRETIRED(this.CreatePayload(), replyHandler, timeoutHandler, waitTimeout);
         }
 
         /// <summary>
-        /// UpdatePortfolio - 
+        /// UpdatePortfolioRETIRED - 
         /// </summary>
-        public Task UpdatePortfolio(String content, PayloadHandler replyHandler = null, PayloadHandler timeoutHandler = null, int waitTimeout = StandardPayload.DEFAULT_TIMEOUT)
+        public Task UpdatePortfolioRETIRED(String content, PayloadHandler replyHandler = null, PayloadHandler timeoutHandler = null, int waitTimeout = StandardPayload.DEFAULT_TIMEOUT)
         {
             var payload = this.CreatePayload(content);
-            return this.UpdatePortfolio(payload, replyHandler, timeoutHandler, waitTimeout);
+            return this.UpdatePortfolioRETIRED(payload, replyHandler, timeoutHandler, waitTimeout);
         }
     
         
         /// <summary>
-        /// UpdatePortfolio - 
+        /// UpdatePortfolioRETIRED - 
         /// </summary>
-        public Task UpdatePortfolio(StandardPayload payload, PayloadHandler replyHandler = null, PayloadHandler timeoutHandler = null, int waitTimeout = StandardPayload.DEFAULT_TIMEOUT)
+        public Task UpdatePortfolioRETIRED(StandardPayload payload, PayloadHandler replyHandler = null, PayloadHandler timeoutHandler = null, int waitTimeout = StandardPayload.DEFAULT_TIMEOUT)
         {
-            return this.SendMessage("crudcoordinator.crud.crudcoordinator.updateportfolio", payload, replyHandler, timeoutHandler, waitTimeout);
+            return this.SendMessage("crudcoordinator.crud.crudcoordinator.updateportfolioretired", payload, replyHandler, timeoutHandler, waitTimeout);
         }
         
         
         /// <summary>
-        /// DeletePortfolio - 
+        /// DeletePortfolioRETIRED - 
         /// </summary>
-        public Task DeletePortfolio(PayloadHandler replyHandler = null, PayloadHandler timeoutHandler = null, int waitTimeout = StandardPayload.DEFAULT_TIMEOUT)
+        public Task DeletePortfolioRETIRED(PayloadHandler replyHandler = null, PayloadHandler timeoutHandler = null, int waitTimeout = StandardPayload.DEFAULT_TIMEOUT)
         {
-            return this.DeletePortfolio(this.CreatePayload(), replyHandler, timeoutHandler, waitTimeout);
+            return this.DeletePortfolioRETIRED(this.CreatePayload(), replyHandler, timeoutHandler, waitTimeout);
         }
 
         /// <summary>
-        /// DeletePortfolio - 
+        /// DeletePortfolioRETIRED - 
         /// </summary>
-        public Task DeletePortfolio(String content, PayloadHandler replyHandler = null, PayloadHandler timeoutHandler = null, int waitTimeout = StandardPayload.DEFAULT_TIMEOUT)
+        public Task DeletePortfolioRETIRED(String content, PayloadHandler replyHandler = null, PayloadHandler timeoutHandler = null, int waitTimeout = StandardPayload.DEFAULT_TIMEOUT)
         {
             var payload = this.CreatePayload(content);
-            return this.DeletePortfolio(payload, replyHandler, timeoutHandler, waitTimeout);
+            return this.DeletePortfolioRETIRED(payload, replyHandler, timeoutHandler, waitTimeout);
         }
     
         
         /// <summary>
-        /// DeletePortfolio - 
+        /// DeletePortfolioRETIRED - 
         /// </summary>
-        public Task DeletePortfolio(StandardPayload payload, PayloadHandler replyHandler = null, PayloadHandler timeoutHandler = null, int waitTimeout = StandardPayload.DEFAULT_TIMEOUT)
+        public Task DeletePortfolioRETIRED(StandardPayload payload, PayloadHandler replyHandler = null, PayloadHandler timeoutHandler = null, int waitTimeout = StandardPayload.DEFAULT_TIMEOUT)
         {
-            return this.SendMessage("crudcoordinator.crud.crudcoordinator.deleteportfolio", payload, replyHandler, timeoutHandler, waitTimeout);
+            return this.SendMessage("crudcoordinator.crud.crudcoordinator.deleteportfolioretired", payload, replyHandler, timeoutHandler, waitTimeout);
         }
         
         
@@ -10885,6 +11175,114 @@ namespace YP.SassyMQ.Lib.RabbitMQ
         public Task DeleteServiceKey(StandardPayload payload, PayloadHandler replyHandler = null, PayloadHandler timeoutHandler = null, int waitTimeout = StandardPayload.DEFAULT_TIMEOUT)
         {
             return this.SendMessage("crudcoordinator.crud.crudcoordinator.deleteservicekey", payload, replyHandler, timeoutHandler, waitTimeout);
+        }
+        
+        
+        /// <summary>
+        /// AddCustomerType - 
+        /// </summary>
+        public Task AddCustomerType(PayloadHandler replyHandler = null, PayloadHandler timeoutHandler = null, int waitTimeout = StandardPayload.DEFAULT_TIMEOUT)
+        {
+            return this.AddCustomerType(this.CreatePayload(), replyHandler, timeoutHandler, waitTimeout);
+        }
+
+        /// <summary>
+        /// AddCustomerType - 
+        /// </summary>
+        public Task AddCustomerType(String content, PayloadHandler replyHandler = null, PayloadHandler timeoutHandler = null, int waitTimeout = StandardPayload.DEFAULT_TIMEOUT)
+        {
+            var payload = this.CreatePayload(content);
+            return this.AddCustomerType(payload, replyHandler, timeoutHandler, waitTimeout);
+        }
+    
+        
+        /// <summary>
+        /// AddCustomerType - 
+        /// </summary>
+        public Task AddCustomerType(StandardPayload payload, PayloadHandler replyHandler = null, PayloadHandler timeoutHandler = null, int waitTimeout = StandardPayload.DEFAULT_TIMEOUT)
+        {
+            return this.SendMessage("crudcoordinator.crud.crudcoordinator.addcustomertype", payload, replyHandler, timeoutHandler, waitTimeout);
+        }
+        
+        
+        /// <summary>
+        /// GetCustomerTypes - 
+        /// </summary>
+        public Task GetCustomerTypes(PayloadHandler replyHandler = null, PayloadHandler timeoutHandler = null, int waitTimeout = StandardPayload.DEFAULT_TIMEOUT)
+        {
+            return this.GetCustomerTypes(this.CreatePayload(), replyHandler, timeoutHandler, waitTimeout);
+        }
+
+        /// <summary>
+        /// GetCustomerTypes - 
+        /// </summary>
+        public Task GetCustomerTypes(String content, PayloadHandler replyHandler = null, PayloadHandler timeoutHandler = null, int waitTimeout = StandardPayload.DEFAULT_TIMEOUT)
+        {
+            var payload = this.CreatePayload(content);
+            return this.GetCustomerTypes(payload, replyHandler, timeoutHandler, waitTimeout);
+        }
+    
+        
+        /// <summary>
+        /// GetCustomerTypes - 
+        /// </summary>
+        public Task GetCustomerTypes(StandardPayload payload, PayloadHandler replyHandler = null, PayloadHandler timeoutHandler = null, int waitTimeout = StandardPayload.DEFAULT_TIMEOUT)
+        {
+            return this.SendMessage("crudcoordinator.crud.crudcoordinator.getcustomertypes", payload, replyHandler, timeoutHandler, waitTimeout);
+        }
+        
+        
+        /// <summary>
+        /// UpdateCustomerType - 
+        /// </summary>
+        public Task UpdateCustomerType(PayloadHandler replyHandler = null, PayloadHandler timeoutHandler = null, int waitTimeout = StandardPayload.DEFAULT_TIMEOUT)
+        {
+            return this.UpdateCustomerType(this.CreatePayload(), replyHandler, timeoutHandler, waitTimeout);
+        }
+
+        /// <summary>
+        /// UpdateCustomerType - 
+        /// </summary>
+        public Task UpdateCustomerType(String content, PayloadHandler replyHandler = null, PayloadHandler timeoutHandler = null, int waitTimeout = StandardPayload.DEFAULT_TIMEOUT)
+        {
+            var payload = this.CreatePayload(content);
+            return this.UpdateCustomerType(payload, replyHandler, timeoutHandler, waitTimeout);
+        }
+    
+        
+        /// <summary>
+        /// UpdateCustomerType - 
+        /// </summary>
+        public Task UpdateCustomerType(StandardPayload payload, PayloadHandler replyHandler = null, PayloadHandler timeoutHandler = null, int waitTimeout = StandardPayload.DEFAULT_TIMEOUT)
+        {
+            return this.SendMessage("crudcoordinator.crud.crudcoordinator.updatecustomertype", payload, replyHandler, timeoutHandler, waitTimeout);
+        }
+        
+        
+        /// <summary>
+        /// DeleteCustomerType - 
+        /// </summary>
+        public Task DeleteCustomerType(PayloadHandler replyHandler = null, PayloadHandler timeoutHandler = null, int waitTimeout = StandardPayload.DEFAULT_TIMEOUT)
+        {
+            return this.DeleteCustomerType(this.CreatePayload(), replyHandler, timeoutHandler, waitTimeout);
+        }
+
+        /// <summary>
+        /// DeleteCustomerType - 
+        /// </summary>
+        public Task DeleteCustomerType(String content, PayloadHandler replyHandler = null, PayloadHandler timeoutHandler = null, int waitTimeout = StandardPayload.DEFAULT_TIMEOUT)
+        {
+            var payload = this.CreatePayload(content);
+            return this.DeleteCustomerType(payload, replyHandler, timeoutHandler, waitTimeout);
+        }
+    
+        
+        /// <summary>
+        /// DeleteCustomerType - 
+        /// </summary>
+        public Task DeleteCustomerType(StandardPayload payload, PayloadHandler replyHandler = null, PayloadHandler timeoutHandler = null, int waitTimeout = StandardPayload.DEFAULT_TIMEOUT)
+        {
+            return this.SendMessage("crudcoordinator.crud.crudcoordinator.deletecustomertype", payload, replyHandler, timeoutHandler, waitTimeout);
         }
         
         

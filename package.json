@@ -1,6 +1,6 @@
 {
   "name": "eapi",
-  "version": "0.0.3-alpha.13",
+  "version": "2020.12.24.001",
   "description": "",
   "devDependencies": {},
   "bin": "cli.js",

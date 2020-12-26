@@ -37,13 +37,19 @@ namespace YP.SassyMQ.Lib.RabbitMQ
             this.Content = content;
         }
 
-        // 29 odxml properties
+        // 30 odxml properties
         
         public String ColumnValueId { get; set; }
         
         public dc.ColumnValue ColumnValue { get; set; }
         
         public List<dc.ColumnValue> ColumnValues { get; set; }
+        
+        public String CustomerTypeId { get; set; }
+        
+        public dc.CustomerType CustomerType { get; set; }
+        
+        public List<dc.CustomerType> CustomerTypes { get; set; }
         
         ///<summary>
         /// No table description. Identifier
@@ -333,17 +339,17 @@ namespace YP.SassyMQ.Lib.RabbitMQ
         ///<summary>
         /// No table description. Identifier
         ///</summary>
-        public String PortfolioItemId { get; set; }
+        public String PortfolioItem_RETIREDId { get; set; }
         
         ///<summary>
         /// No table description.
         ///</summary>
-        public dc.PortfolioItem PortfolioItem { get; set; }
+        public dc.PortfolioItem_RETIRED PortfolioItem_RETIRED { get; set; }
         
         ///<summary>
         /// No table description. (LIST)
         ///</summary>
-        public List<dc.PortfolioItem> PortfolioItems { get; set; }
+        public List<dc.PortfolioItem_RETIRED> PortfolioItems_RETIRED { get; set; }
         
         ///<summary>
         /// No table description. Identifier
@@ -393,17 +399,17 @@ namespace YP.SassyMQ.Lib.RabbitMQ
         ///<summary>
         /// No table description. Identifier
         ///</summary>
-        public String PortfolioId { get; set; }
+        public String Portfolio_RETIREDId { get; set; }
         
         ///<summary>
         /// No table description.
         ///</summary>
-        public dc.Portfolio Portfolio { get; set; }
+        public dc.Portfolio_RETIRED Portfolio_RETIRED { get; set; }
         
         ///<summary>
         /// No table description. (LIST)
         ///</summary>
-        public List<dc.Portfolio> Portfolios { get; set; }
+        public List<dc.Portfolio_RETIRED> Portfolios_RETIRED { get; set; }
         
         ///<summary>
         /// No table description. Identifier

@@ -36,10 +36,10 @@ namespace CLIClassLibrary.RoleHandlers
                 sb.AppendLine($"ColumnValue: GetColumnValues");
                 sb.AppendLine($"ColumnValue: UpdateColumnValue");
                 sb.AppendLine($"void: DeleteColumnValue");
-                sb.AppendLine($"PortfolioItem: AddPortfolioItem");
-                sb.AppendLine($"PortfolioItem: GetPortfolioItems");
-                sb.AppendLine($"PortfolioItem: UpdatePortfolioItem");
-                sb.AppendLine($"void: DeletePortfolioItem");
+                sb.AppendLine($"PortfolioItem_RETIRED: AddPortfolioItemRETIRED");
+                sb.AppendLine($"PortfolioItem_RETIRED: GetPortfolioItemsRETIRED");
+                sb.AppendLine($"PortfolioItem_RETIRED: UpdatePortfolioItemRETIRED");
+                sb.AppendLine($"void: DeletePortfolioItemRETIRED");
                 sb.AppendLine($"ProjectStage: AddProjectStage");
                 sb.AppendLine($"ProjectStage: GetProjectStages");
                 sb.AppendLine($"ProjectStage: UpdateProjectStage");
@@ -68,10 +68,10 @@ namespace CLIClassLibrary.RoleHandlers
                 sb.AppendLine($"ProjectLexiconTerm: GetProjectLexiconTerms");
                 sb.AppendLine($"ProjectLexiconTerm: UpdateProjectLexiconTerm");
                 sb.AppendLine($"void: DeleteProjectLexiconTerm");
-                sb.AppendLine($"Portfolio: AddPortfolio");
-                sb.AppendLine($"Portfolio: GetPortfolios");
-                sb.AppendLine($"Portfolio: UpdatePortfolio");
-                sb.AppendLine($"void: DeletePortfolio");
+                sb.AppendLine($"Portfolio_RETIRED: AddPortfolioRETIRED");
+                sb.AppendLine($"Portfolio_RETIRED: GetPortfoliosRETIRED");
+                sb.AppendLine($"Portfolio_RETIRED: UpdatePortfolioRETIRED");
+                sb.AppendLine($"void: DeletePortfolioRETIRED");
                 sb.AppendLine($"ProjectEmail: AddProjectEmail");
                 sb.AppendLine($"ProjectEmail: GetProjectEmails");
                 sb.AppendLine($"ProjectEmail: UpdateProjectEmail");
@@ -135,7 +135,11 @@ namespace CLIClassLibrary.RoleHandlers
                 sb.AppendLine($"ServiceKey: AddServiceKey");
                 sb.AppendLine($"ServiceKey: GetServiceKeys");
                 sb.AppendLine($"ServiceKey: UpdateServiceKey");
-                sb.AppendLine($"void: DeleteServiceKey");                                            
+                sb.AppendLine($"void: DeleteServiceKey");
+                sb.AppendLine($"CustomerType: AddCustomerType");
+                sb.AppendLine($"CustomerType: GetCustomerTypes");
+                sb.AppendLine($"CustomerType: UpdateCustomerType");
+                sb.AppendLine($"void: DeleteCustomerType");                                            
             }
             
             sb.AppendLine($"{Environment.NewLine}Available Actions Matching: {helpTerm}");
@@ -284,39 +288,39 @@ namespace CLIClassLibrary.RoleHandlers
                 }
                 found = true;
             }
-            if ("addportfolioitem".Contains(helpTerm, StringComparison.OrdinalIgnoreCase))
+            if ("addportfolioitemretired".Contains(helpTerm, StringComparison.OrdinalIgnoreCase))
             {
-                sb.AppendLine($" - AddPortfolioItem");
-                if ("addportfolioitem".Equals(helpTerm, StringComparison.OrdinalIgnoreCase)) 
+                sb.AppendLine($" - AddPortfolioItemRETIRED");
+                if ("addportfolioitemretired".Equals(helpTerm, StringComparison.OrdinalIgnoreCase)) 
                 {
-                    this.PrintAddPortfolioItemHelp(sb);
+                    this.PrintAddPortfolioItemRETIREDHelp(sb);
                 }
                 found = true;
             }
-            if ("getportfolioitems".Contains(helpTerm, StringComparison.OrdinalIgnoreCase))
+            if ("getportfolioitemsretired".Contains(helpTerm, StringComparison.OrdinalIgnoreCase))
             {
-                sb.AppendLine($" - GetPortfolioItems");
-                if ("getportfolioitems".Equals(helpTerm, StringComparison.OrdinalIgnoreCase)) 
+                sb.AppendLine($" - GetPortfolioItemsRETIRED");
+                if ("getportfolioitemsretired".Equals(helpTerm, StringComparison.OrdinalIgnoreCase)) 
                 {
-                    this.PrintGetPortfolioItemsHelp(sb);
+                    this.PrintGetPortfolioItemsRETIREDHelp(sb);
                 }
                 found = true;
             }
-            if ("updateportfolioitem".Contains(helpTerm, StringComparison.OrdinalIgnoreCase))
+            if ("updateportfolioitemretired".Contains(helpTerm, StringComparison.OrdinalIgnoreCase))
             {
-                sb.AppendLine($" - UpdatePortfolioItem");
-                if ("updateportfolioitem".Equals(helpTerm, StringComparison.OrdinalIgnoreCase)) 
+                sb.AppendLine($" - UpdatePortfolioItemRETIRED");
+                if ("updateportfolioitemretired".Equals(helpTerm, StringComparison.OrdinalIgnoreCase)) 
                 {
-                    this.PrintUpdatePortfolioItemHelp(sb);
+                    this.PrintUpdatePortfolioItemRETIREDHelp(sb);
                 }
                 found = true;
             }
-            if ("deleteportfolioitem".Contains(helpTerm, StringComparison.OrdinalIgnoreCase))
+            if ("deleteportfolioitemretired".Contains(helpTerm, StringComparison.OrdinalIgnoreCase))
             {
-                sb.AppendLine($" - DeletePortfolioItem");
-                if ("deleteportfolioitem".Equals(helpTerm, StringComparison.OrdinalIgnoreCase)) 
+                sb.AppendLine($" - DeletePortfolioItemRETIRED");
+                if ("deleteportfolioitemretired".Equals(helpTerm, StringComparison.OrdinalIgnoreCase)) 
                 {
-                    this.PrintDeletePortfolioItemHelp(sb);
+                    this.PrintDeletePortfolioItemRETIREDHelp(sb);
                 }
                 found = true;
             }
@@ -572,39 +576,39 @@ namespace CLIClassLibrary.RoleHandlers
                 }
                 found = true;
             }
-            if ("addportfolio".Contains(helpTerm, StringComparison.OrdinalIgnoreCase))
+            if ("addportfolioretired".Contains(helpTerm, StringComparison.OrdinalIgnoreCase))
             {
-                sb.AppendLine($" - AddPortfolio");
-                if ("addportfolio".Equals(helpTerm, StringComparison.OrdinalIgnoreCase)) 
+                sb.AppendLine($" - AddPortfolioRETIRED");
+                if ("addportfolioretired".Equals(helpTerm, StringComparison.OrdinalIgnoreCase)) 
                 {
-                    this.PrintAddPortfolioHelp(sb);
+                    this.PrintAddPortfolioRETIREDHelp(sb);
                 }
                 found = true;
             }
-            if ("getportfolios".Contains(helpTerm, StringComparison.OrdinalIgnoreCase))
+            if ("getportfoliosretired".Contains(helpTerm, StringComparison.OrdinalIgnoreCase))
             {
-                sb.AppendLine($" - GetPortfolios");
-                if ("getportfolios".Equals(helpTerm, StringComparison.OrdinalIgnoreCase)) 
+                sb.AppendLine($" - GetPortfoliosRETIRED");
+                if ("getportfoliosretired".Equals(helpTerm, StringComparison.OrdinalIgnoreCase)) 
                 {
-                    this.PrintGetPortfoliosHelp(sb);
+                    this.PrintGetPortfoliosRETIREDHelp(sb);
                 }
                 found = true;
             }
-            if ("updateportfolio".Contains(helpTerm, StringComparison.OrdinalIgnoreCase))
+            if ("updateportfolioretired".Contains(helpTerm, StringComparison.OrdinalIgnoreCase))
             {
-                sb.AppendLine($" - UpdatePortfolio");
-                if ("updateportfolio".Equals(helpTerm, StringComparison.OrdinalIgnoreCase)) 
+                sb.AppendLine($" - UpdatePortfolioRETIRED");
+                if ("updateportfolioretired".Equals(helpTerm, StringComparison.OrdinalIgnoreCase)) 
                 {
-                    this.PrintUpdatePortfolioHelp(sb);
+                    this.PrintUpdatePortfolioRETIREDHelp(sb);
                 }
                 found = true;
             }
-            if ("deleteportfolio".Contains(helpTerm, StringComparison.OrdinalIgnoreCase))
+            if ("deleteportfolioretired".Contains(helpTerm, StringComparison.OrdinalIgnoreCase))
             {
-                sb.AppendLine($" - DeletePortfolio");
-                if ("deleteportfolio".Equals(helpTerm, StringComparison.OrdinalIgnoreCase)) 
+                sb.AppendLine($" - DeletePortfolioRETIRED");
+                if ("deleteportfolioretired".Equals(helpTerm, StringComparison.OrdinalIgnoreCase)) 
                 {
-                    this.PrintDeletePortfolioHelp(sb);
+                    this.PrintDeletePortfolioRETIREDHelp(sb);
                 }
                 found = true;
             }
@@ -1184,6 +1188,42 @@ namespace CLIClassLibrary.RoleHandlers
                 }
                 found = true;
             }
+            if ("addcustomertype".Contains(helpTerm, StringComparison.OrdinalIgnoreCase))
+            {
+                sb.AppendLine($" - AddCustomerType");
+                if ("addcustomertype".Equals(helpTerm, StringComparison.OrdinalIgnoreCase)) 
+                {
+                    this.PrintAddCustomerTypeHelp(sb);
+                }
+                found = true;
+            }
+            if ("getcustomertypes".Contains(helpTerm, StringComparison.OrdinalIgnoreCase))
+            {
+                sb.AppendLine($" - GetCustomerTypes");
+                if ("getcustomertypes".Equals(helpTerm, StringComparison.OrdinalIgnoreCase)) 
+                {
+                    this.PrintGetCustomerTypesHelp(sb);
+                }
+                found = true;
+            }
+            if ("updatecustomertype".Contains(helpTerm, StringComparison.OrdinalIgnoreCase))
+            {
+                sb.AppendLine($" - UpdateCustomerType");
+                if ("updatecustomertype".Equals(helpTerm, StringComparison.OrdinalIgnoreCase)) 
+                {
+                    this.PrintUpdateCustomerTypeHelp(sb);
+                }
+                found = true;
+            }
+            if ("deletecustomertype".Contains(helpTerm, StringComparison.OrdinalIgnoreCase))
+            {
+                sb.AppendLine($" - DeleteCustomerType");
+                if ("deletecustomertype".Equals(helpTerm, StringComparison.OrdinalIgnoreCase)) 
+                {
+                    this.PrintDeleteCustomerTypeHelp(sb);
+                }
+                found = true;
+            }
                        
             if (!found)
             {
@@ -1314,29 +1354,29 @@ namespace CLIClassLibrary.RoleHandlers
                     }).Wait(30000);
                     break;                   
 
-                case "addportfolioitem":
-                    this.SMQActor.AddPortfolioItem(payload, (reply, bdea) =>
+                case "addportfolioitemretired":
+                    this.SMQActor.AddPortfolioItemRETIRED(payload, (reply, bdea) =>
                     {
                         result = SerializePayload(reply);
                     }).Wait(30000);
                     break;                   
 
-                case "getportfolioitems":
-                    this.SMQActor.GetPortfolioItems(payload, (reply, bdea) =>
+                case "getportfolioitemsretired":
+                    this.SMQActor.GetPortfolioItemsRETIRED(payload, (reply, bdea) =>
                     {
                         result = SerializePayload(reply);
                     }).Wait(30000);
                     break;                   
 
-                case "updateportfolioitem":
-                    this.SMQActor.UpdatePortfolioItem(payload, (reply, bdea) =>
+                case "updateportfolioitemretired":
+                    this.SMQActor.UpdatePortfolioItemRETIRED(payload, (reply, bdea) =>
                     {
                         result = SerializePayload(reply);
                     }).Wait(30000);
                     break;                   
 
-                case "deleteportfolioitem":
-                    this.SMQActor.DeletePortfolioItem(payload, (reply, bdea) =>
+                case "deleteportfolioitemretired":
+                    this.SMQActor.DeletePortfolioItemRETIRED(payload, (reply, bdea) =>
                     {
                         result = SerializePayload(reply);
                     }).Wait(30000);
@@ -1538,29 +1578,29 @@ namespace CLIClassLibrary.RoleHandlers
                     }).Wait(30000);
                     break;                   
 
-                case "addportfolio":
-                    this.SMQActor.AddPortfolio(payload, (reply, bdea) =>
+                case "addportfolioretired":
+                    this.SMQActor.AddPortfolioRETIRED(payload, (reply, bdea) =>
                     {
                         result = SerializePayload(reply);
                     }).Wait(30000);
                     break;                   
 
-                case "getportfolios":
-                    this.SMQActor.GetPortfolios(payload, (reply, bdea) =>
+                case "getportfoliosretired":
+                    this.SMQActor.GetPortfoliosRETIRED(payload, (reply, bdea) =>
                     {
                         result = SerializePayload(reply);
                     }).Wait(30000);
                     break;                   
 
-                case "updateportfolio":
-                    this.SMQActor.UpdatePortfolio(payload, (reply, bdea) =>
+                case "updateportfolioretired":
+                    this.SMQActor.UpdatePortfolioRETIRED(payload, (reply, bdea) =>
                     {
                         result = SerializePayload(reply);
                     }).Wait(30000);
                     break;                   
 
-                case "deleteportfolio":
-                    this.SMQActor.DeletePortfolio(payload, (reply, bdea) =>
+                case "deleteportfolioretired":
+                    this.SMQActor.DeletePortfolioRETIRED(payload, (reply, bdea) =>
                     {
                         result = SerializePayload(reply);
                     }).Wait(30000);
@@ -2014,6 +2054,34 @@ namespace CLIClassLibrary.RoleHandlers
                     }).Wait(30000);
                     break;                   
 
+                case "addcustomertype":
+                    this.SMQActor.AddCustomerType(payload, (reply, bdea) =>
+                    {
+                        result = SerializePayload(reply);
+                    }).Wait(30000);
+                    break;                   
+
+                case "getcustomertypes":
+                    this.SMQActor.GetCustomerTypes(payload, (reply, bdea) =>
+                    {
+                        result = SerializePayload(reply);
+                    }).Wait(30000);
+                    break;                   
+
+                case "updatecustomertype":
+                    this.SMQActor.UpdateCustomerType(payload, (reply, bdea) =>
+                    {
+                        result = SerializePayload(reply);
+                    }).Wait(30000);
+                    break;                   
+
+                case "deletecustomertype":
+                    this.SMQActor.DeleteCustomerType(payload, (reply, bdea) =>
+                    {
+                        result = SerializePayload(reply);
+                    }).Wait(30000);
+                    break;                   
+
                 default:
                     throw new Exception($"Invalid request: {invokeRequest}");
             }
@@ -2420,76 +2488,79 @@ namespace CLIClassLibrary.RoleHandlers
             
         }
         
-        public void PrintAddPortfolioItemHelp(StringBuilder sb)
+        public void PrintAddPortfolioItemRETIREDHelp(StringBuilder sb)
         {
             
                 
                 sb.AppendLine();
                 sb.AppendLine($"* * * * * * * * * * * * * * * * * * * * * * * * * * *");
-                sb.AppendLine($"* *  OBJECT DEF: PortfolioItem     *");
+                sb.AppendLine($"* *  OBJECT DEF: PortfolioItem_RETIRED     *");
                 sb.AppendLine($"* * * * * * * * * * * * * * * * * * * * * * * * * * *");
                 sb.AppendLine();
                 
-                    sb.AppendLine($"CRUD      - PortfolioItemId");
+                    sb.AppendLine($"CRUD      - PortfolioItem_RETIREDId");
                     sb.AppendLine($"CRUD      - Attachments");
                     sb.AppendLine($"CRUD      - ItemStatus");
                     sb.AppendLine($"CRUD      - ItemType");
                     sb.AppendLine($"CRUD      - Name");
                     sb.AppendLine($"CRUD      - Notes");
                     sb.AppendLine($"CRUD      - Portfolio");
+                    sb.AppendLine($"CRUD      - PortfolioItemId");
                     sb.AppendLine($"CRUD      - PublishUrl");
                     sb.AppendLine($"CRUD      - Who");
                 
             
         }
         
-        public void PrintGetPortfolioItemsHelp(StringBuilder sb)
+        public void PrintGetPortfolioItemsRETIREDHelp(StringBuilder sb)
         {
             
                 
                 sb.AppendLine();
                 sb.AppendLine($"* * * * * * * * * * * * * * * * * * * * * * * * * * *");
-                sb.AppendLine($"* *  OBJECT DEF: PortfolioItem     *");
+                sb.AppendLine($"* *  OBJECT DEF: PortfolioItem_RETIRED     *");
                 sb.AppendLine($"* * * * * * * * * * * * * * * * * * * * * * * * * * *");
                 sb.AppendLine();
                 
-                    sb.AppendLine($"CRUD      - PortfolioItemId");
+                    sb.AppendLine($"CRUD      - PortfolioItem_RETIREDId");
                     sb.AppendLine($"CRUD      - Attachments");
                     sb.AppendLine($"CRUD      - ItemStatus");
                     sb.AppendLine($"CRUD      - ItemType");
                     sb.AppendLine($"CRUD      - Name");
                     sb.AppendLine($"CRUD      - Notes");
                     sb.AppendLine($"CRUD      - Portfolio");
+                    sb.AppendLine($"CRUD      - PortfolioItemId");
                     sb.AppendLine($"CRUD      - PublishUrl");
                     sb.AppendLine($"CRUD      - Who");
                 
             
         }
         
-        public void PrintUpdatePortfolioItemHelp(StringBuilder sb)
+        public void PrintUpdatePortfolioItemRETIREDHelp(StringBuilder sb)
         {
             
                 
                 sb.AppendLine();
                 sb.AppendLine($"* * * * * * * * * * * * * * * * * * * * * * * * * * *");
-                sb.AppendLine($"* *  OBJECT DEF: PortfolioItem     *");
+                sb.AppendLine($"* *  OBJECT DEF: PortfolioItem_RETIRED     *");
                 sb.AppendLine($"* * * * * * * * * * * * * * * * * * * * * * * * * * *");
                 sb.AppendLine();
                 
-                    sb.AppendLine($"CRUD      - PortfolioItemId");
+                    sb.AppendLine($"CRUD      - PortfolioItem_RETIREDId");
                     sb.AppendLine($"CRUD      - Attachments");
                     sb.AppendLine($"CRUD      - ItemStatus");
                     sb.AppendLine($"CRUD      - ItemType");
                     sb.AppendLine($"CRUD      - Name");
                     sb.AppendLine($"CRUD      - Notes");
                     sb.AppendLine($"CRUD      - Portfolio");
+                    sb.AppendLine($"CRUD      - PortfolioItemId");
                     sb.AppendLine($"CRUD      - PublishUrl");
                     sb.AppendLine($"CRUD      - Who");
                 
             
         }
         
-        public void PrintDeletePortfolioItemHelp(StringBuilder sb)
+        public void PrintDeletePortfolioItemRETIREDHelp(StringBuilder sb)
         {
             
         }
@@ -3350,6 +3421,7 @@ namespace CLIClassLibrary.RoleHandlers
                     sb.AppendLine($"CRUD      - ProjectEmails");
                     sb.AppendLine($"CRUD      - To");
                     sb.AppendLine($"CRUD      - ToRole");
+                    sb.AppendLine($"CRUD      - HttpPOSTUrl");
                 
             
         }
@@ -3379,6 +3451,7 @@ namespace CLIClassLibrary.RoleHandlers
                     sb.AppendLine($"CRUD      - ProjectEmails");
                     sb.AppendLine($"CRUD      - To");
                     sb.AppendLine($"CRUD      - ToRole");
+                    sb.AppendLine($"CRUD      - HttpPOSTUrl");
                 
             
         }
@@ -3408,6 +3481,7 @@ namespace CLIClassLibrary.RoleHandlers
                     sb.AppendLine($"CRUD      - ProjectEmails");
                     sb.AppendLine($"CRUD      - To");
                     sb.AppendLine($"CRUD      - ToRole");
+                    sb.AppendLine($"CRUD      - HttpPOSTUrl");
                 
             
         }
@@ -3417,70 +3491,73 @@ namespace CLIClassLibrary.RoleHandlers
             
         }
         
-        public void PrintAddPortfolioHelp(StringBuilder sb)
+        public void PrintAddPortfolioRETIREDHelp(StringBuilder sb)
         {
             
                 
                 sb.AppendLine();
                 sb.AppendLine($"* * * * * * * * * * * * * * * * * * * * * * * * * * *");
-                sb.AppendLine($"* *  OBJECT DEF: Portfolio     *");
+                sb.AppendLine($"* *  OBJECT DEF: Portfolio_RETIRED     *");
                 sb.AppendLine($"* * * * * * * * * * * * * * * * * * * * * * * * * * *");
                 sb.AppendLine();
                 
-                    sb.AppendLine($"CRUD      - PortfolioId");
+                    sb.AppendLine($"CRUD      - Portfolio_RETIREDId");
                     sb.AppendLine($"CRUD      - AiirtableUrl");
                     sb.AppendLine($"CRUD      - Attachments");
                     sb.AppendLine($"CRUD      - BackEndWho");
                     sb.AppendLine($"CRUD      - Name");
                     sb.AppendLine($"CRUD      - Notes");
+                    sb.AppendLine($"CRUD      - PortfolioId");
                     sb.AppendLine($"CRUD      - PortfolioItem");
                 
             
         }
         
-        public void PrintGetPortfoliosHelp(StringBuilder sb)
+        public void PrintGetPortfoliosRETIREDHelp(StringBuilder sb)
         {
             
                 
                 sb.AppendLine();
                 sb.AppendLine($"* * * * * * * * * * * * * * * * * * * * * * * * * * *");
-                sb.AppendLine($"* *  OBJECT DEF: Portfolio     *");
+                sb.AppendLine($"* *  OBJECT DEF: Portfolio_RETIRED     *");
                 sb.AppendLine($"* * * * * * * * * * * * * * * * * * * * * * * * * * *");
                 sb.AppendLine();
                 
-                    sb.AppendLine($"CRUD      - PortfolioId");
+                    sb.AppendLine($"CRUD      - Portfolio_RETIREDId");
                     sb.AppendLine($"CRUD      - AiirtableUrl");
                     sb.AppendLine($"CRUD      - Attachments");
                     sb.AppendLine($"CRUD      - BackEndWho");
                     sb.AppendLine($"CRUD      - Name");
                     sb.AppendLine($"CRUD      - Notes");
+                    sb.AppendLine($"CRUD      - PortfolioId");
                     sb.AppendLine($"CRUD      - PortfolioItem");
                 
             
         }
         
-        public void PrintUpdatePortfolioHelp(StringBuilder sb)
+        public void PrintUpdatePortfolioRETIREDHelp(StringBuilder sb)
         {
             
                 
                 sb.AppendLine();
                 sb.AppendLine($"* * * * * * * * * * * * * * * * * * * * * * * * * * *");
-                sb.AppendLine($"* *  OBJECT DEF: Portfolio     *");
+                sb.AppendLine($"* *  OBJECT DEF: Portfolio_RETIRED     *");
                 sb.AppendLine($"* * * * * * * * * * * * * * * * * * * * * * * * * * *");
                 sb.AppendLine();
                 
-                    sb.AppendLine($"CRUD      - PortfolioId");
+                    sb.AppendLine($"CRUD      - Portfolio_RETIREDId");
                     sb.AppendLine($"CRUD      - AiirtableUrl");
                     sb.AppendLine($"CRUD      - Attachments");
                     sb.AppendLine($"CRUD      - BackEndWho");
                     sb.AppendLine($"CRUD      - Name");
                     sb.AppendLine($"CRUD      - Notes");
+                    sb.AppendLine($"CRUD      - PortfolioId");
                     sb.AppendLine($"CRUD      - PortfolioItem");
                 
             
         }
         
-        public void PrintDeletePortfolioHelp(StringBuilder sb)
+        public void PrintDeletePortfolioRETIREDHelp(StringBuilder sb)
         {
             
         }
@@ -3840,6 +3917,7 @@ namespace CLIClassLibrary.RoleHandlers
                     sb.AppendLine($"CRUD      - ServiceKeys");
                     sb.AppendLine($"CRUD      - MonthlySubscriptionTotals");
                     sb.AppendLine($"CRUD      - AccountDiscount");
+                    sb.AppendLine($"CRUD      - DefaultMaxPages");
                 
             
         }
@@ -3867,6 +3945,7 @@ namespace CLIClassLibrary.RoleHandlers
                     sb.AppendLine($"CRUD      - ServiceKeys");
                     sb.AppendLine($"CRUD      - MonthlySubscriptionTotals");
                     sb.AppendLine($"CRUD      - AccountDiscount");
+                    sb.AppendLine($"CRUD      - DefaultMaxPages");
                 
             
         }
@@ -3894,6 +3973,7 @@ namespace CLIClassLibrary.RoleHandlers
                     sb.AppendLine($"CRUD      - ServiceKeys");
                     sb.AppendLine($"CRUD      - MonthlySubscriptionTotals");
                     sb.AppendLine($"CRUD      - AccountDiscount");
+                    sb.AppendLine($"CRUD      - DefaultMaxPages");
                 
             
         }
@@ -4658,6 +4738,9 @@ namespace CLIClassLibrary.RoleHandlers
                     sb.AppendLine($"CRUD      - HeadStageIsEC2");
                     sb.AppendLine($"CRUD      - SubscriptionTotals");
                     sb.AppendLine($"CRUD      - AccountDiscount");
+                    sb.AppendLine($"CRUD      - CustomMaxPages");
+                    sb.AppendLine($"CRUD      - AccountDefaultMaxPages");
+                    sb.AppendLine($"CRUD      - MaxPages");
                 
             
         }
@@ -4722,6 +4805,9 @@ namespace CLIClassLibrary.RoleHandlers
                     sb.AppendLine($"CRUD      - HeadStageIsEC2");
                     sb.AppendLine($"CRUD      - SubscriptionTotals");
                     sb.AppendLine($"CRUD      - AccountDiscount");
+                    sb.AppendLine($"CRUD      - CustomMaxPages");
+                    sb.AppendLine($"CRUD      - AccountDefaultMaxPages");
+                    sb.AppendLine($"CRUD      - MaxPages");
                 
             
         }
@@ -4786,6 +4872,9 @@ namespace CLIClassLibrary.RoleHandlers
                     sb.AppendLine($"CRUD      - HeadStageIsEC2");
                     sb.AppendLine($"CRUD      - SubscriptionTotals");
                     sb.AppendLine($"CRUD      - AccountDiscount");
+                    sb.AppendLine($"CRUD      - CustomMaxPages");
+                    sb.AppendLine($"CRUD      - AccountDefaultMaxPages");
+                    sb.AppendLine($"CRUD      - MaxPages");
                 
             
         }
@@ -5037,6 +5126,74 @@ namespace CLIClassLibrary.RoleHandlers
         }
         
         public void PrintDeleteServiceKeyHelp(StringBuilder sb)
+        {
+            
+        }
+        
+        public void PrintAddCustomerTypeHelp(StringBuilder sb)
+        {
+            
+                
+                sb.AppendLine();
+                sb.AppendLine($"* * * * * * * * * * * * * * * * * * * * * * * * * * *");
+                sb.AppendLine($"* *  OBJECT DEF: CustomerType     *");
+                sb.AppendLine($"* * * * * * * * * * * * * * * * * * * * * * * * * * *");
+                sb.AppendLine();
+                
+                    sb.AppendLine($"CRUD      - CustomerTypeId");
+                    sb.AppendLine($"CRUD      - Name");
+                    sb.AppendLine($"CRUD      - Notes");
+                    sb.AppendLine($"CRUD      - Attachments");
+                    sb.AppendLine($"CRUD      - Status");
+                    sb.AppendLine($"CRUD      - IsOpenSource");
+                    sb.AppendLine($"CRUD      - IsPaid");
+                
+            
+        }
+        
+        public void PrintGetCustomerTypesHelp(StringBuilder sb)
+        {
+            
+                
+                sb.AppendLine();
+                sb.AppendLine($"* * * * * * * * * * * * * * * * * * * * * * * * * * *");
+                sb.AppendLine($"* *  OBJECT DEF: CustomerType     *");
+                sb.AppendLine($"* * * * * * * * * * * * * * * * * * * * * * * * * * *");
+                sb.AppendLine();
+                
+                    sb.AppendLine($"CRUD      - CustomerTypeId");
+                    sb.AppendLine($"CRUD      - Name");
+                    sb.AppendLine($"CRUD      - Notes");
+                    sb.AppendLine($"CRUD      - Attachments");
+                    sb.AppendLine($"CRUD      - Status");
+                    sb.AppendLine($"CRUD      - IsOpenSource");
+                    sb.AppendLine($"CRUD      - IsPaid");
+                
+            
+        }
+        
+        public void PrintUpdateCustomerTypeHelp(StringBuilder sb)
+        {
+            
+                
+                sb.AppendLine();
+                sb.AppendLine($"* * * * * * * * * * * * * * * * * * * * * * * * * * *");
+                sb.AppendLine($"* *  OBJECT DEF: CustomerType     *");
+                sb.AppendLine($"* * * * * * * * * * * * * * * * * * * * * * * * * * *");
+                sb.AppendLine();
+                
+                    sb.AppendLine($"CRUD      - CustomerTypeId");
+                    sb.AppendLine($"CRUD      - Name");
+                    sb.AppendLine($"CRUD      - Notes");
+                    sb.AppendLine($"CRUD      - Attachments");
+                    sb.AppendLine($"CRUD      - Status");
+                    sb.AppendLine($"CRUD      - IsOpenSource");
+                    sb.AppendLine($"CRUD      - IsPaid");
+                
+            
+        }
+        
+        public void PrintDeleteCustomerTypeHelp(StringBuilder sb)
         {
             
         }

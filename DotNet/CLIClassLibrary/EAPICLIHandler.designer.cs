@@ -49,5 +49,8 @@ Options
         [CommandLineOption(Description = "Get help on a given topic", MinOccurs = 0, Aliases = "")]
         public bool help { get; set; }
         
+        [CommandLineOption(Description = "Reload cache of project types, plans and such", MinOccurs = 0, Aliases = "")]
+        public bool reloadCache { get; set; }
+        
     }
 }

@@ -2039,6 +2039,7 @@ namespace CLIClassLibrary.RoleHandlers
                     sb.AppendLine($"CRUD      - ProjectEmails");
                     sb.AppendLine($"CRUD      - To");
                     sb.AppendLine($"CRUD      - ToRole");
+                    sb.AppendLine($"CRUD      - HttpPOSTUrl");
                 
             
         }
@@ -2068,6 +2069,7 @@ namespace CLIClassLibrary.RoleHandlers
                     sb.AppendLine($"CRUD      - ProjectEmails");
                     sb.AppendLine($"CRUD      - To");
                     sb.AppendLine($"CRUD      - ToRole");
+                    sb.AppendLine($"CRUD      - HttpPOSTUrl");
                 
             
         }
@@ -2097,6 +2099,7 @@ namespace CLIClassLibrary.RoleHandlers
                     sb.AppendLine($"CRUD      - ProjectEmails");
                     sb.AppendLine($"CRUD      - To");
                     sb.AppendLine($"CRUD      - ToRole");
+                    sb.AppendLine($"CRUD      - HttpPOSTUrl");
                 
             
         }
@@ -2311,6 +2314,7 @@ namespace CLIClassLibrary.RoleHandlers
                     sb.AppendLine($"CRUD      - ServiceKeys");
                     sb.AppendLine($"CRUD      - MonthlySubscriptionTotals");
                     sb.AppendLine($"CRUD      - AccountDiscount");
+                    sb.AppendLine($"CRUD      - DefaultMaxPages");
                 
             
         }
@@ -2338,6 +2342,7 @@ namespace CLIClassLibrary.RoleHandlers
                     sb.AppendLine($"CRUD      - ServiceKeys");
                     sb.AppendLine($"CRUD      - MonthlySubscriptionTotals");
                     sb.AppendLine($"CRUD      - AccountDiscount");
+                    sb.AppendLine($"CRUD      - DefaultMaxPages");
                 
             
         }
@@ -2365,6 +2370,7 @@ namespace CLIClassLibrary.RoleHandlers
                     sb.AppendLine($"CRUD      - ServiceKeys");
                     sb.AppendLine($"CRUD      - MonthlySubscriptionTotals");
                     sb.AppendLine($"CRUD      - AccountDiscount");
+                    sb.AppendLine($"CRUD      - DefaultMaxPages");
                 
             
         }
@@ -2800,6 +2806,9 @@ namespace CLIClassLibrary.RoleHandlers
                     sb.AppendLine($"CRUD      - HeadStageIsEC2");
                     sb.AppendLine($"CRUD      - SubscriptionTotals");
                     sb.AppendLine($"CRUD      - AccountDiscount");
+                    sb.AppendLine($"CRUD      - CustomMaxPages");
+                    sb.AppendLine($"CRUD      - AccountDefaultMaxPages");
+                    sb.AppendLine($"CRUD      - MaxPages");
                 
             
         }
@@ -2864,6 +2873,9 @@ namespace CLIClassLibrary.RoleHandlers
                     sb.AppendLine($"CRUD      - HeadStageIsEC2");
                     sb.AppendLine($"CRUD      - SubscriptionTotals");
                     sb.AppendLine($"CRUD      - AccountDiscount");
+                    sb.AppendLine($"CRUD      - CustomMaxPages");
+                    sb.AppendLine($"CRUD      - AccountDefaultMaxPages");
+                    sb.AppendLine($"CRUD      - MaxPages");
                 
             
         }
@@ -2928,6 +2940,9 @@ namespace CLIClassLibrary.RoleHandlers
                     sb.AppendLine($"CRUD      - HeadStageIsEC2");
                     sb.AppendLine($"CRUD      - SubscriptionTotals");
                     sb.AppendLine($"CRUD      - AccountDiscount");
+                    sb.AppendLine($"CRUD      - CustomMaxPages");
+                    sb.AppendLine($"CRUD      - AccountDefaultMaxPages");
+                    sb.AppendLine($"CRUD      - MaxPages");
                 
             
         }

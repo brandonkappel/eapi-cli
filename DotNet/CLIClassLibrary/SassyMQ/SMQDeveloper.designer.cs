@@ -39,8 +39,10 @@ namespace YP.SassyMQ.Lib.RabbitMQ
             {
                 payload.ErrorMessage = ex.Message;
             }
-            if (payload.AccessToken == originalAccessToken) payload.AccessToken = null;            
-            this.Reply(payload, bdea.BasicProperties);
+            var reply = payload.ReplyPayload is null ? payload  : payload.ReplyPayload;
+            reply.IsHandled = payload.IsHandled;
+            if (reply.AccessToken == originalAccessToken) reply.AccessToken = null;            
+            this.Reply(reply, bdea.BasicProperties);
         }
 
         

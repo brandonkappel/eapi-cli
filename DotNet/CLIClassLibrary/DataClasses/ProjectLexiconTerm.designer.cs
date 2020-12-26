@@ -74,6 +74,9 @@ namespace EAPI.CLI.Lib.DataClasses
         [RemoteIsCollection]
         public String ToRole { get; set; }
     
+        [JsonProperty(DefaultValueHandling = DefaultValueHandling.IgnoreAndPopulate, PropertyName = "HttpPOSTUrl")]
+        public String HttpPOSTUrl { get; set; }
+    
 
         
 

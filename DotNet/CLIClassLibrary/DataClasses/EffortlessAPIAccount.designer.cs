@@ -65,6 +65,9 @@ namespace EAPI.CLI.Lib.DataClasses
         [JsonProperty(DefaultValueHandling = DefaultValueHandling.IgnoreAndPopulate, PropertyName = "AccountDiscount")]
         public Nullable<decimal> AccountDiscount { get; set; }
     
+        [JsonProperty(DefaultValueHandling = DefaultValueHandling.IgnoreAndPopulate, PropertyName = "DefaultMaxPages")]
+        public Nullable<Int32> DefaultMaxPages { get; set; }
+    
 
         
 

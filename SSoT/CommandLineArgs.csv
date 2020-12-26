@@ -9,3 +9,4 @@ amqps,AMQPS Connection String,string,FALSE,FALSE,amqps://smqPublic:smqPublic@eff
 where,Limit the where clause,string,TRUE,FALSE,,IsActive=1,9,
 output,Output file name,string,TRUE,FALSE,,output.json,10,
 help,Get help on a given topic,bool,TRUE,FALSE,FALSE,specific topic,11,
+reloadCache,"Reload cache of project types, plans and such",bool,TRUE,FALSE,FALSE,false,12

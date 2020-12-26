@@ -1,4 +1,5 @@
 using CLIClassLibrary.RoleHandlers;
+using EAPI.CLI.Lib.DataClasses;
 using Newtonsoft.Json;
 using Plossum.CommandLine;
 using System;
@@ -56,10 +57,58 @@ namespace SSoTme.Default.Lib.CLIHandler
         public string ProcessRequest()
         {
             this.SetDefaultCLIParameters();
-            if (this.help) return this.ShowHelp(); 
+            if (this.help) return this.ShowHelp();
+            else if (this.reloadCache) return EAPICLIHandler.ReloadCacheNow(this);
             else if (!String.IsNullOrEmpty(this.authenticate)) return this.Authenticate();
             else if (!String.IsNullOrEmpty(this.invoke)) return this.Invoke();
             else throw new Exception($"Sytnax error: cli -invoke <action> -bodyData {{...}} -as Admin");
+        }
+
+        private static string ReloadCacheNow(EAPICLIHandler eapiHandler)
+        {
+            if (!EffortlessAPIServicesFileInfo.Directory.Exists)
+            {
+                EffortlessAPIServicesFileInfo.Directory.Create();
+            }
+
+            var guest = new SMQGuest(eapiHandler.amqps);
+
+            guest.GetEffortlessAPIServices((reply, bdea) =>
+            {
+                File.WriteAllText(EffortlessAPIServicesFileInfo.FullName, JsonConvert.SerializeObject(reply.EffortlessAPIServices, Formatting.Indented));
+            }).Wait(30000);
+
+            guest.GetServiceHostEndpoints((reply, bdea) =>
+            {
+                File.WriteAllText(ServiceHostEndpointsFileInfo.FullName, JsonConvert.SerializeObject(reply.ServiceHostEndpoints, Formatting.Indented));
+            }).Wait(30000);
+            return "{\"Success\":true}";
+        }
+
+        public static DirectoryInfo RootFileInfo
+        {
+            get { return new DirectoryInfo(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile), ".eapi")); }
+        }
+
+        public static FileInfo EffortlessAPIServicesFileInfo
+        {
+            get { return new FileInfo(Path.Combine(RootFileInfo.FullName, "EffortlessapiServices.json")); }
+        }
+
+        public static FileInfo ServiceHostEndpointsFileInfo
+        {
+            get { return new FileInfo(Path.Combine(RootFileInfo.FullName, "ServiceHostEndpoints.json")); }
+        }
+
+        public static List<EffortlessAPIService> EffortlessAPIServices
+        {
+            get
+            {
+                if (!EffortlessAPIServicesFileInfo.Exists) throw new Exception("> eapi -reloadCache required");
+                string json = File.ReadAllText(EffortlessAPIServicesFileInfo.FullName);
+                var services = JsonConvert.DeserializeObject<List<EffortlessAPIService>>(json);
+                return services;
+            }
         }
 
         private string ShowHelp()
@@ -84,7 +133,8 @@ namespace SSoTme.Default.Lib.CLIHandler
         private void SetDefaultCLIParameters()
         {
             var firstArgument = this.Parser.RemainingArguments.FirstOrDefault();
-            if (String.Equals(firstArgument, "help", StringComparison.OrdinalIgnoreCase))
+            if (!this.reloadCache && !this.Parser.RemainingArguments.Any()) this.help = true;
+            else if (String.Equals(firstArgument, "help", StringComparison.OrdinalIgnoreCase))
             {
                 this.help = true;
                 this.Parser.RemainingArguments.RemoveAt(0);

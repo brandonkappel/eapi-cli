@@ -31,8 +31,10 @@ namespace YP.SassyMQ.Lib.RabbitMQ
             {
                 payload.ErrorMessage = ex.Message;
             }
-            if (payload.AccessToken == originalAccessToken) payload.AccessToken = null;            
-            this.Reply(payload, bdea.BasicProperties);
+            var reply = payload.ReplyPayload is null ? payload  : payload.ReplyPayload;
+            reply.IsHandled = payload.IsHandled;
+            if (reply.AccessToken == originalAccessToken) reply.AccessToken = null;            
+            this.Reply(reply, bdea.BasicProperties);
         }
 
         
@@ -172,29 +174,56 @@ namespace YP.SassyMQ.Lib.RabbitMQ
         
         
         /// <summary>
-        /// GetPortfolioItems - 
+        /// GetPlanProducts - 
         /// </summary>
-        public Task GetPortfolioItems(PayloadHandler replyHandler = null, PayloadHandler timeoutHandler = null, int waitTimeout = StandardPayload.DEFAULT_TIMEOUT)
+        public Task GetPlanProducts(PayloadHandler replyHandler = null, PayloadHandler timeoutHandler = null, int waitTimeout = StandardPayload.DEFAULT_TIMEOUT)
         {
-            return this.GetPortfolioItems(this.CreatePayload(), replyHandler, timeoutHandler, waitTimeout);
+            return this.GetPlanProducts(this.CreatePayload(), replyHandler, timeoutHandler, waitTimeout);
         }
 
         /// <summary>
-        /// GetPortfolioItems - 
+        /// GetPlanProducts - 
         /// </summary>
-        public Task GetPortfolioItems(String content, PayloadHandler replyHandler = null, PayloadHandler timeoutHandler = null, int waitTimeout = StandardPayload.DEFAULT_TIMEOUT)
+        public Task GetPlanProducts(String content, PayloadHandler replyHandler = null, PayloadHandler timeoutHandler = null, int waitTimeout = StandardPayload.DEFAULT_TIMEOUT)
         {
             var payload = this.CreatePayload(content);
-            return this.GetPortfolioItems(payload, replyHandler, timeoutHandler, waitTimeout);
+            return this.GetPlanProducts(payload, replyHandler, timeoutHandler, waitTimeout);
         }
     
         
         /// <summary>
-        /// GetPortfolioItems - 
+        /// GetPlanProducts - 
         /// </summary>
-        public Task GetPortfolioItems(StandardPayload payload, PayloadHandler replyHandler = null, PayloadHandler timeoutHandler = null, int waitTimeout = StandardPayload.DEFAULT_TIMEOUT)
+        public Task GetPlanProducts(StandardPayload payload, PayloadHandler replyHandler = null, PayloadHandler timeoutHandler = null, int waitTimeout = StandardPayload.DEFAULT_TIMEOUT)
         {
-            return this.SendMessage("crudcoordinator.crud.guest.getportfolioitems", payload, replyHandler, timeoutHandler, waitTimeout);
+            return this.SendMessage("crudcoordinator.crud.guest.getplanproducts", payload, replyHandler, timeoutHandler, waitTimeout);
+        }
+        
+        
+        /// <summary>
+        /// GetServiceHostEndpoints - 
+        /// </summary>
+        public Task GetServiceHostEndpoints(PayloadHandler replyHandler = null, PayloadHandler timeoutHandler = null, int waitTimeout = StandardPayload.DEFAULT_TIMEOUT)
+        {
+            return this.GetServiceHostEndpoints(this.CreatePayload(), replyHandler, timeoutHandler, waitTimeout);
+        }
+
+        /// <summary>
+        /// GetServiceHostEndpoints - 
+        /// </summary>
+        public Task GetServiceHostEndpoints(String content, PayloadHandler replyHandler = null, PayloadHandler timeoutHandler = null, int waitTimeout = StandardPayload.DEFAULT_TIMEOUT)
+        {
+            var payload = this.CreatePayload(content);
+            return this.GetServiceHostEndpoints(payload, replyHandler, timeoutHandler, waitTimeout);
+        }
+    
+        
+        /// <summary>
+        /// GetServiceHostEndpoints - 
+        /// </summary>
+        public Task GetServiceHostEndpoints(StandardPayload payload, PayloadHandler replyHandler = null, PayloadHandler timeoutHandler = null, int waitTimeout = StandardPayload.DEFAULT_TIMEOUT)
+        {
+            return this.SendMessage("crudcoordinator.crud.guest.getservicehostendpoints", payload, replyHandler, timeoutHandler, waitTimeout);
         }
         
         
@@ -226,29 +255,110 @@ namespace YP.SassyMQ.Lib.RabbitMQ
         
         
         /// <summary>
-        /// GetPortfolios - 
+        /// GetServiceHostTypes - 
         /// </summary>
-        public Task GetPortfolios(PayloadHandler replyHandler = null, PayloadHandler timeoutHandler = null, int waitTimeout = StandardPayload.DEFAULT_TIMEOUT)
+        public Task GetServiceHostTypes(PayloadHandler replyHandler = null, PayloadHandler timeoutHandler = null, int waitTimeout = StandardPayload.DEFAULT_TIMEOUT)
         {
-            return this.GetPortfolios(this.CreatePayload(), replyHandler, timeoutHandler, waitTimeout);
+            return this.GetServiceHostTypes(this.CreatePayload(), replyHandler, timeoutHandler, waitTimeout);
         }
 
         /// <summary>
-        /// GetPortfolios - 
+        /// GetServiceHostTypes - 
         /// </summary>
-        public Task GetPortfolios(String content, PayloadHandler replyHandler = null, PayloadHandler timeoutHandler = null, int waitTimeout = StandardPayload.DEFAULT_TIMEOUT)
+        public Task GetServiceHostTypes(String content, PayloadHandler replyHandler = null, PayloadHandler timeoutHandler = null, int waitTimeout = StandardPayload.DEFAULT_TIMEOUT)
         {
             var payload = this.CreatePayload(content);
-            return this.GetPortfolios(payload, replyHandler, timeoutHandler, waitTimeout);
+            return this.GetServiceHostTypes(payload, replyHandler, timeoutHandler, waitTimeout);
         }
     
         
         /// <summary>
-        /// GetPortfolios - 
+        /// GetServiceHostTypes - 
         /// </summary>
-        public Task GetPortfolios(StandardPayload payload, PayloadHandler replyHandler = null, PayloadHandler timeoutHandler = null, int waitTimeout = StandardPayload.DEFAULT_TIMEOUT)
+        public Task GetServiceHostTypes(StandardPayload payload, PayloadHandler replyHandler = null, PayloadHandler timeoutHandler = null, int waitTimeout = StandardPayload.DEFAULT_TIMEOUT)
         {
-            return this.SendMessage("crudcoordinator.crud.guest.getportfolios", payload, replyHandler, timeoutHandler, waitTimeout);
+            return this.SendMessage("crudcoordinator.crud.guest.getservicehosttypes", payload, replyHandler, timeoutHandler, waitTimeout);
+        }
+        
+        
+        /// <summary>
+        /// GetServiceProducts - 
+        /// </summary>
+        public Task GetServiceProducts(PayloadHandler replyHandler = null, PayloadHandler timeoutHandler = null, int waitTimeout = StandardPayload.DEFAULT_TIMEOUT)
+        {
+            return this.GetServiceProducts(this.CreatePayload(), replyHandler, timeoutHandler, waitTimeout);
+        }
+
+        /// <summary>
+        /// GetServiceProducts - 
+        /// </summary>
+        public Task GetServiceProducts(String content, PayloadHandler replyHandler = null, PayloadHandler timeoutHandler = null, int waitTimeout = StandardPayload.DEFAULT_TIMEOUT)
+        {
+            var payload = this.CreatePayload(content);
+            return this.GetServiceProducts(payload, replyHandler, timeoutHandler, waitTimeout);
+        }
+    
+        
+        /// <summary>
+        /// GetServiceProducts - 
+        /// </summary>
+        public Task GetServiceProducts(StandardPayload payload, PayloadHandler replyHandler = null, PayloadHandler timeoutHandler = null, int waitTimeout = StandardPayload.DEFAULT_TIMEOUT)
+        {
+            return this.SendMessage("crudcoordinator.crud.guest.getserviceproducts", payload, replyHandler, timeoutHandler, waitTimeout);
+        }
+        
+        
+        /// <summary>
+        /// GetServicePlans - 
+        /// </summary>
+        public Task GetServicePlans(PayloadHandler replyHandler = null, PayloadHandler timeoutHandler = null, int waitTimeout = StandardPayload.DEFAULT_TIMEOUT)
+        {
+            return this.GetServicePlans(this.CreatePayload(), replyHandler, timeoutHandler, waitTimeout);
+        }
+
+        /// <summary>
+        /// GetServicePlans - 
+        /// </summary>
+        public Task GetServicePlans(String content, PayloadHandler replyHandler = null, PayloadHandler timeoutHandler = null, int waitTimeout = StandardPayload.DEFAULT_TIMEOUT)
+        {
+            var payload = this.CreatePayload(content);
+            return this.GetServicePlans(payload, replyHandler, timeoutHandler, waitTimeout);
+        }
+    
+        
+        /// <summary>
+        /// GetServicePlans - 
+        /// </summary>
+        public Task GetServicePlans(StandardPayload payload, PayloadHandler replyHandler = null, PayloadHandler timeoutHandler = null, int waitTimeout = StandardPayload.DEFAULT_TIMEOUT)
+        {
+            return this.SendMessage("crudcoordinator.crud.guest.getserviceplans", payload, replyHandler, timeoutHandler, waitTimeout);
+        }
+        
+        
+        /// <summary>
+        /// GetSDKLanguages - 
+        /// </summary>
+        public Task GetSDKLanguages(PayloadHandler replyHandler = null, PayloadHandler timeoutHandler = null, int waitTimeout = StandardPayload.DEFAULT_TIMEOUT)
+        {
+            return this.GetSDKLanguages(this.CreatePayload(), replyHandler, timeoutHandler, waitTimeout);
+        }
+
+        /// <summary>
+        /// GetSDKLanguages - 
+        /// </summary>
+        public Task GetSDKLanguages(String content, PayloadHandler replyHandler = null, PayloadHandler timeoutHandler = null, int waitTimeout = StandardPayload.DEFAULT_TIMEOUT)
+        {
+            var payload = this.CreatePayload(content);
+            return this.GetSDKLanguages(payload, replyHandler, timeoutHandler, waitTimeout);
+        }
+    
+        
+        /// <summary>
+        /// GetSDKLanguages - 
+        /// </summary>
+        public Task GetSDKLanguages(StandardPayload payload, PayloadHandler replyHandler = null, PayloadHandler timeoutHandler = null, int waitTimeout = StandardPayload.DEFAULT_TIMEOUT)
+        {
+            return this.SendMessage("crudcoordinator.crud.guest.getsdklanguages", payload, replyHandler, timeoutHandler, waitTimeout);
         }
         
         

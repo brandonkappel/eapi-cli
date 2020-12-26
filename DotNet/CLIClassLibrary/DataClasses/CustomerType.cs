@@ -9,19 +9,16 @@ using System.ComponentModel;
 namespace EAPI.CLI.Lib.DataClasses
 {                   
     
-    /// <summary>
-    /// No table description.
-    /// </summary>
-    public partial class PortfolioItem 
+    public partial class CustomerType 
     {
-        public PortfolioItem()
+        public CustomerType()
         {
             this.InitPoco();
         }
 
         public override String ToString()
         {
-            return String.Format("PortfolioItem: {0}", this.Name);
+            return String.Format("CustomerType: {0}", this.Name);
         }
                             
     }

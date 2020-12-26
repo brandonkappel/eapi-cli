@@ -31,8 +31,10 @@ namespace YP.SassyMQ.Lib.RabbitMQ
             {
                 payload.ErrorMessage = ex.Message;
             }
-            if (payload.AccessToken == originalAccessToken) payload.AccessToken = null;            
-            this.Reply(payload, bdea.BasicProperties);
+            var reply = payload.ReplyPayload is null ? payload  : payload.ReplyPayload;
+            reply.IsHandled = payload.IsHandled;
+            if (reply.AccessToken == originalAccessToken) reply.AccessToken = null;            
+            this.Reply(reply, bdea.BasicProperties);
         }
 
         
@@ -469,110 +471,110 @@ namespace YP.SassyMQ.Lib.RabbitMQ
         
         
         /// <summary>
-        /// AddPortfolioItem - 
+        /// AddPortfolioItemRETIRED - 
         /// </summary>
-        public Task AddPortfolioItem(PayloadHandler replyHandler = null, PayloadHandler timeoutHandler = null, int waitTimeout = StandardPayload.DEFAULT_TIMEOUT)
+        public Task AddPortfolioItemRETIRED(PayloadHandler replyHandler = null, PayloadHandler timeoutHandler = null, int waitTimeout = StandardPayload.DEFAULT_TIMEOUT)
         {
-            return this.AddPortfolioItem(this.CreatePayload(), replyHandler, timeoutHandler, waitTimeout);
+            return this.AddPortfolioItemRETIRED(this.CreatePayload(), replyHandler, timeoutHandler, waitTimeout);
         }
 
         /// <summary>
-        /// AddPortfolioItem - 
+        /// AddPortfolioItemRETIRED - 
         /// </summary>
-        public Task AddPortfolioItem(String content, PayloadHandler replyHandler = null, PayloadHandler timeoutHandler = null, int waitTimeout = StandardPayload.DEFAULT_TIMEOUT)
+        public Task AddPortfolioItemRETIRED(String content, PayloadHandler replyHandler = null, PayloadHandler timeoutHandler = null, int waitTimeout = StandardPayload.DEFAULT_TIMEOUT)
         {
             var payload = this.CreatePayload(content);
-            return this.AddPortfolioItem(payload, replyHandler, timeoutHandler, waitTimeout);
+            return this.AddPortfolioItemRETIRED(payload, replyHandler, timeoutHandler, waitTimeout);
         }
     
         
         /// <summary>
-        /// AddPortfolioItem - 
+        /// AddPortfolioItemRETIRED - 
         /// </summary>
-        public Task AddPortfolioItem(StandardPayload payload, PayloadHandler replyHandler = null, PayloadHandler timeoutHandler = null, int waitTimeout = StandardPayload.DEFAULT_TIMEOUT)
+        public Task AddPortfolioItemRETIRED(StandardPayload payload, PayloadHandler replyHandler = null, PayloadHandler timeoutHandler = null, int waitTimeout = StandardPayload.DEFAULT_TIMEOUT)
         {
-            return this.SendMessage("crudcoordinator.crud.admin.addportfolioitem", payload, replyHandler, timeoutHandler, waitTimeout);
+            return this.SendMessage("crudcoordinator.crud.admin.addportfolioitemretired", payload, replyHandler, timeoutHandler, waitTimeout);
         }
         
         
         /// <summary>
-        /// GetPortfolioItems - 
+        /// GetPortfolioItemsRETIRED - 
         /// </summary>
-        public Task GetPortfolioItems(PayloadHandler replyHandler = null, PayloadHandler timeoutHandler = null, int waitTimeout = StandardPayload.DEFAULT_TIMEOUT)
+        public Task GetPortfolioItemsRETIRED(PayloadHandler replyHandler = null, PayloadHandler timeoutHandler = null, int waitTimeout = StandardPayload.DEFAULT_TIMEOUT)
         {
-            return this.GetPortfolioItems(this.CreatePayload(), replyHandler, timeoutHandler, waitTimeout);
+            return this.GetPortfolioItemsRETIRED(this.CreatePayload(), replyHandler, timeoutHandler, waitTimeout);
         }
 
         /// <summary>
-        /// GetPortfolioItems - 
+        /// GetPortfolioItemsRETIRED - 
         /// </summary>
-        public Task GetPortfolioItems(String content, PayloadHandler replyHandler = null, PayloadHandler timeoutHandler = null, int waitTimeout = StandardPayload.DEFAULT_TIMEOUT)
+        public Task GetPortfolioItemsRETIRED(String content, PayloadHandler replyHandler = null, PayloadHandler timeoutHandler = null, int waitTimeout = StandardPayload.DEFAULT_TIMEOUT)
         {
             var payload = this.CreatePayload(content);
-            return this.GetPortfolioItems(payload, replyHandler, timeoutHandler, waitTimeout);
+            return this.GetPortfolioItemsRETIRED(payload, replyHandler, timeoutHandler, waitTimeout);
         }
     
         
         /// <summary>
-        /// GetPortfolioItems - 
+        /// GetPortfolioItemsRETIRED - 
         /// </summary>
-        public Task GetPortfolioItems(StandardPayload payload, PayloadHandler replyHandler = null, PayloadHandler timeoutHandler = null, int waitTimeout = StandardPayload.DEFAULT_TIMEOUT)
+        public Task GetPortfolioItemsRETIRED(StandardPayload payload, PayloadHandler replyHandler = null, PayloadHandler timeoutHandler = null, int waitTimeout = StandardPayload.DEFAULT_TIMEOUT)
         {
-            return this.SendMessage("crudcoordinator.crud.admin.getportfolioitems", payload, replyHandler, timeoutHandler, waitTimeout);
+            return this.SendMessage("crudcoordinator.crud.admin.getportfolioitemsretired", payload, replyHandler, timeoutHandler, waitTimeout);
         }
         
         
         /// <summary>
-        /// UpdatePortfolioItem - 
+        /// UpdatePortfolioItemRETIRED - 
         /// </summary>
-        public Task UpdatePortfolioItem(PayloadHandler replyHandler = null, PayloadHandler timeoutHandler = null, int waitTimeout = StandardPayload.DEFAULT_TIMEOUT)
+        public Task UpdatePortfolioItemRETIRED(PayloadHandler replyHandler = null, PayloadHandler timeoutHandler = null, int waitTimeout = StandardPayload.DEFAULT_TIMEOUT)
         {
-            return this.UpdatePortfolioItem(this.CreatePayload(), replyHandler, timeoutHandler, waitTimeout);
+            return this.UpdatePortfolioItemRETIRED(this.CreatePayload(), replyHandler, timeoutHandler, waitTimeout);
         }
 
         /// <summary>
-        /// UpdatePortfolioItem - 
+        /// UpdatePortfolioItemRETIRED - 
         /// </summary>
-        public Task UpdatePortfolioItem(String content, PayloadHandler replyHandler = null, PayloadHandler timeoutHandler = null, int waitTimeout = StandardPayload.DEFAULT_TIMEOUT)
+        public Task UpdatePortfolioItemRETIRED(String content, PayloadHandler replyHandler = null, PayloadHandler timeoutHandler = null, int waitTimeout = StandardPayload.DEFAULT_TIMEOUT)
         {
             var payload = this.CreatePayload(content);
-            return this.UpdatePortfolioItem(payload, replyHandler, timeoutHandler, waitTimeout);
+            return this.UpdatePortfolioItemRETIRED(payload, replyHandler, timeoutHandler, waitTimeout);
         }
     
         
         /// <summary>
-        /// UpdatePortfolioItem - 
+        /// UpdatePortfolioItemRETIRED - 
         /// </summary>
-        public Task UpdatePortfolioItem(StandardPayload payload, PayloadHandler replyHandler = null, PayloadHandler timeoutHandler = null, int waitTimeout = StandardPayload.DEFAULT_TIMEOUT)
+        public Task UpdatePortfolioItemRETIRED(StandardPayload payload, PayloadHandler replyHandler = null, PayloadHandler timeoutHandler = null, int waitTimeout = StandardPayload.DEFAULT_TIMEOUT)
         {
-            return this.SendMessage("crudcoordinator.crud.admin.updateportfolioitem", payload, replyHandler, timeoutHandler, waitTimeout);
+            return this.SendMessage("crudcoordinator.crud.admin.updateportfolioitemretired", payload, replyHandler, timeoutHandler, waitTimeout);
         }
         
         
         /// <summary>
-        /// DeletePortfolioItem - 
+        /// DeletePortfolioItemRETIRED - 
         /// </summary>
-        public Task DeletePortfolioItem(PayloadHandler replyHandler = null, PayloadHandler timeoutHandler = null, int waitTimeout = StandardPayload.DEFAULT_TIMEOUT)
+        public Task DeletePortfolioItemRETIRED(PayloadHandler replyHandler = null, PayloadHandler timeoutHandler = null, int waitTimeout = StandardPayload.DEFAULT_TIMEOUT)
         {
-            return this.DeletePortfolioItem(this.CreatePayload(), replyHandler, timeoutHandler, waitTimeout);
+            return this.DeletePortfolioItemRETIRED(this.CreatePayload(), replyHandler, timeoutHandler, waitTimeout);
         }
 
         /// <summary>
-        /// DeletePortfolioItem - 
+        /// DeletePortfolioItemRETIRED - 
         /// </summary>
-        public Task DeletePortfolioItem(String content, PayloadHandler replyHandler = null, PayloadHandler timeoutHandler = null, int waitTimeout = StandardPayload.DEFAULT_TIMEOUT)
+        public Task DeletePortfolioItemRETIRED(String content, PayloadHandler replyHandler = null, PayloadHandler timeoutHandler = null, int waitTimeout = StandardPayload.DEFAULT_TIMEOUT)
         {
             var payload = this.CreatePayload(content);
-            return this.DeletePortfolioItem(payload, replyHandler, timeoutHandler, waitTimeout);
+            return this.DeletePortfolioItemRETIRED(payload, replyHandler, timeoutHandler, waitTimeout);
         }
     
         
         /// <summary>
-        /// DeletePortfolioItem - 
+        /// DeletePortfolioItemRETIRED - 
         /// </summary>
-        public Task DeletePortfolioItem(StandardPayload payload, PayloadHandler replyHandler = null, PayloadHandler timeoutHandler = null, int waitTimeout = StandardPayload.DEFAULT_TIMEOUT)
+        public Task DeletePortfolioItemRETIRED(StandardPayload payload, PayloadHandler replyHandler = null, PayloadHandler timeoutHandler = null, int waitTimeout = StandardPayload.DEFAULT_TIMEOUT)
         {
-            return this.SendMessage("crudcoordinator.crud.admin.deleteportfolioitem", payload, replyHandler, timeoutHandler, waitTimeout);
+            return this.SendMessage("crudcoordinator.crud.admin.deleteportfolioitemretired", payload, replyHandler, timeoutHandler, waitTimeout);
         }
         
         
@@ -1333,110 +1335,110 @@ namespace YP.SassyMQ.Lib.RabbitMQ
         
         
         /// <summary>
-        /// AddPortfolio - 
+        /// AddPortfolioRETIRED - 
         /// </summary>
-        public Task AddPortfolio(PayloadHandler replyHandler = null, PayloadHandler timeoutHandler = null, int waitTimeout = StandardPayload.DEFAULT_TIMEOUT)
+        public Task AddPortfolioRETIRED(PayloadHandler replyHandler = null, PayloadHandler timeoutHandler = null, int waitTimeout = StandardPayload.DEFAULT_TIMEOUT)
         {
-            return this.AddPortfolio(this.CreatePayload(), replyHandler, timeoutHandler, waitTimeout);
+            return this.AddPortfolioRETIRED(this.CreatePayload(), replyHandler, timeoutHandler, waitTimeout);
         }
 
         /// <summary>
-        /// AddPortfolio - 
+        /// AddPortfolioRETIRED - 
         /// </summary>
-        public Task AddPortfolio(String content, PayloadHandler replyHandler = null, PayloadHandler timeoutHandler = null, int waitTimeout = StandardPayload.DEFAULT_TIMEOUT)
+        public Task AddPortfolioRETIRED(String content, PayloadHandler replyHandler = null, PayloadHandler timeoutHandler = null, int waitTimeout = StandardPayload.DEFAULT_TIMEOUT)
         {
             var payload = this.CreatePayload(content);
-            return this.AddPortfolio(payload, replyHandler, timeoutHandler, waitTimeout);
+            return this.AddPortfolioRETIRED(payload, replyHandler, timeoutHandler, waitTimeout);
         }
     
         
         /// <summary>
-        /// AddPortfolio - 
+        /// AddPortfolioRETIRED - 
         /// </summary>
-        public Task AddPortfolio(StandardPayload payload, PayloadHandler replyHandler = null, PayloadHandler timeoutHandler = null, int waitTimeout = StandardPayload.DEFAULT_TIMEOUT)
+        public Task AddPortfolioRETIRED(StandardPayload payload, PayloadHandler replyHandler = null, PayloadHandler timeoutHandler = null, int waitTimeout = StandardPayload.DEFAULT_TIMEOUT)
         {
-            return this.SendMessage("crudcoordinator.crud.admin.addportfolio", payload, replyHandler, timeoutHandler, waitTimeout);
+            return this.SendMessage("crudcoordinator.crud.admin.addportfolioretired", payload, replyHandler, timeoutHandler, waitTimeout);
         }
         
         
         /// <summary>
-        /// GetPortfolios - 
+        /// GetPortfoliosRETIRED - 
         /// </summary>
-        public Task GetPortfolios(PayloadHandler replyHandler = null, PayloadHandler timeoutHandler = null, int waitTimeout = StandardPayload.DEFAULT_TIMEOUT)
+        public Task GetPortfoliosRETIRED(PayloadHandler replyHandler = null, PayloadHandler timeoutHandler = null, int waitTimeout = StandardPayload.DEFAULT_TIMEOUT)
         {
-            return this.GetPortfolios(this.CreatePayload(), replyHandler, timeoutHandler, waitTimeout);
+            return this.GetPortfoliosRETIRED(this.CreatePayload(), replyHandler, timeoutHandler, waitTimeout);
         }
 
         /// <summary>
-        /// GetPortfolios - 
+        /// GetPortfoliosRETIRED - 
         /// </summary>
-        public Task GetPortfolios(String content, PayloadHandler replyHandler = null, PayloadHandler timeoutHandler = null, int waitTimeout = StandardPayload.DEFAULT_TIMEOUT)
+        public Task GetPortfoliosRETIRED(String content, PayloadHandler replyHandler = null, PayloadHandler timeoutHandler = null, int waitTimeout = StandardPayload.DEFAULT_TIMEOUT)
         {
             var payload = this.CreatePayload(content);
-            return this.GetPortfolios(payload, replyHandler, timeoutHandler, waitTimeout);
+            return this.GetPortfoliosRETIRED(payload, replyHandler, timeoutHandler, waitTimeout);
         }
     
         
         /// <summary>
-        /// GetPortfolios - 
+        /// GetPortfoliosRETIRED - 
         /// </summary>
-        public Task GetPortfolios(StandardPayload payload, PayloadHandler replyHandler = null, PayloadHandler timeoutHandler = null, int waitTimeout = StandardPayload.DEFAULT_TIMEOUT)
+        public Task GetPortfoliosRETIRED(StandardPayload payload, PayloadHandler replyHandler = null, PayloadHandler timeoutHandler = null, int waitTimeout = StandardPayload.DEFAULT_TIMEOUT)
         {
-            return this.SendMessage("crudcoordinator.crud.admin.getportfolios", payload, replyHandler, timeoutHandler, waitTimeout);
+            return this.SendMessage("crudcoordinator.crud.admin.getportfoliosretired", payload, replyHandler, timeoutHandler, waitTimeout);
         }
         
         
         /// <summary>
-        /// UpdatePortfolio - 
+        /// UpdatePortfolioRETIRED - 
         /// </summary>
-        public Task UpdatePortfolio(PayloadHandler replyHandler = null, PayloadHandler timeoutHandler = null, int waitTimeout = StandardPayload.DEFAULT_TIMEOUT)
+        public Task UpdatePortfolioRETIRED(PayloadHandler replyHandler = null, PayloadHandler timeoutHandler = null, int waitTimeout = StandardPayload.DEFAULT_TIMEOUT)
         {
-            return this.UpdatePortfolio(this.CreatePayload(), replyHandler, timeoutHandler, waitTimeout);
+            return this.UpdatePortfolioRETIRED(this.CreatePayload(), replyHandler, timeoutHandler, waitTimeout);
         }
 
         /// <summary>
-        /// UpdatePortfolio - 
+        /// UpdatePortfolioRETIRED - 
         /// </summary>
-        public Task UpdatePortfolio(String content, PayloadHandler replyHandler = null, PayloadHandler timeoutHandler = null, int waitTimeout = StandardPayload.DEFAULT_TIMEOUT)
+        public Task UpdatePortfolioRETIRED(String content, PayloadHandler replyHandler = null, PayloadHandler timeoutHandler = null, int waitTimeout = StandardPayload.DEFAULT_TIMEOUT)
         {
             var payload = this.CreatePayload(content);
-            return this.UpdatePortfolio(payload, replyHandler, timeoutHandler, waitTimeout);
+            return this.UpdatePortfolioRETIRED(payload, replyHandler, timeoutHandler, waitTimeout);
         }
     
         
         /// <summary>
-        /// UpdatePortfolio - 
+        /// UpdatePortfolioRETIRED - 
         /// </summary>
-        public Task UpdatePortfolio(StandardPayload payload, PayloadHandler replyHandler = null, PayloadHandler timeoutHandler = null, int waitTimeout = StandardPayload.DEFAULT_TIMEOUT)
+        public Task UpdatePortfolioRETIRED(StandardPayload payload, PayloadHandler replyHandler = null, PayloadHandler timeoutHandler = null, int waitTimeout = StandardPayload.DEFAULT_TIMEOUT)
         {
-            return this.SendMessage("crudcoordinator.crud.admin.updateportfolio", payload, replyHandler, timeoutHandler, waitTimeout);
+            return this.SendMessage("crudcoordinator.crud.admin.updateportfolioretired", payload, replyHandler, timeoutHandler, waitTimeout);
         }
         
         
         /// <summary>
-        /// DeletePortfolio - 
+        /// DeletePortfolioRETIRED - 
         /// </summary>
-        public Task DeletePortfolio(PayloadHandler replyHandler = null, PayloadHandler timeoutHandler = null, int waitTimeout = StandardPayload.DEFAULT_TIMEOUT)
+        public Task DeletePortfolioRETIRED(PayloadHandler replyHandler = null, PayloadHandler timeoutHandler = null, int waitTimeout = StandardPayload.DEFAULT_TIMEOUT)
         {
-            return this.DeletePortfolio(this.CreatePayload(), replyHandler, timeoutHandler, waitTimeout);
+            return this.DeletePortfolioRETIRED(this.CreatePayload(), replyHandler, timeoutHandler, waitTimeout);
         }
 
         /// <summary>
-        /// DeletePortfolio - 
+        /// DeletePortfolioRETIRED - 
         /// </summary>
-        public Task DeletePortfolio(String content, PayloadHandler replyHandler = null, PayloadHandler timeoutHandler = null, int waitTimeout = StandardPayload.DEFAULT_TIMEOUT)
+        public Task DeletePortfolioRETIRED(String content, PayloadHandler replyHandler = null, PayloadHandler timeoutHandler = null, int waitTimeout = StandardPayload.DEFAULT_TIMEOUT)
         {
             var payload = this.CreatePayload(content);
-            return this.DeletePortfolio(payload, replyHandler, timeoutHandler, waitTimeout);
+            return this.DeletePortfolioRETIRED(payload, replyHandler, timeoutHandler, waitTimeout);
         }
     
         
         /// <summary>
-        /// DeletePortfolio - 
+        /// DeletePortfolioRETIRED - 
         /// </summary>
-        public Task DeletePortfolio(StandardPayload payload, PayloadHandler replyHandler = null, PayloadHandler timeoutHandler = null, int waitTimeout = StandardPayload.DEFAULT_TIMEOUT)
+        public Task DeletePortfolioRETIRED(StandardPayload payload, PayloadHandler replyHandler = null, PayloadHandler timeoutHandler = null, int waitTimeout = StandardPayload.DEFAULT_TIMEOUT)
         {
-            return this.SendMessage("crudcoordinator.crud.admin.deleteportfolio", payload, replyHandler, timeoutHandler, waitTimeout);
+            return this.SendMessage("crudcoordinator.crud.admin.deleteportfolioretired", payload, replyHandler, timeoutHandler, waitTimeout);
         }
         
         
@@ -3165,6 +3167,114 @@ namespace YP.SassyMQ.Lib.RabbitMQ
         public Task DeleteServiceKey(StandardPayload payload, PayloadHandler replyHandler = null, PayloadHandler timeoutHandler = null, int waitTimeout = StandardPayload.DEFAULT_TIMEOUT)
         {
             return this.SendMessage("crudcoordinator.crud.admin.deleteservicekey", payload, replyHandler, timeoutHandler, waitTimeout);
+        }
+        
+        
+        /// <summary>
+        /// AddCustomerType - 
+        /// </summary>
+        public Task AddCustomerType(PayloadHandler replyHandler = null, PayloadHandler timeoutHandler = null, int waitTimeout = StandardPayload.DEFAULT_TIMEOUT)
+        {
+            return this.AddCustomerType(this.CreatePayload(), replyHandler, timeoutHandler, waitTimeout);
+        }
+
+        /// <summary>
+        /// AddCustomerType - 
+        /// </summary>
+        public Task AddCustomerType(String content, PayloadHandler replyHandler = null, PayloadHandler timeoutHandler = null, int waitTimeout = StandardPayload.DEFAULT_TIMEOUT)
+        {
+            var payload = this.CreatePayload(content);
+            return this.AddCustomerType(payload, replyHandler, timeoutHandler, waitTimeout);
+        }
+    
+        
+        /// <summary>
+        /// AddCustomerType - 
+        /// </summary>
+        public Task AddCustomerType(StandardPayload payload, PayloadHandler replyHandler = null, PayloadHandler timeoutHandler = null, int waitTimeout = StandardPayload.DEFAULT_TIMEOUT)
+        {
+            return this.SendMessage("crudcoordinator.crud.admin.addcustomertype", payload, replyHandler, timeoutHandler, waitTimeout);
+        }
+        
+        
+        /// <summary>
+        /// GetCustomerTypes - 
+        /// </summary>
+        public Task GetCustomerTypes(PayloadHandler replyHandler = null, PayloadHandler timeoutHandler = null, int waitTimeout = StandardPayload.DEFAULT_TIMEOUT)
+        {
+            return this.GetCustomerTypes(this.CreatePayload(), replyHandler, timeoutHandler, waitTimeout);
+        }
+
+        /// <summary>
+        /// GetCustomerTypes - 
+        /// </summary>
+        public Task GetCustomerTypes(String content, PayloadHandler replyHandler = null, PayloadHandler timeoutHandler = null, int waitTimeout = StandardPayload.DEFAULT_TIMEOUT)
+        {
+            var payload = this.CreatePayload(content);
+            return this.GetCustomerTypes(payload, replyHandler, timeoutHandler, waitTimeout);
+        }
+    
+        
+        /// <summary>
+        /// GetCustomerTypes - 
+        /// </summary>
+        public Task GetCustomerTypes(StandardPayload payload, PayloadHandler replyHandler = null, PayloadHandler timeoutHandler = null, int waitTimeout = StandardPayload.DEFAULT_TIMEOUT)
+        {
+            return this.SendMessage("crudcoordinator.crud.admin.getcustomertypes", payload, replyHandler, timeoutHandler, waitTimeout);
+        }
+        
+        
+        /// <summary>
+        /// UpdateCustomerType - 
+        /// </summary>
+        public Task UpdateCustomerType(PayloadHandler replyHandler = null, PayloadHandler timeoutHandler = null, int waitTimeout = StandardPayload.DEFAULT_TIMEOUT)
+        {
+            return this.UpdateCustomerType(this.CreatePayload(), replyHandler, timeoutHandler, waitTimeout);
+        }
+
+        /// <summary>
+        /// UpdateCustomerType - 
+        /// </summary>
+        public Task UpdateCustomerType(String content, PayloadHandler replyHandler = null, PayloadHandler timeoutHandler = null, int waitTimeout = StandardPayload.DEFAULT_TIMEOUT)
+        {
+            var payload = this.CreatePayload(content);
+            return this.UpdateCustomerType(payload, replyHandler, timeoutHandler, waitTimeout);
+        }
+    
+        
+        /// <summary>
+        /// UpdateCustomerType - 
+        /// </summary>
+        public Task UpdateCustomerType(StandardPayload payload, PayloadHandler replyHandler = null, PayloadHandler timeoutHandler = null, int waitTimeout = StandardPayload.DEFAULT_TIMEOUT)
+        {
+            return this.SendMessage("crudcoordinator.crud.admin.updatecustomertype", payload, replyHandler, timeoutHandler, waitTimeout);
+        }
+        
+        
+        /// <summary>
+        /// DeleteCustomerType - 
+        /// </summary>
+        public Task DeleteCustomerType(PayloadHandler replyHandler = null, PayloadHandler timeoutHandler = null, int waitTimeout = StandardPayload.DEFAULT_TIMEOUT)
+        {
+            return this.DeleteCustomerType(this.CreatePayload(), replyHandler, timeoutHandler, waitTimeout);
+        }
+
+        /// <summary>
+        /// DeleteCustomerType - 
+        /// </summary>
+        public Task DeleteCustomerType(String content, PayloadHandler replyHandler = null, PayloadHandler timeoutHandler = null, int waitTimeout = StandardPayload.DEFAULT_TIMEOUT)
+        {
+            var payload = this.CreatePayload(content);
+            return this.DeleteCustomerType(payload, replyHandler, timeoutHandler, waitTimeout);
+        }
+    
+        
+        /// <summary>
+        /// DeleteCustomerType - 
+        /// </summary>
+        public Task DeleteCustomerType(StandardPayload payload, PayloadHandler replyHandler = null, PayloadHandler timeoutHandler = null, int waitTimeout = StandardPayload.DEFAULT_TIMEOUT)
+        {
+            return this.SendMessage("crudcoordinator.crud.admin.deletecustomertype", payload, replyHandler, timeoutHandler, waitTimeout);
         }
         
         

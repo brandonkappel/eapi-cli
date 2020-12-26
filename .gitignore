@@ -5,3 +5,5 @@
 /DotNet/CLIClassLibrary/CLIClassLibrary.csproj.user
 /*.json
 /*.xlsx
+/DotNet/CLIClassLibrary/DataClasses/*_RETIRED.*cs
+/PowerShell/**/*.json

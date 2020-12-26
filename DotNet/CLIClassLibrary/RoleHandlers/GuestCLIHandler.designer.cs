@@ -25,9 +25,13 @@ namespace CLIClassLibrary.RoleHandlers
                 sb.AppendLine($"void: WhoAmI");
                 sb.AppendLine($"void: WhoAreYou");
                 sb.AppendLine($"void: StoreTempFile");
-                sb.AppendLine($"PortfolioItem: GetPortfolioItems");
+                sb.AppendLine($"PlanProduct: GetPlanProducts");
+                sb.AppendLine($"ServiceHostEndpoint: GetServiceHostEndpoints");
                 sb.AppendLine($"EffortlessAPIService: GetEffortlessAPIServices");
-                sb.AppendLine($"Portfolio: GetPortfolios");                                            
+                sb.AppendLine($"ServiceHostType: GetServiceHostTypes");
+                sb.AppendLine($"ServiceProduct: GetServiceProducts");
+                sb.AppendLine($"ServicePlan: GetServicePlans");
+                sb.AppendLine($"SDKLanguage: GetSDKLanguages");                                            
             }
             
             sb.AppendLine($"{Environment.NewLine}Available Actions Matching: {helpTerm}");
@@ -77,12 +81,21 @@ namespace CLIClassLibrary.RoleHandlers
                 }
                 found = true;
             }
-            if ("getportfolioitems".Contains(helpTerm, StringComparison.OrdinalIgnoreCase))
+            if ("getplanproducts".Contains(helpTerm, StringComparison.OrdinalIgnoreCase))
             {
-                sb.AppendLine($" - GetPortfolioItems");
-                if ("getportfolioitems".Equals(helpTerm, StringComparison.OrdinalIgnoreCase)) 
+                sb.AppendLine($" - GetPlanProducts");
+                if ("getplanproducts".Equals(helpTerm, StringComparison.OrdinalIgnoreCase)) 
                 {
-                    this.PrintGetPortfolioItemsHelp(sb);
+                    this.PrintGetPlanProductsHelp(sb);
+                }
+                found = true;
+            }
+            if ("getservicehostendpoints".Contains(helpTerm, StringComparison.OrdinalIgnoreCase))
+            {
+                sb.AppendLine($" - GetServiceHostEndpoints");
+                if ("getservicehostendpoints".Equals(helpTerm, StringComparison.OrdinalIgnoreCase)) 
+                {
+                    this.PrintGetServiceHostEndpointsHelp(sb);
                 }
                 found = true;
             }
@@ -95,12 +108,39 @@ namespace CLIClassLibrary.RoleHandlers
                 }
                 found = true;
             }
-            if ("getportfolios".Contains(helpTerm, StringComparison.OrdinalIgnoreCase))
+            if ("getservicehosttypes".Contains(helpTerm, StringComparison.OrdinalIgnoreCase))
             {
-                sb.AppendLine($" - GetPortfolios");
-                if ("getportfolios".Equals(helpTerm, StringComparison.OrdinalIgnoreCase)) 
+                sb.AppendLine($" - GetServiceHostTypes");
+                if ("getservicehosttypes".Equals(helpTerm, StringComparison.OrdinalIgnoreCase)) 
                 {
-                    this.PrintGetPortfoliosHelp(sb);
+                    this.PrintGetServiceHostTypesHelp(sb);
+                }
+                found = true;
+            }
+            if ("getserviceproducts".Contains(helpTerm, StringComparison.OrdinalIgnoreCase))
+            {
+                sb.AppendLine($" - GetServiceProducts");
+                if ("getserviceproducts".Equals(helpTerm, StringComparison.OrdinalIgnoreCase)) 
+                {
+                    this.PrintGetServiceProductsHelp(sb);
+                }
+                found = true;
+            }
+            if ("getserviceplans".Contains(helpTerm, StringComparison.OrdinalIgnoreCase))
+            {
+                sb.AppendLine($" - GetServicePlans");
+                if ("getserviceplans".Equals(helpTerm, StringComparison.OrdinalIgnoreCase)) 
+                {
+                    this.PrintGetServicePlansHelp(sb);
+                }
+                found = true;
+            }
+            if ("getsdklanguages".Contains(helpTerm, StringComparison.OrdinalIgnoreCase))
+            {
+                sb.AppendLine($" - GetSDKLanguages");
+                if ("getsdklanguages".Equals(helpTerm, StringComparison.OrdinalIgnoreCase)) 
+                {
+                    this.PrintGetSDKLanguagesHelp(sb);
                 }
                 found = true;
             }
@@ -157,8 +197,15 @@ namespace CLIClassLibrary.RoleHandlers
                     }).Wait(30000);
                     break;                   
 
-                case "getportfolioitems":
-                    this.SMQActor.GetPortfolioItems(payload, (reply, bdea) =>
+                case "getplanproducts":
+                    this.SMQActor.GetPlanProducts(payload, (reply, bdea) =>
+                    {
+                        result = SerializePayload(reply);
+                    }).Wait(30000);
+                    break;                   
+
+                case "getservicehostendpoints":
+                    this.SMQActor.GetServiceHostEndpoints(payload, (reply, bdea) =>
                     {
                         result = SerializePayload(reply);
                     }).Wait(30000);
@@ -171,8 +218,29 @@ namespace CLIClassLibrary.RoleHandlers
                     }).Wait(30000);
                     break;                   
 
-                case "getportfolios":
-                    this.SMQActor.GetPortfolios(payload, (reply, bdea) =>
+                case "getservicehosttypes":
+                    this.SMQActor.GetServiceHostTypes(payload, (reply, bdea) =>
+                    {
+                        result = SerializePayload(reply);
+                    }).Wait(30000);
+                    break;                   
+
+                case "getserviceproducts":
+                    this.SMQActor.GetServiceProducts(payload, (reply, bdea) =>
+                    {
+                        result = SerializePayload(reply);
+                    }).Wait(30000);
+                    break;                   
+
+                case "getserviceplans":
+                    this.SMQActor.GetServicePlans(payload, (reply, bdea) =>
+                    {
+                        result = SerializePayload(reply);
+                    }).Wait(30000);
+                    break;                   
+
+                case "getsdklanguages":
+                    this.SMQActor.GetSDKLanguages(payload, (reply, bdea) =>
                     {
                         result = SerializePayload(reply);
                     }).Wait(30000);
@@ -211,25 +279,49 @@ namespace CLIClassLibrary.RoleHandlers
             
         }
         
-        public void PrintGetPortfolioItemsHelp(StringBuilder sb)
+        public void PrintGetPlanProductsHelp(StringBuilder sb)
         {
             
                 
                 sb.AppendLine();
                 sb.AppendLine($"* * * * * * * * * * * * * * * * * * * * * * * * * * *");
-                sb.AppendLine($"* *  OBJECT DEF: PortfolioItem     *");
+                sb.AppendLine($"* *  OBJECT DEF: PlanProduct     *");
                 sb.AppendLine($"* * * * * * * * * * * * * * * * * * * * * * * * * * *");
                 sb.AppendLine();
                 
-                    sb.AppendLine($"R      - PortfolioItemId");
-                    sb.AppendLine($"R      - Attachments");
-                    sb.AppendLine($"R      - ItemStatus");
-                    sb.AppendLine($"R      - ItemType");
+                    sb.AppendLine($"R      - IsActive");
+                    sb.AppendLine($"R      - IsIncludedByDefault");
+                    sb.AppendLine($"R      - Max");
+                    sb.AppendLine($"R      - Min");
                     sb.AppendLine($"R      - Name");
                     sb.AppendLine($"R      - Notes");
-                    sb.AppendLine($"R      - Portfolio");
-                    sb.AppendLine($"R      - PublishUrl");
-                    sb.AppendLine($"R      - Who");
+                    sb.AppendLine($"R      - PlanDiscount");
+                    sb.AppendLine($"R      - PlanPrice");
+                    sb.AppendLine($"R      - ServicePlan");
+                    sb.AppendLine($"R      - ServicePlanName");
+                
+            
+        }
+        
+        public void PrintGetServiceHostEndpointsHelp(StringBuilder sb)
+        {
+            
+                
+                sb.AppendLine();
+                sb.AppendLine($"* * * * * * * * * * * * * * * * * * * * * * * * * * *");
+                sb.AppendLine($"* *  OBJECT DEF: ServiceHostEndpoint     *");
+                sb.AppendLine($"* * * * * * * * * * * * * * * * * * * * * * * * * * *");
+                sb.AppendLine();
+                
+                    sb.AppendLine($"R      - ServiceHostEndpointId");
+                    sb.AppendLine($"R      - Alias");
+                    sb.AppendLine($"R      - IsEC2");
+                    sb.AppendLine($"R      - MaxCPU");
+                    sb.AppendLine($"R      - MaxMemory");
+                    sb.AppendLine($"R      - Name");
+                    sb.AppendLine($"R      - Notes");
+                    sb.AppendLine($"R      - ProjectTasks");
+                    sb.AppendLine($"R      - IsEAPIEndpoint");
                 
             
         }
@@ -245,41 +337,96 @@ namespace CLIClassLibrary.RoleHandlers
                 sb.AppendLine();
                 
                     sb.AppendLine($"R      - EffortlessAPIServiceId");
-                    sb.AppendLine($"R      - EffortlessApiProjects");
                     sb.AppendLine($"R      - Attachments");
                     sb.AppendLine($"R      - DisplayName");
-                    sb.AppendLine($"None      - EffortlessAPIProjects");
                     sb.AppendLine($"R      - IsActive");
                     sb.AppendLine($"R      - Name");
                     sb.AppendLine($"R      - Notes");
-                    sb.AppendLine($"None      - ProjectConnections");
-                    sb.AppendLine($"None      - ServiceKeys");
-                    sb.AppendLine($"R      - ServicePlan");
                     sb.AppendLine($"R      - ServiceStatus");
                     sb.AppendLine($"R      - ServiceType");
                     sb.AppendLine($"R      - SortOrder");
-                    sb.AppendLine($"R      - AirtableRecordID");
                 
             
         }
         
-        public void PrintGetPortfoliosHelp(StringBuilder sb)
+        public void PrintGetServiceHostTypesHelp(StringBuilder sb)
         {
             
                 
                 sb.AppendLine();
                 sb.AppendLine($"* * * * * * * * * * * * * * * * * * * * * * * * * * *");
-                sb.AppendLine($"* *  OBJECT DEF: Portfolio     *");
+                sb.AppendLine($"* *  OBJECT DEF: ServiceHostType     *");
                 sb.AppendLine($"* * * * * * * * * * * * * * * * * * * * * * * * * * *");
                 sb.AppendLine();
                 
-                    sb.AppendLine($"R      - PortfolioId");
-                    sb.AppendLine($"R      - AiirtableUrl");
+                    sb.AppendLine($"R      - ServiceHostTypeId");
                     sb.AppendLine($"R      - Attachments");
-                    sb.AppendLine($"R      - BackEndWho");
                     sb.AppendLine($"R      - Name");
                     sb.AppendLine($"R      - Notes");
-                    sb.AppendLine($"R      - PortfolioItem");
+                    sb.AppendLine($"R      - IsEAPIEndpoint");
+                
+            
+        }
+        
+        public void PrintGetServiceProductsHelp(StringBuilder sb)
+        {
+            
+                
+                sb.AppendLine();
+                sb.AppendLine($"* * * * * * * * * * * * * * * * * * * * * * * * * * *");
+                sb.AppendLine($"* *  OBJECT DEF: ServiceProduct     *");
+                sb.AppendLine($"* * * * * * * * * * * * * * * * * * * * * * * * * * *");
+                sb.AppendLine();
+                
+                    sb.AppendLine($"R      - ServiceProductId");
+                    sb.AppendLine($"R      - Attachments");
+                    sb.AppendLine($"R      - Category");
+                    sb.AppendLine($"R      - DisplayName");
+                    sb.AppendLine($"R      - EffectiveQuantity");
+                    sb.AppendLine($"R      - Name");
+                    sb.AppendLine($"R      - Notes");
+                    sb.AppendLine($"R      - SortOrder");
+                
+            
+        }
+        
+        public void PrintGetServicePlansHelp(StringBuilder sb)
+        {
+            
+                
+                sb.AppendLine();
+                sb.AppendLine($"* * * * * * * * * * * * * * * * * * * * * * * * * * *");
+                sb.AppendLine($"* *  OBJECT DEF: ServicePlan     *");
+                sb.AppendLine($"* * * * * * * * * * * * * * * * * * * * * * * * * * *");
+                sb.AppendLine();
+                
+                    sb.AppendLine($"R      - ServicePlanId");
+                    sb.AppendLine($"R      - DisplayName");
+                    sb.AppendLine($"R      - IsActive");
+                    sb.AppendLine($"R      - IsDeveloperPlan");
+                    sb.AppendLine($"R      - MonthlyPrice");
+                    sb.AppendLine($"R      - Name");
+                    sb.AppendLine($"R      - Notes");
+                    sb.AppendLine($"R      - ServicePlanProducts");
+                    sb.AppendLine($"R      - SortOrder");
+                
+            
+        }
+        
+        public void PrintGetSDKLanguagesHelp(StringBuilder sb)
+        {
+            
+                
+                sb.AppendLine();
+                sb.AppendLine($"* * * * * * * * * * * * * * * * * * * * * * * * * * *");
+                sb.AppendLine($"* *  OBJECT DEF: SDKLanguage     *");
+                sb.AppendLine($"* * * * * * * * * * * * * * * * * * * * * * * * * * *");
+                sb.AppendLine();
+                
+                    sb.AppendLine($"R      - SDKLanguageId");
+                    sb.AppendLine($"R      - Attachments");
+                    sb.AppendLine($"R      - Name");
+                    sb.AppendLine($"R      - Notes");
                 
             
         }

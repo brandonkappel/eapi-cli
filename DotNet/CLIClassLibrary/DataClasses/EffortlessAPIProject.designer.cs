@@ -191,6 +191,16 @@ namespace EAPI.CLI.Lib.DataClasses
         [RemoteIsCollection]
         public Nullable<decimal> AccountDiscount { get; set; }
     
+        [JsonProperty(DefaultValueHandling = DefaultValueHandling.IgnoreAndPopulate, PropertyName = "CustomMaxPages")]
+        public Nullable<Int32> CustomMaxPages { get; set; }
+    
+        [JsonProperty(DefaultValueHandling = DefaultValueHandling.IgnoreAndPopulate, PropertyName = "AccountDefaultMaxPages")]
+        [RemoteIsCollection]
+        public Nullable<Int32> AccountDefaultMaxPages { get; set; }
+    
+        [JsonProperty(DefaultValueHandling = DefaultValueHandling.IgnoreAndPopulate, PropertyName = "MaxPages")]
+        public Nullable<Int32> MaxPages { get; set; }
+    
 
         
 

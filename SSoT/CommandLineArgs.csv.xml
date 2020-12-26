@@ -93,4 +93,14 @@
     <ExampleValue>specific topic</ExampleValue>
     <SortOrder>11</SortOrder>
   </CommandLineArg>
+  <CommandLineArg>
+    <Name>reloadCache</Name>
+    <Description>Reload cache of project types, plans and such</Description>
+    <DataType>bool</DataType>
+    <IsOptional>TRUE</IsOptional>
+    <IsList>FALSE</IsList>
+    <DefaultValue>FALSE</DefaultValue>
+    <ExampleValue>false</ExampleValue>
+    <SortOrder>12</SortOrder>
+  </CommandLineArg>
 </CommandLineArgs>
