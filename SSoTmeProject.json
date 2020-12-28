@@ -287,6 +287,89 @@
       "Name": "XmlXsltTransform",
       "RelativePath": "/DotNet/CLIClassLibrary/RoleHandlers",
       "CommandLine": "codee42/xml-xslt-transform -i ..\\..\\..\\SassyMQ\\Lexicon.smql -i CreateRoleHandlers.xslt -i ..\\..\\..\\ODXML\\DataSchema.odxml"
+    },
+    {
+      "MatchedTranspiler": {
+        "TranspilerId": "6dffda43-46a9-482a-9eca-c9061ab22fef",
+        "AccountHolderId": "1e876e4f-d63b-4698-bd68-3bc27876e41e",
+        "Name": "CsvToXml",
+        "DisplayName": "Csv To Xml",
+        "Description": "Converts a CSV File into an XML File where the names of the elemnts are derived from the column names",
+        "CreatedOn": "2017-06-02T15:52:41.903",
+        "IsActive": true,
+        "CurrentRoutingKey": "amq.gen-oTOwWY09y9fflImFqdwieA",
+        "LowerName": "csvtoxml",
+        "UpperName": "CSVTOXML",
+        "LowerHyphenName": "csv-to-xml",
+        "ReadMeMD": "Turns a csv file into an xml file.  It uses the CSV Column Headers as the Element names within the Xml.",
+        "InputDescriptionMD": "A CSV File Data.csv:\r\n\r\nFoo, Bar, Baz\r\n1, 2, 3\r\n3, 2, 1",
+        "OutputDescriptionMD": "An Xml File\r\n<Datas>\r\n   <Data>\r\n      <Foo> 1 </Foo>\r\n      <Bar> 2 </Bar>\r\n      <Baz> 3 </Baz>\r\n   </Data>\r\n   <Data>\r\n      <Foo> 3 </Foo>\r\n      <Bar> 2 </Bar>\r\n      <Baz> 1 </Baz>\r\n   </Data>\r\n </Datas>",
+        "InputFileTypeId": "2b02094e-3b80-4a07-8db2-0c2f38d44328",
+        "OutputFileTypeId": "f1b92a2a-3f83-4000-9b37-57f920e14419",
+        "Category": "type-conversion",
+        "IsRecommended": true,
+        "TranspileRequests": [],
+        "TranspilerInstances": [],
+        "TranspilerVersions": [
+          {
+            "TranspilerVersionId": "22d43219-5632-4728-94b5-8022915aed07",
+            "TranspilerId": "6dffda43-46a9-482a-9eca-c9061ab22fef",
+            "Name": "v1",
+            "CreatedOn": "2017-06-02T15:52:51.403",
+            "IsActive": true,
+            "TranspilerFileTypeId_TranspilerInputHints": [],
+            "TranspilerInstances": [],
+            "ReplacedByTranspilerVersionId_TranspilerVersions": []
+          }
+        ]
+      },
+      "CLIHandler": null,
+      "ProjectTranspilerId": "c44e536b-b77f-4f5a-a54a-69252ba54afa",
+      "Name": "CsvToXml",
+      "RelativePath": "/DotNet/CLIClassLibrary/SeedRepos",
+      "CommandLine": "codee42/csv-to-xml -i ./SeedRepositories.csv -o SeedRepos.xml"
+    },
+    {
+      "MatchedTranspiler": {
+        "TranspilerId": "ba509977-74bf-486e-a405-1b2125bd5d15",
+        "AccountHolderId": "1e876e4f-d63b-4698-bd68-3bc27876e41e",
+        "Name": "XmlToJson",
+        "DisplayName": "Xml To Json",
+        "Description": "Converts XML to JSON using the NewtonSoft C# conversion tools.",
+        "CreatedOn": "2017-06-02T15:52:50.193",
+        "IsActive": true,
+        "CurrentRoutingKey": "amq.gen-oTOwWY09y9fflImFqdwieA",
+        "LowerName": "xmltojson",
+        "UpperName": "XMLTOJSON",
+        "LowerHyphenName": "xml-to-json",
+        "ReadMeMD": "Converts an emil file into a json file with exactly the same data, just in a Jsony sort of syntax.",
+        "InputDescriptionMD": "An XML file\r\n\r\nMyData.Xml\r\n<Foo>\r\n   <Item1>Item value</Item1>\r\n   <Item2>Item value</Item2>\r\n</Foo>",
+        "OutputDescriptionMD": "A Json file with exactly the same data, but in JSon format.\r\n\r\n{\r\n 'foo' : \r\n   { 'item1' : 'value 1',\r\n     'Item2: \"value 2'\r\n  }\r\n}",
+        "ExampleMD": "ssotme XmlToJson -i MyData.xml",
+        "InputFileTypeId": "f1b92a2a-3f83-4000-9b37-57f920e14419",
+        "OutputFileTypeId": "e827499f-f215-4b35-8dae-6bd423a75e4c",
+        "Category": "type-conversion",
+        "IsRecommended": true,
+        "TranspileRequests": [],
+        "TranspilerInstances": [],
+        "TranspilerVersions": [
+          {
+            "TranspilerVersionId": "2d32ee25-12f8-47c5-bd9a-3940985bb6af",
+            "TranspilerId": "ba509977-74bf-486e-a405-1b2125bd5d15",
+            "Name": "v1",
+            "CreatedOn": "2017-06-02T15:52:51.377",
+            "IsActive": true,
+            "TranspilerFileTypeId_TranspilerInputHints": [],
+            "TranspilerInstances": [],
+            "ReplacedByTranspilerVersionId_TranspilerVersions": []
+          }
+        ]
+      },
+      "CLIHandler": null,
+      "ProjectTranspilerId": "b4a38e3b-2846-469e-874c-c303979f3c6e",
+      "Name": "XmlToJson",
+      "RelativePath": "/DotNet/CLIClassLibrary/SeedRepos",
+      "CommandLine": "codee42/xml-to-json -i ./SeedRepos.xml -o SeedRepos.json"
     }
   ]
 }

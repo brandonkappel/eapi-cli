@@ -2,7 +2,8 @@
   "profiles": {
     "EAPICLI": {
       "commandName": "Project",
-      "commandLineArgs": "-reloadCache"
+      "commandLineArgs": "eapi -authenticate cli@ssot.me -demoPassword=clip42123 -as Developer",
+      "workingDirectory": "C:\\Users\\auto1\\go\\src\\github.com\\effortlessapi\\qbod3"
     }
   }
 }

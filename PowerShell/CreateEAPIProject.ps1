@@ -37,7 +37,9 @@ Function CreateEAPIProject {
 
 					$response = eapi AddEffortlessAPIProject -bodyFile ./data/project.json|convertfrom-json
 					$response
+					$response|convertto-json|out-file ./data/project.json
 					$project = $response|select -expand EffortlessAPIProject
+
 					$projectId = $project|select -expand EffortlessAPIProjectId
 
 					$projectEmail = @{ProjectEmail=@{Project=$projectId;Account=$account.EffortlessAPIAccountId}}|convertto-json
@@ -81,6 +83,7 @@ Function CreateEAPIProject {
 					$adminRole|out-file ./data/adminRole.json
 					$response = eapi AddProjectRole -bodyFile ./data/adminRole.json|convertfrom-json
 					$response
+
 
 				}
 			}

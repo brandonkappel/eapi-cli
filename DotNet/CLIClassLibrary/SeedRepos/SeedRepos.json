@@ -1,0 +1,213 @@
+{
+  "SeedRepositories": {
+    "SeedRepository": [
+      {
+        "Name": "eapi-airtable-akveo-seed",
+        "ShortName": "airtable-akveo",
+        "DisplayName": "Airtable Akveo Administrative Web App",
+        "RepositoryUrl": "https://github.com/effortlessapi/eapi-airtable-akveo-seed/",
+        "DefaultRepositoryUrl": "https://github.com/effortlessapi/eapi-airtable-akveo-seed",
+        "PrivateUrl": "git@github.com:eejai42/eapi-airtable-akveo-seed.git",
+        "Notes": "Administrative Web Application\r\n\r\nStarts with authenticated web app which provides data access to all information available through the API.",
+        "IsActive": "checked",
+        "IsAirtable": "checked",
+        "IsAkveo": "checked",
+        "IsAngular": "checked",
+        "IsWebApp": "checked",
+        "AdditionalDeploymentCommands": "npm install\r\nng serve"
+      },
+      {
+        "Name": "eapi-airtable-ionic-seed",
+        "ShortName": "airtable-ionic",
+        "DisplayName": "Airtable Ionic cross-platform Mobile App",
+        "RepositoryUrl": "https://github.com/effortlessapi/eapi-airtable-ionic-seed/",
+        "DefaultRepositoryUrl": "https://github.com/effortlessapi/eapi-airtable-ionic-seed",
+        "PrivateUrl": "git@github.com:eejai42/eapi-airtable-akveo-seed.git",
+        "Notes": "Administrative Web Application\r\n\r\nStarts with authenticated web app which provides data access to all information available through the API.",
+        "IsActive": "checked",
+        "IsAirtable": "checked",
+        "IsAngular": "checked",
+        "IsIonic": "checked",
+        "IsIOS": "checked",
+        "IsAndroid": "checked",
+        "IsWebApp": "checked"
+      },
+      {
+        "Name": "eapi-airtable-angular-seed",
+        "ShortName": "airtable-angular",
+        "DisplayName": "Airtable Angular Web App",
+        "RepositoryUrl": "https://github.com/effortlessapi/",
+        "DefaultRepositoryUrl": "https://github.com/effortlessapi/eapi-airtable-angular-seed",
+        "PrivateUrl": "git@github.com:eejai42/eapi-airtable-angular-seed.git",
+        "IsAirtable": "checked",
+        "IsAngular": "checked"
+      },
+      {
+        "Name": "eapi-airtable-python-seed",
+        "ShortName": "airtable-python",
+        "DisplayName": "Airtable Python Console App",
+        "RepositoryUrl": "https://github.com/effortlessapi/eapi-airtable-python-seed/",
+        "DefaultRepositoryUrl": "https://github.com/effortlessapi/eapi-airtable-python-seed",
+        "PrivateUrl": "git@github.com:eejai42/eapi-airtable-python-seed.git",
+        "Notes": "Python Console Application\r\n\r\nImplement business logic in .net, and publish it to a docker container for ongoing back end support.",
+        "IsActive": "checked",
+        "IsAirtable": "checked",
+        "IsPython": "checked"
+      },
+      {
+        "Name": "eapi-airtable-dotnet-seed",
+        "ShortName": "airtable-dotnet",
+        "DisplayName": "Airtable .Net Core Console app",
+        "RepositoryUrl": "https://github.com/effortlessapi/eapi-airtable-dotnet-seed/",
+        "DefaultRepositoryUrl": "https://github.com/effortlessapi/eapi-airtable-dotnet-seed",
+        "PrivateUrl": "git@github.com:eejai42/eapi-airtable-dotnet-seed.git",
+        "Notes": ".Net Console Application\r\n\r\nImplement business logic in .net, and publish it to a docker container for ongoing back end support.",
+        "IsActive": "checked",
+        "IsAirtable": "checked",
+        "IsDotNet": "checked"
+      },
+      {
+        "Name": "eapi-airtable-ios-seed",
+        "ShortName": "airtable-ios",
+        "DisplayName": "Airtable iOS Native App",
+        "RepositoryUrl": "https://github.com/effortlessapi/eapi-airtable-ios-seed",
+        "DefaultRepositoryUrl": "https://github.com/effortlessapi/eapi-airtable-ios-seed",
+        "IsAirtable": "checked",
+        "IsIOS": "checked"
+      },
+      {
+        "Name": "eapi-airtable-android-seed",
+        "ShortName": "airtable-android",
+        "DisplayName": "Airtable Android Native App",
+        "RepositoryUrl": "https://github.com/effortlessapi/eapi-airtable-android-seed",
+        "DefaultRepositoryUrl": "https://github.com/effortlessapi/eapi-airtable-android-seed",
+        "IsAirtable": "checked",
+        "IsAndroid": "checked"
+      },
+      {
+        "Name": "eapi-sqlserver-akveo-seed",
+        "ShortName": "sqlserver-akveo",
+        "DisplayName": "SQL Akveo Administrative Web App",
+        "RepositoryUrl": "https://github.com/effortlessapi/eapi-sqlserver-akveo-seed",
+        "DefaultRepositoryUrl": "https://github.com/effortlessapi/eapi-sqlserver-akveo-seed",
+        "IsSqlServer": "checked",
+        "IsAkveo": "checked",
+        "IsAngular": "checked",
+        "IsWebApp": "checked",
+        "AdditionalDeploymentCommands": "npm install\r\nng serve"
+      },
+      {
+        "Name": "eapi-sqlserver-angular-seed",
+        "ShortName": "sqlserver-angular",
+        "DisplayName": "SQL Angular Web App",
+        "RepositoryUrl": "https://github.com/effortlessapi/eapi-sqlserver-angular-seed",
+        "DefaultRepositoryUrl": "https://github.com/effortlessapi/eapi-sqlserver-angular-seed",
+        "IsSqlServer": "checked",
+        "IsAngular": "checked"
+      },
+      {
+        "Name": "eapi-sqlserver-ionic-seed",
+        "ShortName": "sqlserver-ionic",
+        "DisplayName": "SQL Ionic cross-platform Mobile App",
+        "RepositoryUrl": "https://github.com/effortlessapi/eapi-airtable-ionic-seed/",
+        "DefaultRepositoryUrl": "https://github.com/effortlessapi/eapi-sqlserver-ionic-seed",
+        "PrivateUrl": "git@github.com:eejai42/eapi-airtable-akveo-seed.git",
+        "Notes": "Administrative Web Application\r\n\r\nStarts with authenticated web app which provides data access to all information available through the API.",
+        "IsActive": "checked",
+        "IsSqlServer": "checked",
+        "IsAngular": "checked",
+        "IsIonic": "checked",
+        "IsIOS": "checked",
+        "IsAndroid": "checked",
+        "IsWebApp": "checked"
+      },
+      {
+        "Name": "eapi-sqlserver-python-seed",
+        "ShortName": "sqlserver-python",
+        "DisplayName": "SQL Python Console App",
+        "RepositoryUrl": "https://github.com/effortlessapi/eapi-sqlserver-python-seed",
+        "DefaultRepositoryUrl": "https://github.com/effortlessapi/eapi-sqlserver-python-seed",
+        "IsSqlServer": "checked",
+        "IsPython": "checked"
+      },
+      {
+        "Name": "eapi-sqlserver-dotnet-seed",
+        "ShortName": "sqlserver-dotnet",
+        "DisplayName": "SQL .Net Core Console app",
+        "RepositoryUrl": "https://github.com/effortlessapi/eapi-sqlserver-dotnet-seed",
+        "DefaultRepositoryUrl": "https://github.com/effortlessapi/eapi-sqlserver-dotnet-seed",
+        "IsSqlServer": "checked",
+        "IsDotNet": "checked"
+      },
+      {
+        "Name": "eapi-sqlserver-coordinator-seed",
+        "ShortName": "sqlserver-coordinator",
+        "DisplayName": "SQL .Net Core Coordinator Starter",
+        "RepositoryUrl": "https://github.com/effortlessapi/eapi-sqlserver-coordinator-seed",
+        "DefaultRepositoryUrl": "https://github.com/effortlessapi/eapi-sqlserver-coordinator-seed",
+        "IsSqlServer": "checked",
+        "IsDotNet": "checked"
+      },
+      {
+        "Name": "eapi-sqlserver-ios-seed",
+        "ShortName": "sqlserver-ios",
+        "DisplayName": "SQL iOS Native App",
+        "RepositoryUrl": "https://github.com/effortlessapi/eapi-sqlserver-ios-seed",
+        "DefaultRepositoryUrl": "https://github.com/effortlessapi/eapi-sqlserver-ios-seed",
+        "IsSqlServer": "checked",
+        "IsIOS": "checked"
+      },
+      {
+        "Name": "eapi-sqlserver-android-seed",
+        "ShortName": "sqlserver-android",
+        "DisplayName": "SQL Android Native App",
+        "RepositoryUrl": "https://github.com/effortlessapi/eapi-sqlserver-android-seed",
+        "DefaultRepositoryUrl": "https://github.com/effortlessapi/eapi-sqlserver-android-seed",
+        "IsSqlServer": "checked",
+        "IsAndroid": "checked"
+      },
+      {
+        "Name": "eapi-airtable-winapp-seed",
+        "ShortName": "airtable-winapp",
+        "DisplayName": "Airtable .Net Native Windows app",
+        "RepositoryUrl": "https://github.com/effortlessapi/eapi-airtable-winapp-seed/",
+        "DefaultRepositoryUrl": "https://github.com/effortlessapi/eapi-airtable-winapp-seed",
+        "PrivateUrl": "git@github.com:eejai42/eapi-airtable-winapp-seed.git",
+        "Notes": ".Net Windows Native App Application\r\n\r\nImplement business logic in .net, and publish it to clickonce.",
+        "IsActive": "checked",
+        "IsAirtable": "checked",
+        "IsDotNet": "checked"
+      },
+      {
+        "Name": "eapi-airtable-monaca-seed",
+        "ShortName": "airtable-monaca",
+        "DisplayName": "Monaca Cordova Seed",
+        "RepositoryUrl": "https://github.com/effortlessapi/eapi-airtable-monaca-seed",
+        "DefaultRepositoryUrl": "https://github.com/effortlessapi/eapi-airtable-monaca-seed",
+        "PrivateUrl": "git@github.com:eejai42/eapi-airtable-monaca-seed",
+        "Notes": "Cross Platform Cordova Project",
+        "IsActive": "checked",
+        "IsAirtable": "checked",
+        "IsIonic": "checked",
+        "IsDotNet": "checked",
+        "IsIOS": "checked",
+        "IsAndroid": "checked",
+        "IsWebApp": "checked"
+      },
+      {
+        "Name": "eapi-project-cli-seed",
+        "ShortName": "project-cli",
+        "DisplayName": "EffortlessAPI Project CLI",
+        "RepositoryUrl": "https://github.com/effortlessapi/eapi-project-cli-seed",
+        "DefaultRepositoryUrl": "https://github.com/effortlessapi/eapi-project-cli-seed",
+        "PrivateUrl": "git@github.com:eejai42/effortlessapi-cli-seed",
+        "Notes": "A simple .Net Core Fully automatable API Access to your source data.",
+        "IsActive": "checked",
+        "IsAirtable": "checked",
+        "IsDotNet": "checked",
+        "SeedReplacements": "eapi-project-cli-seed_REPLACE_ej-tictactoe-demo_WITH_$EffortlessAPIProject.Alias$",
+        "SeedReplacementsText": "REPLACE_ej-tictactoe-demo_WITH_$EffortlessAPIProject.Alias$"
+      }
+    ]
+  }
+}

@@ -5,6 +5,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="SeedRepos\SeedRepos.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="SeedRepos\SeedRepos.json" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="DataClasses\" />
   </ItemGroup>
 
