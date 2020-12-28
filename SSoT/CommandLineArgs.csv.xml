@@ -9,6 +9,15 @@
     <SortOrder>1</SortOrder>
   </CommandLineArg>
   <CommandLineArg>
+    <Name>whoami</Name>
+    <Description>Check who you are currently operating as</Description>
+    <DataType>bool</DataType>
+    <IsOptional>TRUE</IsOptional>
+    <IsList>FALSE</IsList>
+    <ExampleValue>whoami</ExampleValue>
+    <SortOrder>1</SortOrder>
+  </CommandLineArg>
+  <CommandLineArg>
     <Name>demoPassword</Name>
     <Description>the user's password</Description>
     <DataType>string</DataType>
@@ -100,7 +109,47 @@
     <IsOptional>TRUE</IsOptional>
     <IsList>FALSE</IsList>
     <DefaultValue>FALSE</DefaultValue>
-    <ExampleValue>false</ExampleValue>
+    <ExampleValue>FALSE</ExampleValue>
     <SortOrder>12</SortOrder>
+  </CommandLineArg>
+  <CommandLineArg>
+    <Name>createAirtableProject</Name>
+    <Description>Create an EffortlessAPI for Airtable Project based on an airtable.json application.</Description>
+    <DataType>string</DataType>
+    <IsOptional>TRUE</IsOptional>
+    <IsList>FALSE</IsList>
+    <DefaultValue>FALSE</DefaultValue>
+    <ExampleValue>FALSE</ExampleValue>
+    <SortOrder>13</SortOrder>
+  </CommandLineArg>
+  <CommandLineArg>
+    <Name>name</Name>
+    <Description>Name for the new project.</Description>
+    <DataType>string</DataType>
+    <IsOptional>TRUE</IsOptional>
+    <IsList>FALSE</IsList>
+    <DefaultValue>FALSE</DefaultValue>
+    <ExampleValue>FALSE</ExampleValue>
+    <SortOrder>14</SortOrder>
+  </CommandLineArg>
+  <CommandLineArg>
+    <Name>appId</Name>
+    <Description>application.id of the airtable project to add.</Description>
+    <DataType>string</DataType>
+    <IsOptional>TRUE</IsOptional>
+    <IsList>FALSE</IsList>
+    <DefaultValue>FALSE</DefaultValue>
+    <ExampleValue>FALSE</ExampleValue>
+    <SortOrder>15</SortOrder>
+  </CommandLineArg>
+  <CommandLineArg>
+    <Name>listSeeds</Name>
+    <Description>List all available seeds</Description>
+    <DataType>bool</DataType>
+    <IsOptional>TRUE</IsOptional>
+    <IsList>FALSE</IsList>
+    <DefaultValue>FALSE</DefaultValue>
+    <ExampleValue>#NAME?</ExampleValue>
+    <SortOrder>16</SortOrder>
   </CommandLineArg>
 </CommandLineArgs>

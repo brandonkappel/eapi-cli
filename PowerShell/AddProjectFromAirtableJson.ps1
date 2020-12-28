@@ -13,13 +13,8 @@ function ParseAirtable() {
 	$airtable
 }
 
-function GetFinalResult() {
-	$airtable = ParseAirtable;
-	$airtable
-}
-
 Write-Host "Getting final result...";
-$final = GetFinalResult;
+$final = ParseAirtable;
 $final|convertto-json -depth 10|out-file ./data/airtable.json
 $projName = $final|select -expand name
 $projAirtableId = $final|select -expand id

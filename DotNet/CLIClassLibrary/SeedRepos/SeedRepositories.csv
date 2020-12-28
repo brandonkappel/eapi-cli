@@ -1,0 +1,33 @@
+﻿Name,ShortName,DisplayName,LaunchUrl,RepositoryUrl,DefaultRepositoryUrl,PrivateUrl,Notes,IsActive,Attachments,IsAirtable,IsSqlServer,IsAkveo,IsAngular,IsReact,IsIonic,IsPython,IsDotNet,IsIOS,IsAndroid,IsWebApp,IsWinApp,IsMacOS,IsVue,IsJQuery,AdditionalDeploymentInstructions,AdditionalDeploymentCommands,SeedReplacements,SeedReplacementsText
+eapi-airtable-akveo-seed,airtable-akveo,Airtable Akveo Administrative Web App,,https://github.com/effortlessapi/eapi-airtable-akveo-seed/,https://github.com/effortlessapi/eapi-airtable-akveo-seed,git@github.com:eejai42/eapi-airtable-akveo-seed.git,"Administrative Web Application
+
+Starts with authenticated web app which provides data access to all information available through the API.",checked,,checked,,checked,checked,,,,,,,checked,,,,,,"npm install
+ng serve",,
+eapi-airtable-ionic-seed,airtable-ionic,Airtable Ionic cross-platform Mobile App,,https://github.com/effortlessapi/eapi-airtable-ionic-seed/,https://github.com/effortlessapi/eapi-airtable-ionic-seed,git@github.com:eejai42/eapi-airtable-akveo-seed.git,"Administrative Web Application
+
+Starts with authenticated web app which provides data access to all information available through the API.",checked,,checked,,,checked,,checked,,,checked,checked,checked,,,,,,,,
+eapi-airtable-angular-seed,airtable-angular,Airtable Angular Web App,,https://github.com/effortlessapi/,https://github.com/effortlessapi/eapi-airtable-angular-seed,git@github.com:eejai42/eapi-airtable-angular-seed.git,,,,checked,,,checked,,,,,,,,,,,,,,,
+eapi-airtable-python-seed,airtable-python,Airtable Python Console App,,https://github.com/effortlessapi/eapi-airtable-python-seed/,https://github.com/effortlessapi/eapi-airtable-python-seed,git@github.com:eejai42/eapi-airtable-python-seed.git,"Python Console Application
+
+Implement business logic in .net, and publish it to a docker container for ongoing back end support.",checked,,checked,,,,,,checked,,,,,,,,,,,,
+eapi-airtable-dotnet-seed,airtable-dotnet,Airtable .Net Core Console app,,https://github.com/effortlessapi/eapi-airtable-dotnet-seed/,https://github.com/effortlessapi/eapi-airtable-dotnet-seed,git@github.com:eejai42/eapi-airtable-dotnet-seed.git,".Net Console Application
+
+Implement business logic in .net, and publish it to a docker container for ongoing back end support.",checked,,checked,,,,,,,checked,,,,,,,,,,,
+eapi-airtable-ios-seed,airtable-ios,Airtable iOS Native App,,https://github.com/effortlessapi/eapi-airtable-ios-seed,https://github.com/effortlessapi/eapi-airtable-ios-seed,,,,,checked,,,,,,,,checked,,,,,,,,,,
+eapi-airtable-android-seed,airtable-android,Airtable Android Native App,,https://github.com/effortlessapi/eapi-airtable-android-seed,https://github.com/effortlessapi/eapi-airtable-android-seed,,,,,checked,,,,,,,,,checked,,,,,,,,,
+eapi-sqlserver-akveo-seed,sqlserver-akveo,SQL Akveo Administrative Web App,,https://github.com/effortlessapi/eapi-sqlserver-akveo-seed,https://github.com/effortlessapi/eapi-sqlserver-akveo-seed,,,,,,checked,checked,checked,,,,,,,checked,,,,,,"npm install
+ng serve",,
+eapi-sqlserver-angular-seed,sqlserver-angular,SQL Angular Web App,,https://github.com/effortlessapi/eapi-sqlserver-angular-seed,https://github.com/effortlessapi/eapi-sqlserver-angular-seed,,,,,,checked,,checked,,,,,,,,,,,,,,,
+eapi-sqlserver-ionic-seed,sqlserver-ionic,SQL Ionic cross-platform Mobile App,,https://github.com/effortlessapi/eapi-airtable-ionic-seed/,https://github.com/effortlessapi/eapi-sqlserver-ionic-seed,git@github.com:eejai42/eapi-airtable-akveo-seed.git,"Administrative Web Application
+
+Starts with authenticated web app which provides data access to all information available through the API.",checked,,,checked,,checked,,checked,,,checked,checked,checked,,,,,,,,
+eapi-sqlserver-python-seed,sqlserver-python,SQL Python Console App,,https://github.com/effortlessapi/eapi-sqlserver-python-seed,https://github.com/effortlessapi/eapi-sqlserver-python-seed,,,,,,checked,,,,,checked,,,,,,,,,,,,
+eapi-sqlserver-dotnet-seed,sqlserver-dotnet,SQL .Net Core Console app,,https://github.com/effortlessapi/eapi-sqlserver-dotnet-seed,https://github.com/effortlessapi/eapi-sqlserver-dotnet-seed,,,,,,checked,,,,,,checked,,,,,,,,,,,
+eapi-sqlserver-coordinator-seed,sqlserver-coordinator,SQL .Net Core Coordinator Starter,,https://github.com/effortlessapi/eapi-sqlserver-coordinator-seed,https://github.com/effortlessapi/eapi-sqlserver-coordinator-seed,,,,,,checked,,,,,,checked,,,,,,,,,,,
+eapi-sqlserver-ios-seed,sqlserver-ios,SQL iOS Native App,,https://github.com/effortlessapi/eapi-sqlserver-ios-seed,https://github.com/effortlessapi/eapi-sqlserver-ios-seed,,,,,,checked,,,,,,,checked,,,,,,,,,,
+eapi-sqlserver-android-seed,sqlserver-android,SQL Android Native App,,https://github.com/effortlessapi/eapi-sqlserver-android-seed,https://github.com/effortlessapi/eapi-sqlserver-android-seed,,,,,,checked,,,,,,,,checked,,,,,,,,,
+eapi-airtable-winapp-seed,airtable-winapp,Airtable .Net Native Windows app,,https://github.com/effortlessapi/eapi-airtable-winapp-seed/,https://github.com/effortlessapi/eapi-airtable-winapp-seed,git@github.com:eejai42/eapi-airtable-winapp-seed.git,".Net Windows Native App Application
+
+Implement business logic in .net, and publish it to clickonce.",checked,,checked,,,,,,,checked,,,,,,,,,,,
+eapi-airtable-monaca-seed,airtable-monaca,Monaca Cordova Seed,,https://github.com/effortlessapi/eapi-airtable-monaca-seed,https://github.com/effortlessapi/eapi-airtable-monaca-seed,git@github.com:eejai42/eapi-airtable-monaca-seed,Cross Platform Cordova Project,checked,,checked,,,,,checked,,checked,checked,checked,checked,,,,,,,,
+eapi-project-cli-seed,project-cli,EffortlessAPI Project CLI,,https://github.com/effortlessapi/eapi-project-cli-seed,https://github.com/effortlessapi/eapi-project-cli-seed,git@github.com:eejai42/effortlessapi-cli-seed,A simple .Net Core Fully automatable API Access to your source data.,checked,,checked,,,,,,,checked,,,,,,,,,,eapi-project-cli-seed_REPLACE_ej-tictactoe-demo_WITH_$EffortlessAPIProject.Alias$,REPLACE_ej-tictactoe-demo_WITH_$EffortlessAPIProject.Alias$

@@ -22,6 +22,9 @@ Options
         [CommandLineOption(Description = "Authenticate as a user", MinOccurs = 0, Aliases = "")]
         public string authenticate { get; set; }
         
+        [CommandLineOption(Description = "Check who you are currently operating as", MinOccurs = 0, Aliases = "")]
+        public bool whoami { get; set; }
+        
         [CommandLineOption(Description = "the user's password", MinOccurs = 0, Aliases = "")]
         public string demoPassword { get; set; }
         
@@ -51,6 +54,18 @@ Options
         
         [CommandLineOption(Description = "Reload cache of project types, plans and such", MinOccurs = 0, Aliases = "")]
         public bool reloadCache { get; set; }
+        
+        [CommandLineOption(Description = "Create an EffortlessAPI for Airtable Project based on an airtable.json application.", MinOccurs = 0, Aliases = "")]
+        public string createAirtableProject { get; set; }
+        
+        [CommandLineOption(Description = "Name for the new project.", MinOccurs = 0, Aliases = "")]
+        public string name { get; set; }
+        
+        [CommandLineOption(Description = "application.id of the airtable project to add.", MinOccurs = 0, Aliases = "")]
+        public string appId { get; set; }
+        
+        [CommandLineOption(Description = "List all available seeds", MinOccurs = 0, Aliases = "")]
+        public bool listSeeds { get; set; }
         
     }
 }
