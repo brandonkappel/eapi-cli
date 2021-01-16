@@ -3,11 +3,9 @@
 namespace SSoTme.Default.Lib.CLIHandler
 {
 
-    public partial class EAPICLIHandler
+    internal class SeedRepositories
     {
-        private class SeedRepositories
-        {
-            public List<SeedRepository> SeedRepository { get; set; }
-        }
+        public List<SeedRepository> SeedRepository { get; set; }
     }
+    
 }

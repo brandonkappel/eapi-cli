@@ -1,8 +1,11 @@
-﻿using Newtonsoft.Json;
+﻿using EAPI.CLI.Lib.DataClasses;
+using Newtonsoft.Json;
 using SSoTme.Default.Lib.CLIHandler;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 using YP.SassyMQ.Lib.RabbitMQ;
 
 namespace CLIClassLibrary.RoleHandlers
@@ -20,6 +23,8 @@ namespace CLIClassLibrary.RoleHandlers
         }
 
         public abstract void AddHelp(StringBuilder sb, string helpTerm);
+
+        public abstract EffortlessAPIProject GetProjectByAlias(string eapiProjectAlias);
     }
 
     public abstract class RoleHandlerBase<T> : RoleHandlerBase
@@ -46,5 +51,25 @@ namespace CLIClassLibrary.RoleHandlers
 
         public string AMQPS { get; }
         public string AccessToken { get; }
+        public delegate Task handler(StandardPayload payload, PayloadHandler handler, PayloadHandler errors = null, int timeout = 30000);
+        public handler GetEffortlessAPIProjectsHandler { get; set; }
+
+        public override EffortlessAPIProject GetProjectByAlias(string eapiProjectAlias)
+        {
+            var payload = this.SMQActor.CreatePayload();
+            payload.AirtableWhere = string.Format($"Alias = '{eapiProjectAlias}'");
+            var result = default(EffortlessAPIProject);
+            this.GetEffortlessAPIProjectsHandler(payload, (reply, bdea) =>
+            {
+                if (reply.HasNoErrors(bdea) && !(reply.EffortlessAPIProjects is null))
+                {
+                    result = reply.EffortlessAPIProjects.FirstOrDefault();
+                }
+            }).Wait(30000);
+
+            return result;
+        }
     }
+
+
 }

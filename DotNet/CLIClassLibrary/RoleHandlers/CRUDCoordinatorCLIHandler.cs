@@ -11,6 +11,7 @@ namespace CLIClassLibrary.RoleHandlers
         public CRUDCoordinatorCLIHandler(string amqps, string accessToken)
             : base(amqps, accessToken)
         {
+            this.GetEffortlessAPIProjectsHandler = this.SMQActor.GetEffortlessAPIProjects;
         }
 
         public override string Handle(string invoke, string data, string where)

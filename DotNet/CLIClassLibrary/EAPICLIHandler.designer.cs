@@ -67,5 +67,11 @@ Options
         [CommandLineOption(Description = "List all available seeds", MinOccurs = 0, Aliases = "")]
         public bool listSeeds { get; set; }
         
+        [CommandLineOption(Description = "Clone the given seed", MinOccurs = 0, Aliases = "")]
+        public string cloneEAPISeed { get; set; }
+        
+        [CommandLineOption(Description = "Override the default URL specified bythe seed repository", MinOccurs = 0, Aliases = "")]
+        public string repoUrl { get; set; }
+        
     }
 }

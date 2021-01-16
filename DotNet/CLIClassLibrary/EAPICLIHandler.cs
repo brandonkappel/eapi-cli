@@ -4,10 +4,12 @@ using Newtonsoft.Json;
 using Plossum.CommandLine;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using YP.SassyMQ.Lib.RabbitMQ;
 
@@ -19,6 +21,7 @@ namespace SSoTme.Default.Lib.CLIHandler
         public static string C_PROJECT_NAME = "effortlessapi";
         private RoleHandlerBase _roleHandler;
         private EffortlessAPIAccount _effortlessAPIAccount;
+        private static List<SeedRepository> _seedRepositories;
 
         static EAPICLIHandler()
         {
@@ -37,10 +40,12 @@ namespace SSoTme.Default.Lib.CLIHandler
         public EAPICLIHandler(string[] args)
         {
             this.amqps = $"amqps://smqPublic:smqPublic@effortlessapi-rmq.ssot.me/{C_PROJECT_NAME}";
-            var list = args.ToList();
-            list.Insert(0, "cli");
             this.Parser = new CommandLineParser(this);
-            this.Parser.Parse(list.ToArray());
+            this.Parser.Parse(args, false);
+            if (this.Parser.Errors.Any())
+            {
+                throw new Exception($"SYNTAX ERRORS: {JsonConvert.SerializeObject(Parser.Errors)}.");
+            }
         }
 
         internal static string GetMostRecentUser()
@@ -76,11 +81,143 @@ namespace SSoTme.Default.Lib.CLIHandler
             if (this.help) return this.ShowHelp();
             else if (this.reloadCache) return EAPICLIHandler.ReloadCacheNow(this);
             else if (this.whoami) return this.CheckWhoIAmNow();
+            else if (this.listSeeds) return this.ListSeedRepositoriesNow();
+            else if (!String.IsNullOrEmpty(this.cloneEAPISeed)) return this.CloneEAPISeed();
             else if (!String.IsNullOrEmpty(this.authenticate)) return this.Authenticate();
             else if (!String.IsNullOrEmpty(this.createAirtableProject) || !String.IsNullOrEmpty(this.appId)) return this.CreateAirtableProjectNow();
-            else if (this.listSeeds) return this.ListSeedRepositoriesNow();
             else if (!String.IsNullOrEmpty(this.invoke)) return this.Invoke();
             else throw new Exception($"Sytnax error: cli -invoke <action> -bodyData {{...}} -as Admin");
+        }
+
+        private string CloneEAPISeed()
+        {
+            if (this.Parser.RemainingArguments.Count < 2) throw new Exception("Syntax: eapi -cloneEAPISeed {project-seed-short-name} ./project-folder {eapi-project-alias}");
+            else
+            {
+                var folderName = this.Parser.RemainingArguments.FirstOrDefault();
+                var folder = new DirectoryInfo(folderName);
+                var eapiProjectAlias = Parser.RemainingArguments.Skip(1).First();
+                var eapiProject = this.RoleHandler.GetProjectByAlias(eapiProjectAlias);
+                var matchingSeed = EAPICLIHandler.SeedRepositories.FirstOrDefault(seedRepo => String.Equals(seedRepo.ShortName, this.cloneEAPISeed, StringComparison.OrdinalIgnoreCase));
+                
+                if (eapiProject is null) throw new Exception($"Can't load the EAPI project requested: {eapiProjectAlias}");
+
+                this.CloneRepo(folder, matchingSeed);
+                this.UpdateFiles(folder, eapiProject, matchingSeed);
+                this.DeleteDotGitFolder(folder);
+                this.InvokeSSoTmeBuild(folder);
+                this.StartSlnIfPresent(folder);
+                return $"CLONED EAPI SEED: {this.cloneEAPISeed} into folder ./{folder.Name}, linking it to EAPI Project {eapiProjectAlias}.";
+            }
+
+        }
+
+        private void StartSlnIfPresent(DirectoryInfo folder)
+        {
+            var slnFile = folder.GetFiles().FirstOrDefault(fi => Path.GetExtension(fi.Name) == ".sln");
+            if (slnFile.Exists)
+            {
+                Console.WriteLine($"SOLUTION: {slnFile.FullName}");
+                // Process.Start(slnFile.FullName);
+            }
+        }
+
+        private void InvokeSSoTmeBuild(DirectoryInfo folder)
+        {
+            var ssotmeProjectFile = new FileInfo(Path.Combine(folder.FullName, "SSoTmeProject.json"));
+            if (ssotmeProjectFile.Exists)
+            {
+                var psi = new ProcessStartInfo("ssotme");
+                psi.WorkingDirectory = folder.FullName;
+                psi.Arguments = "-build";
+                using (var process = Process.Start(psi))
+                {
+                    process.WaitForExit();
+                    process.Close();
+                }
+            }
+
+        }
+
+        private void UpdateFiles(DirectoryInfo folder, EffortlessAPIProject eapiProject, SeedRepository matchingSeed)
+        {
+            var eapiProjectAlias = eapiProject.Alias.SafeToString();
+            var replacements = matchingSeed.SeedReplacementsText.Split(",");
+            replacements.ToList().ForEach(replacement =>
+            {
+                var replaceParts = replacement.SafeToString().Split("_WITH_");
+                if (replaceParts.Length == 2)
+                {
+                    var find = replaceParts[0].Trim().Replace("REPLACE_", "").Trim();
+                    var replace = replaceParts[1].SafeToString();
+                    replace = replace.Replace("$EffortlessAPIProject.Alias$", eapiProjectAlias);
+                    replace = replace.Replace("$EffortlessAPIProject.AliasToken$", eapiProjectAlias.SafeToString().Replace(" ", "").Replace("-", ""));
+                    replace = replace.Replace("$EffortlessAPIProject.UserTable$", eapiProject.UserTable);
+                    replace = replace.Replace("$EffortlessAPIProject.UserTablePlural$", $"{eapiProject.UserTable}s");
+                    replace = replace.Replace("$EffortlessAPIProject.AirtableId$", eapiProject.AirtableId);
+                    this.SearchAndReplace(folder, find, replace);
+                }
+            });
+            object o = -1;
+        }
+
+        private void SearchAndReplace(DirectoryInfo folder, string find, string replace)
+        {
+            if (folder.Name.StartsWith(".")) return;
+            foreach (var fi in folder.GetFiles())
+            {
+                this.SearchAndReplace(fi, find, replace);
+            }
+            foreach (var di in folder.GetDirectories())
+            {
+                this.SearchAndReplace(di, find, replace);
+            }
+        }
+
+        private void SearchAndReplace(FileInfo fi, string find, string replace)
+        {
+            if (fi.Exists)
+            {
+                if (fi.Name.Contains(find))
+                {
+                    var newName = Path.Combine(fi.Directory.FullName, fi.Name.Replace(find, replace));
+                    fi.MoveTo(newName);
+                    fi = new FileInfo(newName);
+                }
+                var contents = File.ReadAllText(fi.FullName);
+                if (contents.Contains(find))
+                {
+                    contents = contents.Replace(find, replace);
+                    File.WriteAllText(fi.FullName, contents);
+                }
+            }
+        }
+
+        private void DeleteDotGitFolder(DirectoryInfo folder)
+        {
+            var gitFolder = new DirectoryInfo(Path.Combine(folder.FullName, ".git"));
+            if (!gitFolder.Exists) throw new Exception("GIT CLONE Seems to have failed.  :(");
+            else
+            {
+                gitFolder.MoveTo(Path.Combine(gitFolder.Parent.FullName, "REMOVED_GIT_FOLDER"));
+            }
+        }
+
+        private void CloneRepo(DirectoryInfo folder, SeedRepository matchingSeed)
+        {
+            if (folder.Exists) throw new Exception($"Folder '{folder.FullName}' already exists.");
+            else
+            {
+                if (String.IsNullOrEmpty(this.repoUrl)) this.repoUrl = matchingSeed.RepositoryUrl;
+                var psi = new ProcessStartInfo("git");
+                psi.Arguments = $"clone {this.repoUrl} {folder.FullName}";
+                //              psi.UseShellExecute = true;
+                using (var process = Process.Start(psi))
+                {
+                    process.WaitForExit();
+                    process.Close();
+                }
+            }
         }
 
         private string ListSeedRepositoriesNow()
@@ -326,6 +463,8 @@ namespace SSoTme.Default.Lib.CLIHandler
 
         private (string name, string airtableId) GetAirtableNameAndId(string name, string airtableId)
         {
+            if (String.IsNullOrEmpty(name)) name = this.createAirtableProject;
+
             if (!String.IsNullOrEmpty(name) && !String.IsNullOrEmpty(airtableId)) return (name, airtableId);
             else
             {
@@ -404,12 +543,16 @@ namespace SSoTme.Default.Lib.CLIHandler
             }
         }
 
-        public FileInfo AirtableApplicationFileInfo
+        internal FileInfo AirtableApplicationFileInfo
         {
-            get { return new FileInfo(this.createAirtableProject); }
+            get
+            {
+                if (!String.IsNullOrEmpty(this.createAirtableProject)) return new FileInfo(this.createAirtableProject);
+                else return default(FileInfo);
+            }
         }
 
-        public FileInfo EffortlessAPIAccountFileInfo
+        internal FileInfo EffortlessAPIAccountFileInfo
         {
             get { return new FileInfo(Path.Combine(ProjectRootPath, $"{runas}.json")); }
         }
@@ -428,6 +571,7 @@ namespace SSoTme.Default.Lib.CLIHandler
         private string ShowHelp()
         {
             var sbHelpBuilder = new StringBuilder();
+            sbHelpBuilder.AppendLine($"CLI Help: {Assembly.GetExecutingAssembly().ImageRuntimeVersion.ToString()}.");
             var helpTerm = this.Parser.RemainingArguments.FirstOrDefault();
             if (String.IsNullOrEmpty(helpTerm)) helpTerm = "general";
             this.RoleHandler.AddHelp(sbHelpBuilder, helpTerm);
@@ -458,19 +602,26 @@ namespace SSoTme.Default.Lib.CLIHandler
                 this.reloadCache = true;
                 this.Parser.RemainingArguments.RemoveAt(0);
             }
+
             if (String.IsNullOrEmpty(this.runas)) this.runas = GetMostRecentUser();
             if (String.IsNullOrEmpty(this.runas)) this.runas = "guest";
             this.runas = this.runas.ToLower();
 
+            firstArgument = this.Parser.RemainingArguments.FirstOrDefault();
             if (!this.help &&
                 !this.reloadCache &&
                 !this.whoami &&
                 !this.listSeeds &&
+                String.IsNullOrEmpty(this.cloneEAPISeed) &&
                 String.IsNullOrEmpty(this.authenticate) &&
                 String.IsNullOrEmpty(this.invoke) &&
                 !String.IsNullOrEmpty(firstArgument))
             {
-                this.invoke = firstArgument;
+                if (String.IsNullOrEmpty(firstArgument))
+                {
+                    this.help = true;
+                }
+                else this.invoke = firstArgument;
             }
         }
 
@@ -549,6 +700,21 @@ namespace SSoTme.Default.Lib.CLIHandler
                 if (!di.Exists) di.Create();
                 return di.FullName;
             }
+        }
+
+        public static List<SeedRepository> SeedRepositories
+        {
+            get
+            {
+                if (_seedRepositories is null)
+                {
+                    var json = File.ReadAllText(SeedRepositoriesFileInfo.FullName);
+                    var payload = JsonConvert.DeserializeObject<SeedRepositories>(json);
+                    _seedRepositories = payload.SeedRepository;
+                }
+                return _seedRepositories;
+            }
+            set => _seedRepositories = value;
         }
 
         public static void HandleRequest(string[] args)

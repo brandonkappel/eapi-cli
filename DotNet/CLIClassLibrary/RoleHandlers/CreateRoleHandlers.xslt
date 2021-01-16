@@ -38,7 +38,8 @@ namespace CLIClassLibrary.RoleHandlers
 
         public <xsl:value-of select="Name"/>CLIHandler(string amqps, string accessToken)
             : base(amqps, accessToken)
-        {
+        {<xsl:if test="normalize-space(Name) != 'Guest'">
+            this.GetEffortlessAPIProjectsHandler = this.SMQActor.GetEffortlessAPIProjects;</xsl:if>
         }
 
         public override string Handle(string invoke, string data, string where)

@@ -18,6 +18,16 @@
     <SortOrder>1</SortOrder>
   </CommandLineArg>
   <CommandLineArg>
+    <Name>reloadCache</Name>
+    <Description>Reload cache of project types, plans and such</Description>
+    <DataType>bool</DataType>
+    <IsOptional>TRUE</IsOptional>
+    <IsList>FALSE</IsList>
+    <DefaultValue>FALSE</DefaultValue>
+    <ExampleValue>FALSE</ExampleValue>
+    <SortOrder>12</SortOrder>
+  </CommandLineArg>
+  <CommandLineArg>
     <Name>demoPassword</Name>
     <Description>the user's password</Description>
     <DataType>string</DataType>
@@ -103,22 +113,11 @@
     <SortOrder>11</SortOrder>
   </CommandLineArg>
   <CommandLineArg>
-    <Name>reloadCache</Name>
-    <Description>Reload cache of project types, plans and such</Description>
-    <DataType>bool</DataType>
-    <IsOptional>TRUE</IsOptional>
-    <IsList>FALSE</IsList>
-    <DefaultValue>FALSE</DefaultValue>
-    <ExampleValue>FALSE</ExampleValue>
-    <SortOrder>12</SortOrder>
-  </CommandLineArg>
-  <CommandLineArg>
     <Name>createAirtableProject</Name>
     <Description>Create an EffortlessAPI for Airtable Project based on an airtable.json application.</Description>
     <DataType>string</DataType>
     <IsOptional>TRUE</IsOptional>
     <IsList>FALSE</IsList>
-    <DefaultValue>FALSE</DefaultValue>
     <ExampleValue>FALSE</ExampleValue>
     <SortOrder>13</SortOrder>
   </CommandLineArg>
@@ -128,7 +127,6 @@
     <DataType>string</DataType>
     <IsOptional>TRUE</IsOptional>
     <IsList>FALSE</IsList>
-    <DefaultValue>FALSE</DefaultValue>
     <ExampleValue>FALSE</ExampleValue>
     <SortOrder>14</SortOrder>
   </CommandLineArg>
@@ -138,7 +136,6 @@
     <DataType>string</DataType>
     <IsOptional>TRUE</IsOptional>
     <IsList>FALSE</IsList>
-    <DefaultValue>FALSE</DefaultValue>
     <ExampleValue>FALSE</ExampleValue>
     <SortOrder>15</SortOrder>
   </CommandLineArg>
@@ -149,7 +146,25 @@
     <IsOptional>TRUE</IsOptional>
     <IsList>FALSE</IsList>
     <DefaultValue>FALSE</DefaultValue>
-    <ExampleValue>#NAME?</ExampleValue>
+    <ExampleValue>-listSeeds</ExampleValue>
     <SortOrder>16</SortOrder>
+  </CommandLineArg>
+  <CommandLineArg>
+    <Name>cloneEAPISeed</Name>
+    <Description>Clone the given seed</Description>
+    <DataType>string</DataType>
+    <IsOptional>TRUE</IsOptional>
+    <IsList>FALSE</IsList>
+    <ExampleValue>-cloneEAPISeed 'eapi-project-cli'</ExampleValue>
+    <SortOrder>17</SortOrder>
+  </CommandLineArg>
+  <CommandLineArg>
+    <Name>repoUrl</Name>
+    <Description>Override the default URL specified bythe seed repository</Description>
+    <DataType>string</DataType>
+    <IsOptional>TRUE</IsOptional>
+    <IsList>FALSE</IsList>
+    <ExampleValue>-repoURL git@xyz.com/foo</ExampleValue>
+    <SortOrder>18</SortOrder>
   </CommandLineArg>
 </CommandLineArgs>
