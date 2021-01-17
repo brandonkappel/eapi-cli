@@ -99,7 +99,7 @@ namespace SSoTme.Default.Lib.CLIHandler
                 var eapiProjectAlias = Parser.RemainingArguments.Skip(1).First();
                 var eapiProject = this.RoleHandler.GetProjectByAlias(eapiProjectAlias);
                 var matchingSeed = EAPICLIHandler.SeedRepositories.FirstOrDefault(seedRepo => String.Equals(seedRepo.ShortName, this.cloneEAPISeed, StringComparison.OrdinalIgnoreCase));
-                
+
                 if (eapiProject is null) throw new Exception($"Can't load the EAPI project requested: {eapiProjectAlias}");
 
                 this.CloneRepo(folder, matchingSeed);
@@ -208,7 +208,11 @@ namespace SSoTme.Default.Lib.CLIHandler
             if (folder.Exists) throw new Exception($"Folder '{folder.FullName}' already exists.");
             else
             {
-                if (String.IsNullOrEmpty(this.repoUrl)) this.repoUrl = matchingSeed.RepositoryUrl;
+                if (String.IsNullOrEmpty(this.repoUrl))
+                {
+                    if (this.betaRepo) this.repoUrl = matchingSeed.PrivateRepositoryUrl;
+                    else this.repoUrl = matchingSeed.RepositoryUrl;
+                }
                 var psi = new ProcessStartInfo("git");
                 psi.Arguments = $"clone {this.repoUrl} {folder.FullName}";
                 //              psi.UseShellExecute = true;
@@ -219,10 +223,31 @@ namespace SSoTme.Default.Lib.CLIHandler
                 }
             }
         }
+        private class SeedRespositories
+        {
+            public List<SeedRepository> SeedRepository { get; set; }
+        }
 
         private string ListSeedRepositoriesNow()
         {
-            return File.ReadAllText(SeedRepositoriesFileInfo.FullName);
+            var reposJson = File.ReadAllText(SeedRepositoriesFileInfo.FullName);
+            var repos = JsonConvert.DeserializeObject<SeedRepositories>(reposJson);
+            var sb = new StringBuilder();
+            repos.SeedRepository.ForEach(repo =>
+            {
+                sb.Append($" - {repo.Name}".PadRight(50, '.'));
+                sb.AppendLine($"{repo.RepositoryUrl}");
+            });
+
+            sb.AppendLine();
+            sb.AppendLine();
+            sb.AppendLine();
+            sb.AppendLine();
+            sb.AppendLine("Syntax:> eapi -cloneEAPISeed {seed name} {local name} {eapi alias}");
+            sb.AppendLine("       > eapi -cloneEAPISeed project-cli demo123 demo-project123");
+            sb.AppendLine();
+
+            return sb.ToString();
         }
 
         private string CheckWhoIAmNow()

@@ -159,12 +159,22 @@
     <SortOrder>17</SortOrder>
   </CommandLineArg>
   <CommandLineArg>
+    <Name>betaRepo</Name>
+    <Description>Use the beta repository for this seed?</Description>
+    <DataType>bool</DataType>
+    <IsOptional>TRUE</IsOptional>
+    <IsList>FALSE</IsList>
+    <DefaultValue>FALSE</DefaultValue>
+    <ExampleValue>-betaRepo true</ExampleValue>
+    <SortOrder>18</SortOrder>
+  </CommandLineArg>
+  <CommandLineArg>
     <Name>repoUrl</Name>
     <Description>Override the default URL specified bythe seed repository</Description>
     <DataType>string</DataType>
     <IsOptional>TRUE</IsOptional>
     <IsList>FALSE</IsList>
     <ExampleValue>-repoURL git@xyz.com/foo</ExampleValue>
-    <SortOrder>18</SortOrder>
+    <SortOrder>19</SortOrder>
   </CommandLineArg>
 </CommandLineArgs>

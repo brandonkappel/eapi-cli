@@ -16,4 +16,5 @@ name,Name for the new project.,string,TRUE,FALSE,,FALSE,14,
 appId,application.id of the airtable project to add.,string,TRUE,FALSE,,FALSE,15,
 listSeeds,List all available seeds,bool,TRUE,FALSE,FALSE,"-listSeeds",16,
 cloneEAPISeed,Clone the given seed,string,TRUE,FALSE,,"-cloneEAPISeed 'eapi-project-cli'",17,
-repoUrl,Override the default URL specified bythe seed repository,string,TRUE,FALSE,,"-repoURL git@xyz.com/foo",18,
+betaRepo,"Use the beta repository for this seed?",bool,TRUE,FALSE,FALSE,-betaRepo true,18
+repoUrl,Override the default URL specified bythe seed repository,string,TRUE,FALSE,,"-repoURL git@xyz.com/foo",19,

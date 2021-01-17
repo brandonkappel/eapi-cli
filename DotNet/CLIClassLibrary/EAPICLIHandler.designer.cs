@@ -70,6 +70,9 @@ Options
         [CommandLineOption(Description = "Clone the given seed", MinOccurs = 0, Aliases = "")]
         public string cloneEAPISeed { get; set; }
         
+        [CommandLineOption(Description = "Use the beta repository for this seed?", MinOccurs = 0, Aliases = "")]
+        public bool betaRepo { get; set; }
+        
         [CommandLineOption(Description = "Override the default URL specified bythe seed repository", MinOccurs = 0, Aliases = "")]
         public string repoUrl { get; set; }
         

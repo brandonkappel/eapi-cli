@@ -17,6 +17,7 @@ namespace SSoTme.Default.Lib.CLIHandler
         public Boolean IsWebApp { get; set; }
         public String AdditionalDeploymentCommands { get; set; }
         public string SeedReplacementsText { get; set; }
+        public string PrivateRepositoryUrl { get; set; }
 
         public override string ToString()
         {
