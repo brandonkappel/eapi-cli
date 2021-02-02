@@ -106,16 +106,32 @@ namespace SSoTme.Default.Lib.CLIHandler
                 this.UpdateFiles(folder, eapiProject, matchingSeed);
                 this.DeleteDotGitFolder(folder);
                 this.InvokeSSoTmeBuild(folder);
+                this.InvokeNPMInstall(folder, matchingSeed.InvokeNPMInstall);
                 this.StartSlnIfPresent(folder);
                 return $"CLONED EAPI SEED: {this.cloneEAPISeed} into folder ./{folder.Name}, linking it to EAPI Project {eapiProjectAlias}.";
             }
 
         }
 
+        private void InvokeNPMInstall(DirectoryInfo folder, bool invokeNPMInstall)
+        {
+            if (invokeNPMInstall)
+            {
+                var psi = new ProcessStartInfo("npm");
+                psi.WorkingDirectory = folder.FullName;
+                psi.Arguments = "install";
+                using (var process = Process.Start(psi))
+                {
+                    process.WaitForExit();
+                    process.Close();
+                }
+            }
+        }
+
         private void StartSlnIfPresent(DirectoryInfo folder)
         {
             var slnFile = folder.GetFiles().FirstOrDefault(fi => Path.GetExtension(fi.Name) == ".sln");
-            if (slnFile.Exists)
+            if (!(slnFile is null) && slnFile.Exists)
             {
                 Console.WriteLine($"SOLUTION: {slnFile.FullName}");
                 // Process.Start(slnFile.FullName);
@@ -210,9 +226,10 @@ namespace SSoTme.Default.Lib.CLIHandler
             {
                 if (String.IsNullOrEmpty(this.repoUrl))
                 {
-                    if (this.betaRepo) this.repoUrl = matchingSeed.PrivateRepositoryUrl;
+                    if (this.betaRepo) this.repoUrl = matchingSeed.PrivateUrl;
                     else this.repoUrl = matchingSeed.RepositoryUrl;
                 }
+                this.repoUrl = this.repoUrl.Replace("git@github.com:", "https://github.com/");
                 var psi = new ProcessStartInfo("git");
                 psi.Arguments = $"clone {this.repoUrl} {folder.FullName}";
                 //              psi.UseShellExecute = true;

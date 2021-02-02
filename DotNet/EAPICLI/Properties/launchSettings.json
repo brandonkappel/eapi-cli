@@ -2,8 +2,8 @@
   "profiles": {
     "EAPICLI": {
       "commandName": "Project",
-      "commandLineArgs": "-cloneEAPISeed sqlserver-coordinator sd5-sqlserver demo-sd5 \"-repoUrl=https://github.com/eejai42/eapi-sqlserver-coordinator-seed.git\"",
-      "workingDirectory": "C:\\Users\\auto1\\go\\src\\github.com\\effortlessapi\\"
+      "commandLineArgs": "-cloneEAPISeed airtable-akveo sd2-admin demo-sd2 -betaRepo",
+      "workingDirectory": "C:\\Users\\auto1\\go\\src\\github.com\\effortlessapi\\steve\\"
     }
   }
 }

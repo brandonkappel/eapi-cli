@@ -2,8 +2,10 @@
   <SeedRepository>
     <Name>eapi-airtable-akveo-seed</Name>
     <SortOrder>1</SortOrder>
+    <SeedStatus>Published</SeedStatus>
     <ShortName>airtable-akveo</ShortName>
     <DisplayName>Airtable Akveo Administrative Web App</DisplayName>
+    <SeedTechnologies>Client,Airtable,Akveo,Angular,WebApp</SeedTechnologies>
     <RepositoryUrl>https://github.com/effortlessapi/eapi-airtable-akveo-seed</RepositoryUrl>
     <DefaultRepositoryUrl>https://github.com/effortlessapi/eapi-airtable-akveo-seed</DefaultRepositoryUrl>
     <DefaultPrivateUrl>git@github.com:eejai42/eapi-airtable-akveo-seed</DefaultPrivateUrl>
@@ -19,14 +21,21 @@ Starts with authenticated web app which provides data access to all information 
     <IsWebApp>checked</IsWebApp>
     <AdditionalDeploymentCommands>npm install
 ng serve</AdditionalDeploymentCommands>
+    <InvokeNPMInstall>checked</InvokeNPMInstall>
+    <SeedReplacements>eapi-airtable-akveo-seed_REPLACE_ej-tictactoe-demo_WITH_$EffortlessAPIProject.Alias$,eapi-airtable-akveo-seed_REPLACE_ejtictactoedemo_WITH_$EffortlessAPIProject.AliasToken$,eapi-airtable-akveo-seed_REPLACE_app123abc321_WITH_$EffortlessAPIProject.AirtableId$</SeedReplacements>
+    <SeedReplacementsText>REPLACE_ej-tictactoe-demo_WITH_$EffortlessAPIProject.Alias$, REPLACE_ejtictactoedemo_WITH_$EffortlessAPIProject.AliasToken$, REPLACE_app123abc321_WITH_$EffortlessAPIProject.AirtableId$</SeedReplacementsText>
     <CreatedTime>11/5/2019 5:30pm</CreatedTime>
-    <ModifiedTime>1/16/2021 5:51pm</ModifiedTime>
+    <ModifiedTime>1/21/2021 6:55pm</ModifiedTime>
+    <TechnologyLogos>client (https://dl.airtable.com/.attachments/a0bccf95ddcb941f216b0dddf48ebf95/4d6effdc/Client_App__Pike13),airtable (https://dl.airtable.com/.attachments/a90c9ccbfb7ec257d423835925be54f7/a49f4e4d/I_Finally_Understand_Databases_Because_of_the_Free_Airtable_App_...),akveo (https://dl.airtable.com/.attachments/093ad64ed2274c8a4d0b1a78ad72092a/27ece74b/Ngx-admin_-_Guideline_to_install.),angular (https://dl.airtable.com/.attachments/2dbcd160b85bd6c6ea5a748bac3eaebf/2a5531ae/Angular_-_PRESS_KIT),webapp (https://dl.airtable.com/.attachments/803868516607111421ccb044de723d01/b5ef8a4d/Whats_the_Operating_System_of_my_Webapp__All_Things_Cloud)</TechnologyLogos>
+    <TechnologyNames>Client, Airtable, Akveo, Angular, WebApp</TechnologyNames>
   </SeedRepository>
   <SeedRepository>
     <Name>eapi-project-cli-seed</Name>
     <SortOrder>2</SortOrder>
+    <SeedStatus>Published</SeedStatus>
     <ShortName>project-cli</ShortName>
     <DisplayName>EffortlessAPI Project CLI</DisplayName>
+    <SeedTechnologies>CLI,Client,Airtable,DotNet</SeedTechnologies>
     <RepositoryUrl>https://github.com/effortlessapi/eapi-project-cli-seed</RepositoryUrl>
     <DefaultRepositoryUrl>https://github.com/effortlessapi/eapi-project-cli-seed</DefaultRepositoryUrl>
     <DefaultPrivateUrl>git@github.com:eejai42/eapi-project-cli-seed</DefaultPrivateUrl>
@@ -40,17 +49,22 @@ ng serve</AdditionalDeploymentCommands>
     <SeedReplacements>eapi-project-cli-seed_REPLACE_ej-tictactoe-demo_WITH_$EffortlessAPIProject.Alias$,eapi-project-cli-seed_REPLACE_&lt;User&gt;_WITH_&lt;$EffortlessAPIProject.UserTable$&gt;</SeedReplacements>
     <SeedReplacementsText>REPLACE_ej-tictactoe-demo_WITH_$EffortlessAPIProject.Alias$, REPLACE_&lt;User&gt;_WITH_&lt;$EffortlessAPIProject.UserTable$&gt;</SeedReplacementsText>
     <CreatedTime>12/14/2020 11:03pm</CreatedTime>
-    <ModifiedTime>1/16/2021 4:31pm</ModifiedTime>
+    <ModifiedTime>1/21/2021 6:55pm</ModifiedTime>
+    <TechnologyLogos>cli (https://dl.airtable.com/.attachments/90c96913529680ba9e94fcd7edd08aaf/127b5526/Azure_CLI_-_Docker_Hub),client (https://dl.airtable.com/.attachments/a0bccf95ddcb941f216b0dddf48ebf95/4d6effdc/Client_App__Pike13),airtable (https://dl.airtable.com/.attachments/a90c9ccbfb7ec257d423835925be54f7/a49f4e4d/I_Finally_Understand_Databases_Because_of_the_Free_Airtable_App_...),dotnet (https://dl.airtable.com/.attachments/4d53255d56338e7cb21ca9680449a275/89661d40/Dotnet_Vector_Logo_-_Download_Free_SVG_Icon__Worldvectorlogo)</TechnologyLogos>
+    <TechnologyNames>CLI, Client, Airtable, DotNet</TechnologyNames>
   </SeedRepository>
   <SeedRepository>
     <Name>eapi-sqlserver-coordinator-seed</Name>
     <SortOrder>3</SortOrder>
+    <SeedStatus>Published</SeedStatus>
     <ShortName>sqlserver-coordinator</ShortName>
     <DisplayName>SQL .Net Core Coordinator Starter</DisplayName>
+    <SeedTechnologies>Server,SqlServer,DotNet</SeedTechnologies>
     <RepositoryUrl>https://github.com/effortlessapi/eapi-sqlserver-coordinator-seed</RepositoryUrl>
     <DefaultRepositoryUrl>https://github.com/effortlessapi/eapi-sqlserver-coordinator-seed</DefaultRepositoryUrl>
     <DefaultPrivateUrl>git@github.com:eejai42/eapi-sqlserver-coordinator-seed</DefaultPrivateUrl>
     <PrivateUrl>git@github.com:eejai42/eapi-sqlserver-coordinator-seed</PrivateUrl>
+    <Notes>Creates a local EAPI Server with scripts to create/populate a SQL DB and a RabbitMQ Configuration script for SassyMQ Wrapper Classes</Notes>
     <IsActive>checked</IsActive>
     <IsServer>checked</IsServer>
     <IsSqlServer>checked</IsSqlServer>
@@ -58,102 +72,17 @@ ng serve</AdditionalDeploymentCommands>
     <SeedReplacements>eapi-sqlserver-coordinator-seed_REPLACE_ej-tictactoe-demo_WITH_$EffortlessAPIProject.Alias$,eapi-sqlserver-coordinator-seed_REPLACE_ejtictactoedemo_WITH_$EffortlessAPIProject.AliasToken$,eapi-sqlserver-coordinator-seed_REPLACE_app123abc321_WITH_$EffortlessAPIProject.AirtableId$,eapi-sqlserver-coordinator-seed_REPLACE_&lt;dc.User&gt;_WITH_&lt;dc.$EffortlessAPIProject.UserTable$&gt;,eapi-sqlserver-coordinator-seed_REPLACE_&lt;User&gt;_WITH_&lt;$EffortlessAPIProject.UserTable$&gt;,eapi-sqlserver-coordinator-seed_REPLACE_public User SingletonAppUser_WITH_public $EffortlessAPIProject.UserTable$ SingletonAppUser,eapi-sqlserver-coordinator-seed_REPLACE_ dc.User _WITH_ dc.$EffortlessAPIProject.UserTable$,eapi-sqlserver-coordinator-seed_REPLACE_user-name=User_WITH_user-name=$EffortlessAPIProject.UserTable$,eapi-sqlserver-coordinator-seed_REPLACE_this.APIWrapper.GetAllUsers&lt;dc._WITH_this.APIWrapper.GetAll$EffortlessAPIProject.UserTable$s&lt;dc.</SeedReplacements>
     <SeedReplacementsText>REPLACE_ej-tictactoe-demo_WITH_$EffortlessAPIProject.Alias$, REPLACE_ejtictactoedemo_WITH_$EffortlessAPIProject.AliasToken$, REPLACE_app123abc321_WITH_$EffortlessAPIProject.AirtableId$, REPLACE_&lt;dc.User&gt;_WITH_&lt;dc.$EffortlessAPIProject.UserTable$&gt;, REPLACE_&lt;User&gt;_WITH_&lt;$EffortlessAPIProject.UserTable$&gt;, REPLACE_public User SingletonAppUser_WITH_public $EffortlessAPIProject.UserTable$ SingletonAppUser, REPLACE_ dc.User _WITH_ dc.$EffortlessAPIProject.UserTable$, REPLACE_user-name=User_WITH_user-name=$EffortlessAPIProject.UserTable$, REPLACE_this.APIWrapper.GetAllUsers&lt;dc._WITH_this.APIWrapper.GetAll$EffortlessAPIProject.UserTable$s&lt;dc.</SeedReplacementsText>
     <CreatedTime>2/23/2020 8:30pm</CreatedTime>
-    <ModifiedTime>1/16/2021 4:27pm</ModifiedTime>
-  </SeedRepository>
-  <SeedRepository>
-    <Name>eapi-airtable-python-django-seed</Name>
-    <SortOrder>4</SortOrder>
-    <ShortName>airtable-python-django</ShortName>
-    <DisplayName>Python Django Airtable Coordinator</DisplayName>
-    <RepositoryUrl>https://github.com/effortlessapi/eapi-airtable-python-django-seed</RepositoryUrl>
-    <DefaultRepositoryUrl>https://github.com/effortlessapi/eapi-airtable-python-django-seed</DefaultRepositoryUrl>
-    <DefaultPrivateUrl>git@github.com:eejai42/eapi-airtable-python-django-seed</DefaultPrivateUrl>
-    <PrivateUrl>git@github.com:eejai42/eapi-airtable-python-django-seed</PrivateUrl>
-    <IsServer>checked</IsServer>
-    <IsDjango>checked</IsDjango>
-    <IsAirtable>checked</IsAirtable>
-    <IsPython>checked</IsPython>
-    <IsWebApp>checked</IsWebApp>
-    <CreatedTime>1/12/2021 10:25pm</CreatedTime>
-    <ModifiedTime>1/16/2021 4:33pm</ModifiedTime>
-  </SeedRepository>
-  <SeedRepository>
-    <Name>eapi-mysql-python-django-seed</Name>
-    <SortOrder>5</SortOrder>
-    <ShortName>mysql-python-django</ShortName>
-    <DisplayName>Djano Python Mysql Coordinator</DisplayName>
-    <RepositoryUrl>https://github.com/effortlessapi/eapi-mysql-python-django-seed</RepositoryUrl>
-    <DefaultRepositoryUrl>https://github.com/effortlessapi/eapi-mysql-python-django-seed</DefaultRepositoryUrl>
-    <DefaultPrivateUrl>git@github.com:eejai42/eapi-mysql-python-django-seed</DefaultPrivateUrl>
-    <PrivateUrl>git@github.com:eejai42/eapi-mysql-python-django-seed</PrivateUrl>
-    <IsServer>checked</IsServer>
-    <IsDjango>checked</IsDjango>
-    <IsMySQL>checked</IsMySQL>
-    <IsPython>checked</IsPython>
-    <CreatedTime>1/12/2021 10:25pm</CreatedTime>
-    <ModifiedTime>1/16/2021 4:38pm</ModifiedTime>
-  </SeedRepository>
-  <SeedRepository>
-    <Name>eapi-airtable-angular-seed</Name>
-    <SortOrder>7</SortOrder>
-    <ShortName>airtable-angular</ShortName>
-    <DisplayName>Airtable Angular Web App</DisplayName>
-    <RepositoryUrl>https://github.com/effortlessapi/eapi-airtable-angular-seed</RepositoryUrl>
-    <DefaultRepositoryUrl>https://github.com/effortlessapi/eapi-airtable-angular-seed</DefaultRepositoryUrl>
-    <DefaultPrivateUrl>git@github.com:eejai42/eapi-airtable-angular-seed</DefaultPrivateUrl>
-    <PrivateUrl>git@github.com:eejai42/eapi-airtable-angular-seed</PrivateUrl>
-    <IsActive>checked</IsActive>
-    <IsClient>checked</IsClient>
-    <IsAirtable>checked</IsAirtable>
-    <IsAngular>checked</IsAngular>
-    <IsWebApp>checked</IsWebApp>
-    <CreatedTime>11/5/2019 5:30pm</CreatedTime>
-    <ModifiedTime>1/16/2021 4:32pm</ModifiedTime>
-  </SeedRepository>
-  <SeedRepository>
-    <Name>eapi-sqlserver-akveo-seed</Name>
-    <SortOrder>8</SortOrder>
-    <ShortName>sqlserver-akveo</ShortName>
-    <DisplayName>SQL Akveo Administrative Web App</DisplayName>
-    <RepositoryUrl>https://github.com/effortlessapi/eapi-sqlserver-akveo-seed</RepositoryUrl>
-    <DefaultRepositoryUrl>https://github.com/effortlessapi/eapi-sqlserver-akveo-seed</DefaultRepositoryUrl>
-    <DefaultPrivateUrl>git@github.com:eejai42/eapi-sqlserver-akveo-seed</DefaultPrivateUrl>
-    <PrivateUrl>git@github.com:eejai42/eapi-sqlserver-akveo-seed</PrivateUrl>
-    <IsClient>checked</IsClient>
-    <IsSqlServer>checked</IsSqlServer>
-    <IsAkveo>checked</IsAkveo>
-    <IsAngular>checked</IsAngular>
-    <IsWebApp>checked</IsWebApp>
-    <AdditionalDeploymentCommands>npm install
-ng serve</AdditionalDeploymentCommands>
-    <CreatedTime>12/20/2019 9:50pm</CreatedTime>
-    <ModifiedTime>1/16/2021 4:32pm</ModifiedTime>
-  </SeedRepository>
-  <SeedRepository>
-    <Name>eapi-airtable-monaca-seed</Name>
-    <SortOrder>9</SortOrder>
-    <ShortName>airtable-monaca</ShortName>
-    <DisplayName>Monaca Cordova Seed</DisplayName>
-    <RepositoryUrl>https://github.com/effortlessapi/eapi-airtable-monaca-seed</RepositoryUrl>
-    <DefaultRepositoryUrl>https://github.com/effortlessapi/eapi-airtable-monaca-seed</DefaultRepositoryUrl>
-    <DefaultPrivateUrl>git@github.com:eejai42/eapi-airtable-monaca-seed</DefaultPrivateUrl>
-    <PrivateUrl>git@github.com:eejai42/eapi-airtable-monaca-seed</PrivateUrl>
-    <Notes>Cross Platform Cordova Project</Notes>
-    <IsClient>checked</IsClient>
-    <IsAirtable>checked</IsAirtable>
-    <IsIonic>checked</IsIonic>
-    <IsDotNet>checked</IsDotNet>
-    <IsIOS>checked</IsIOS>
-    <IsAndroid>checked</IsAndroid>
-    <IsWebApp>checked</IsWebApp>
-    <CreatedTime>3/9/2020 2:24am</CreatedTime>
-    <ModifiedTime>1/16/2021 4:41pm</ModifiedTime>
+    <ModifiedTime>1/21/2021 6:55pm</ModifiedTime>
+    <TechnologyLogos>server (https://dl.airtable.com/.attachments/9e89e187e98b322b31a1c8dde48f7764/9efd933c/Learn_Microservices_-_2021_Best_Microservices_Tutorials),sqlserver (https://dl.airtable.com/.attachments/50fdc3bd590ac8142ef57d48639fea18/c15b096e/SQL_Server_Logo_-_Microsoft_Vector_Free_Download__Sql_server_...),dotnet (https://dl.airtable.com/.attachments/4d53255d56338e7cb21ca9680449a275/89661d40/Dotnet_Vector_Logo_-_Download_Free_SVG_Icon__Worldvectorlogo)</TechnologyLogos>
+    <TechnologyNames>Server, Sql Server, DotNet</TechnologyNames>
   </SeedRepository>
   <SeedRepository>
     <Name>eapi-airtable-winapp-seed</Name>
-    <SortOrder>10</SortOrder>
+    <SortOrder>5</SortOrder>
+    <SeedStatus>Published</SeedStatus>
     <ShortName>airtable-winapp</ShortName>
     <DisplayName>Airtable .Net Native Windows app</DisplayName>
+    <SeedTechnologies>Client,Airtable,DotNet,WinApp</SeedTechnologies>
     <RepositoryUrl>https://github.com/effortlessapi/eapi-airtable-winapp-seed</RepositoryUrl>
     <DefaultRepositoryUrl>https://github.com/effortlessapi/eapi-airtable-winapp-seed</DefaultRepositoryUrl>
     <DefaultPrivateUrl>git@github.com:eejai42/eapi-airtable-winapp-seed</DefaultPrivateUrl>
@@ -166,210 +95,20 @@ Implement business logic in .net, and publish it to clickonce.</Notes>
     <IsAirtable>checked</IsAirtable>
     <IsDotNet>checked</IsDotNet>
     <IsWinApp>checked</IsWinApp>
+    <SeedReplacements>eapi-airtable-winapp-seed_REPLACE_ej-tictactoe-demo_WITH_$EffortlessAPIProject.Alias$,eapi-airtable-winapp-seed_REPLACE_ejtictactoedemo_WITH_$EffortlessAPIProject.AliasToken$,eapi-airtable-winapp-seed_REPLACE_app123abc321_WITH_$EffortlessAPIProject.AirtableId$,eapi-airtable-winapp-seed_REPLACE_public User SingletonAppUser_WITH_public $EffortlessAPIProject.UserTable$ SingletonAppUser,eapi-airtable-winapp-seed_REPLACE_public User WhoAmI_WITH_public $EffortlessAPIProject.UserTable$ WhoAmI,eapi-airtable-winapp-seed_REPLACE_this.WhoAmI = new User()_WITH_this.WhoAmI = new $EffortlessAPIProject.UserTable$()</SeedReplacements>
+    <SeedReplacementsText>REPLACE_ej-tictactoe-demo_WITH_$EffortlessAPIProject.Alias$, REPLACE_ejtictactoedemo_WITH_$EffortlessAPIProject.AliasToken$, REPLACE_app123abc321_WITH_$EffortlessAPIProject.AirtableId$, REPLACE_public User SingletonAppUser_WITH_public $EffortlessAPIProject.UserTable$ SingletonAppUser, REPLACE_public User WhoAmI_WITH_public $EffortlessAPIProject.UserTable$ WhoAmI, REPLACE_this.WhoAmI = new User()_WITH_this.WhoAmI = new $EffortlessAPIProject.UserTable$()</SeedReplacementsText>
     <CreatedTime>1/27/2020 11:36pm</CreatedTime>
-    <ModifiedTime>1/16/2021 4:43pm</ModifiedTime>
-  </SeedRepository>
-  <SeedRepository>
-    <Name>eapi-sqlserver-angular-seed</Name>
-    <SortOrder>12</SortOrder>
-    <ShortName>sqlserver-angular</ShortName>
-    <DisplayName>SQL Angular Web App</DisplayName>
-    <RepositoryUrl>https://github.com/effortlessapi/eapi-sqlserver-angular-seed</RepositoryUrl>
-    <DefaultRepositoryUrl>https://github.com/effortlessapi/eapi-sqlserver-angular-seed</DefaultRepositoryUrl>
-    <DefaultPrivateUrl>git@github.com:eejai42/eapi-sqlserver-angular-seed</DefaultPrivateUrl>
-    <PrivateUrl>git@github.com:eejai42/eapi-sqlserver-angular-seed</PrivateUrl>
-    <IsClient>checked</IsClient>
-    <IsSqlServer>checked</IsSqlServer>
-    <IsAngular>checked</IsAngular>
-    <CreatedTime>12/20/2019 9:51pm</CreatedTime>
-    <ModifiedTime>1/16/2021 4:33pm</ModifiedTime>
-  </SeedRepository>
-  <SeedRepository>
-    <Name>eapi-react-admin-webapp-seed</Name>
-    <SortOrder>12</SortOrder>
-    <ShortName>react-admin-webapp</ShortName>
-    <DisplayName>React Administrative Web App</DisplayName>
-    <RepositoryUrl>https://github.com/effortlessapi/eapi-react-admin-webapp-seed</RepositoryUrl>
-    <DefaultRepositoryUrl>https://github.com/effortlessapi/eapi-react-admin-webapp-seed</DefaultRepositoryUrl>
-    <DefaultPrivateUrl>git@github.com:eejai42/eapi-react-admin-webapp-seed</DefaultPrivateUrl>
-    <PrivateUrl>git@github.com:eejai42/eapi-react-admin-webapp-seed</PrivateUrl>
-    <IsClient>checked</IsClient>
-    <IsReact>checked</IsReact>
-    <IsWebApp>checked</IsWebApp>
-    <CreatedTime>1/12/2021 10:26pm</CreatedTime>
-    <ModifiedTime>1/16/2021 5:51pm</ModifiedTime>
-  </SeedRepository>
-  <SeedRepository>
-    <Name>eapi-sqlserver-ionic-seed</Name>
-    <SortOrder>13</SortOrder>
-    <ShortName>sqlserver-ionic</ShortName>
-    <DisplayName>SQL Ionic cross-platform Mobile App</DisplayName>
-    <RepositoryUrl>https://github.com/effortlessapi/eapi-sqlserver-ionic-seed</RepositoryUrl>
-    <DefaultRepositoryUrl>https://github.com/effortlessapi/eapi-sqlserver-ionic-seed</DefaultRepositoryUrl>
-    <DefaultPrivateUrl>git@github.com:eejai42/eapi-sqlserver-ionic-seed</DefaultPrivateUrl>
-    <PrivateUrl>git@github.com:eejai42/eapi-sqlserver-ionic-seed</PrivateUrl>
-    <Notes>Administrative Web Application
-
-Starts with authenticated web app which provides data access to all information available through the API.</Notes>
-    <IsActive>checked</IsActive>
-    <IsClient>checked</IsClient>
-    <IsSqlServer>checked</IsSqlServer>
-    <IsAngular>checked</IsAngular>
-    <IsIonic>checked</IsIonic>
-    <IsIOS>checked</IsIOS>
-    <IsAndroid>checked</IsAndroid>
-    <IsWebApp>checked</IsWebApp>
-    <CreatedTime>12/20/2019 9:55pm</CreatedTime>
-    <ModifiedTime>1/16/2021 4:32pm</ModifiedTime>
-  </SeedRepository>
-  <SeedRepository>
-    <Name>eapi-firebase-dotnet-coordinator-seed</Name>
-    <SortOrder>13</SortOrder>
-    <ShortName>firebase-dotnet-coordinator</ShortName>
-    <DisplayName>Firebase Coordinator</DisplayName>
-    <RepositoryUrl>https://github.com/effortlessapi/eapi-firebase-dotnet-coordinator-seed</RepositoryUrl>
-    <DefaultRepositoryUrl>https://github.com/effortlessapi/eapi-firebase-dotnet-coordinator-seed</DefaultRepositoryUrl>
-    <DefaultPrivateUrl>git@github.com:eejai42/eapi-firebase-dotnet-coordinator-seed</DefaultPrivateUrl>
-    <PrivateUrl>git@github.com:eejai42/eapi-firebase-dotnet-coordinator-seed</PrivateUrl>
-    <IsFirebase>checked</IsFirebase>
-    <IsServer>checked</IsServer>
-    <IsDotNet>checked</IsDotNet>
-    <CreatedTime>1/12/2021 10:26pm</CreatedTime>
-    <ModifiedTime>1/16/2021 5:51pm</ModifiedTime>
-  </SeedRepository>
-  <SeedRepository>
-    <Name>eapi-sqlserver-android-seed</Name>
-    <SortOrder>14</SortOrder>
-    <ShortName>sqlserver-android</ShortName>
-    <DisplayName>SQL Android Native App</DisplayName>
-    <RepositoryUrl>https://github.com/effortlessapi/eapi-sqlserver-android-seed</RepositoryUrl>
-    <DefaultRepositoryUrl>https://github.com/effortlessapi/eapi-sqlserver-android-seed</DefaultRepositoryUrl>
-    <DefaultPrivateUrl>git@github.com:eejai42/eapi-sqlserver-android-seed</DefaultPrivateUrl>
-    <PrivateUrl>git@github.com:eejai42/eapi-sqlserver-android-seed</PrivateUrl>
-    <IsClient>checked</IsClient>
-    <IsSqlServer>checked</IsSqlServer>
-    <IsAndroid>checked</IsAndroid>
-    <CreatedTime>12/20/2019 9:51pm</CreatedTime>
-    <ModifiedTime>1/16/2021 4:32pm</ModifiedTime>
-  </SeedRepository>
-  <SeedRepository>
-    <Name>eapi-sqlserver-ios-seed</Name>
-    <SortOrder>15</SortOrder>
-    <ShortName>sqlserver-ios</ShortName>
-    <DisplayName>SQL iOS Native App</DisplayName>
-    <RepositoryUrl>https://github.com/effortlessapi/eapi-sqlserver-ios-seed</RepositoryUrl>
-    <DefaultRepositoryUrl>https://github.com/effortlessapi/eapi-sqlserver-ios-seed</DefaultRepositoryUrl>
-    <DefaultPrivateUrl>git@github.com:eejai42/eapi-sqlserver-ios-seed</DefaultPrivateUrl>
-    <PrivateUrl>git@github.com:eejai42/eapi-sqlserver-ios-seed</PrivateUrl>
-    <IsClient>checked</IsClient>
-    <IsSqlServer>checked</IsSqlServer>
-    <IsIOS>checked</IsIOS>
-    <CreatedTime>12/20/2019 9:51pm</CreatedTime>
-    <ModifiedTime>1/16/2021 4:32pm</ModifiedTime>
-  </SeedRepository>
-  <SeedRepository>
-    <Name>eapi-sqlserver-dotnet-seed</Name>
-    <SortOrder>16</SortOrder>
-    <ShortName>sqlserver-dotnet</ShortName>
-    <DisplayName>SQL .Net Core Console app</DisplayName>
-    <RepositoryUrl>https://github.com/effortlessapi/eapi-sqlserver-dotnet-seed</RepositoryUrl>
-    <DefaultRepositoryUrl>https://github.com/effortlessapi/eapi-sqlserver-dotnet-seed</DefaultRepositoryUrl>
-    <DefaultPrivateUrl>git@github.com:eejai42/eapi-sqlserver-dotnet-seed</DefaultPrivateUrl>
-    <PrivateUrl>git@github.com:eejai42/eapi-sqlserver-dotnet-seed</PrivateUrl>
-    <IsServer>checked</IsServer>
-    <IsSqlServer>checked</IsSqlServer>
-    <IsDotNet>checked</IsDotNet>
-    <CreatedTime>12/20/2019 9:51pm</CreatedTime>
-    <ModifiedTime>1/16/2021 4:32pm</ModifiedTime>
-  </SeedRepository>
-  <SeedRepository>
-    <Name>eapi-sqlserver-python-seed</Name>
-    <SortOrder>17</SortOrder>
-    <ShortName>sqlserver-python</ShortName>
-    <DisplayName>SQL Python Console App</DisplayName>
-    <RepositoryUrl>https://github.com/effortlessapi/eapi-sqlserver-python-seed</RepositoryUrl>
-    <DefaultRepositoryUrl>https://github.com/effortlessapi/eapi-sqlserver-python-seed</DefaultRepositoryUrl>
-    <DefaultPrivateUrl>git@github.com:eejai42/eapi-sqlserver-python-seed</DefaultPrivateUrl>
-    <PrivateUrl>git@github.com:eejai42/eapi-sqlserver-python-seed</PrivateUrl>
-    <IsServer>checked</IsServer>
-    <IsSqlServer>checked</IsSqlServer>
-    <IsPython>checked</IsPython>
-    <CreatedTime>12/20/2019 9:51pm</CreatedTime>
-    <ModifiedTime>1/16/2021 4:32pm</ModifiedTime>
-  </SeedRepository>
-  <SeedRepository>
-    <Name>eapi-airtable-android-seed</Name>
-    <SortOrder>18</SortOrder>
-    <ShortName>airtable-android</ShortName>
-    <DisplayName>Airtable Android Native App</DisplayName>
-    <RepositoryUrl>https://github.com/effortlessapi/eapi-airtable-android-seed</RepositoryUrl>
-    <DefaultRepositoryUrl>https://github.com/effortlessapi/eapi-airtable-android-seed</DefaultRepositoryUrl>
-    <DefaultPrivateUrl>git@github.com:eejai42/eapi-airtable-android-seed</DefaultPrivateUrl>
-    <PrivateUrl>git@github.com:eejai42/eapi-airtable-android-seed</PrivateUrl>
-    <IsClient>checked</IsClient>
-    <IsAirtable>checked</IsAirtable>
-    <IsAndroid>checked</IsAndroid>
-    <CreatedTime>12/20/2019 9:50pm</CreatedTime>
-    <ModifiedTime>1/16/2021 4:32pm</ModifiedTime>
-  </SeedRepository>
-  <SeedRepository>
-    <Name>eapi-airtable-ios-seed</Name>
-    <SortOrder>19</SortOrder>
-    <ShortName>airtable-ios</ShortName>
-    <DisplayName>Airtable iOS Native App</DisplayName>
-    <RepositoryUrl>https://github.com/effortlessapi/eapi-airtable-ios-seed</RepositoryUrl>
-    <DefaultRepositoryUrl>https://github.com/effortlessapi/eapi-airtable-ios-seed</DefaultRepositoryUrl>
-    <DefaultPrivateUrl>git@github.com:eejai42/eapi-airtable-ios-seed</DefaultPrivateUrl>
-    <PrivateUrl>git@github.com:eejai42/eapi-airtable-ios-seed</PrivateUrl>
-    <IsClient>checked</IsClient>
-    <IsAirtable>checked</IsAirtable>
-    <IsIOS>checked</IsIOS>
-    <CreatedTime>12/20/2019 9:50pm</CreatedTime>
-    <ModifiedTime>1/16/2021 4:32pm</ModifiedTime>
-  </SeedRepository>
-  <SeedRepository>
-    <Name>eapi-airtable-dotnet-seed</Name>
-    <SortOrder>20</SortOrder>
-    <ShortName>airtable-dotnet</ShortName>
-    <DisplayName>Airtable .Net Core Console app</DisplayName>
-    <RepositoryUrl>https://github.com/effortlessapi/eapi-airtable-dotnet-seed</RepositoryUrl>
-    <DefaultRepositoryUrl>https://github.com/effortlessapi/eapi-airtable-dotnet-seed</DefaultRepositoryUrl>
-    <DefaultPrivateUrl>git@github.com:eejai42/eapi-airtable-dotnet-seed</DefaultPrivateUrl>
-    <PrivateUrl>git@github.com:eejai42/eapi-airtable-dotnet-seed</PrivateUrl>
-    <Notes>.Net Console Application
-
-Implement business logic in .net, and publish it to a docker container for ongoing back end support.</Notes>
-    <IsActive>checked</IsActive>
-    <IsServer>checked</IsServer>
-    <IsAirtable>checked</IsAirtable>
-    <IsDotNet>checked</IsDotNet>
-    <CreatedTime>12/7/2019 9:50pm</CreatedTime>
-    <ModifiedTime>1/16/2021 4:32pm</ModifiedTime>
-  </SeedRepository>
-  <SeedRepository>
-    <Name>eapi-airtable-python-seed</Name>
-    <SortOrder>21</SortOrder>
-    <ShortName>airtable-python</ShortName>
-    <DisplayName>Airtable Python Console App</DisplayName>
-    <RepositoryUrl>https://github.com/effortlessapi/eapi-airtable-python-seed</RepositoryUrl>
-    <DefaultRepositoryUrl>https://github.com/effortlessapi/eapi-airtable-python-seed</DefaultRepositoryUrl>
-    <DefaultPrivateUrl>git@github.com:eejai42/eapi-airtable-python-seed</DefaultPrivateUrl>
-    <PrivateUrl>git@github.com:eejai42/eapi-airtable-python-seed</PrivateUrl>
-    <Notes>Python Console Application
-
-Implement business logic in .net, and publish it to a docker container for ongoing back end support.</Notes>
-    <IsActive>checked</IsActive>
-    <IsServer>checked</IsServer>
-    <IsAirtable>checked</IsAirtable>
-    <IsPython>checked</IsPython>
-    <CreatedTime>11/5/2019 5:35pm</CreatedTime>
-    <ModifiedTime>1/16/2021 4:32pm</ModifiedTime>
+    <ModifiedTime>1/21/2021 6:55pm</ModifiedTime>
+    <TechnologyLogos>client (https://dl.airtable.com/.attachments/a0bccf95ddcb941f216b0dddf48ebf95/4d6effdc/Client_App__Pike13),airtable (https://dl.airtable.com/.attachments/a90c9ccbfb7ec257d423835925be54f7/a49f4e4d/I_Finally_Understand_Databases_Because_of_the_Free_Airtable_App_...),dotnet (https://dl.airtable.com/.attachments/4d53255d56338e7cb21ca9680449a275/89661d40/Dotnet_Vector_Logo_-_Download_Free_SVG_Icon__Worldvectorlogo),winapp (https://dl.airtable.com/.attachments/994d7b4fb6a610328db8b60b84c49f7a/a565342a/Windows_Phone_App_Store_Icon_Download_-_Window_Square_Png_Clipart_...)</TechnologyLogos>
+    <TechnologyNames>Client, Airtable, DotNet, WinApp</TechnologyNames>
   </SeedRepository>
   <SeedRepository>
     <Name>eapi-airtable-ionic-seed</Name>
     <SortOrder>22</SortOrder>
+    <SeedStatus>Published</SeedStatus>
     <ShortName>airtable-ionic</ShortName>
     <DisplayName>Airtable Ionic cross-platform Mobile App</DisplayName>
+    <SeedTechnologies>Client,Airtable,Angular,Ionic,iOS,Android,WebApp</SeedTechnologies>
     <RepositoryUrl>https://github.com/effortlessapi/eapi-airtable-ionic-seed</RepositoryUrl>
     <DefaultRepositoryUrl>https://github.com/effortlessapi/eapi-airtable-ionic-seed</DefaultRepositoryUrl>
     <DefaultPrivateUrl>git@github.com:eejai42/eapi-airtable-ionic-seed</DefaultPrivateUrl>
@@ -386,6 +125,382 @@ Starts with authenticated web app which provides data access to all information 
     <IsAndroid>checked</IsAndroid>
     <IsWebApp>checked</IsWebApp>
     <CreatedTime>12/20/2019 9:52pm</CreatedTime>
-    <ModifiedTime>1/16/2021 4:32pm</ModifiedTime>
+    <ModifiedTime>1/21/2021 7:32pm</ModifiedTime>
+    <TechnologyLogos>client (https://dl.airtable.com/.attachments/a0bccf95ddcb941f216b0dddf48ebf95/4d6effdc/Client_App__Pike13),airtable (https://dl.airtable.com/.attachments/a90c9ccbfb7ec257d423835925be54f7/a49f4e4d/I_Finally_Understand_Databases_Because_of_the_Free_Airtable_App_...),angular (https://dl.airtable.com/.attachments/2dbcd160b85bd6c6ea5a748bac3eaebf/2a5531ae/Angular_-_PRESS_KIT),ionic (https://dl.airtable.com/.attachments/38e3ad64cc0999648f0440ba04e30248/1dc46d40/Ionic_-_Cross-Platform_Mobile_App_Development),ios (https://dl.airtable.com/.attachments/822225515dc27784a0e5e80be2737a30/1f58be74/web-ios-logo__Cardiac_Exercise_Research_Group),android (https://dl.airtable.com/.attachments/e86b827e158acb30410427e71a0695c6/a27037f7/FileAndroid_logo_2019.svg_-_Wikipedia.svg-Wikipedia),webapp (https://dl.airtable.com/.attachments/803868516607111421ccb044de723d01/b5ef8a4d/Whats_the_Operating_System_of_my_Webapp__All_Things_Cloud)</TechnologyLogos>
+    <TechnologyNames>Client, Airtable, Angular, Ionic, iOS, Android, WebApp</TechnologyNames>
+  </SeedRepository>
+  <SeedRepository>
+    <Name>eapi-mysql-python-django-seed</Name>
+    <SortOrder>5</SortOrder>
+    <SeedStatus>Beta</SeedStatus>
+    <ShortName>mysql-python-django</ShortName>
+    <DisplayName>MySQL Python-Django Coordinator</DisplayName>
+    <SeedTechnologies>Server,Django,MySQL,Python,WebApp</SeedTechnologies>
+    <RepositoryUrl>https://github.com/effortlessapi/eapi-mysql-python-django-seed</RepositoryUrl>
+    <DefaultRepositoryUrl>https://github.com/effortlessapi/eapi-mysql-python-django-seed</DefaultRepositoryUrl>
+    <DefaultPrivateUrl>git@github.com:eejai42/eapi-mysql-python-django-seed</DefaultPrivateUrl>
+    <PrivateUrl>git@github.com:eejai42/eapi-mysql-python-django-seed</PrivateUrl>
+    <IsServer>checked</IsServer>
+    <IsDjango>checked</IsDjango>
+    <IsMySQL>checked</IsMySQL>
+    <IsPython>checked</IsPython>
+    <CreatedTime>1/12/2021 10:25pm</CreatedTime>
+    <ModifiedTime>1/21/2021 7:38pm</ModifiedTime>
+    <TechnologyLogos>server (https://dl.airtable.com/.attachments/9e89e187e98b322b31a1c8dde48f7764/9efd933c/Learn_Microservices_-_2021_Best_Microservices_Tutorials),django (https://dl.airtable.com/.attachments/7e218464d50598652b785fe337d572ac/2e2d89e3/django-python-logo_-_OPENGIS.ch.ch),mysql (https://dl.airtable.com/.attachments/379890e2ec4defa36547ad896c6bba04/0a3924bf/MySQL_logo_PNG),python (https://dl.airtable.com/.attachments/3a78ff1f17ea9b05c4e329665b9cd876/77307f95/FilePython-logo-notext.svg_-_Wikimedia_Commons.svg-WikimediaCommons),webapp (https://dl.airtable.com/.attachments/803868516607111421ccb044de723d01/b5ef8a4d/Whats_the_Operating_System_of_my_Webapp__All_Things_Cloud)</TechnologyLogos>
+    <TechnologyNames>Server, Django, MySQL, Python, WebApp</TechnologyNames>
+  </SeedRepository>
+  <SeedRepository>
+    <Name>eapi-airtable-android-seed</Name>
+    <SortOrder>18</SortOrder>
+    <SeedStatus>Beta</SeedStatus>
+    <ShortName>airtable-android</ShortName>
+    <DisplayName>Airtable Android Native App</DisplayName>
+    <SeedTechnologies>Client,Airtable,Android</SeedTechnologies>
+    <RepositoryUrl>https://github.com/effortlessapi/eapi-airtable-android-seed</RepositoryUrl>
+    <DefaultRepositoryUrl>https://github.com/effortlessapi/eapi-airtable-android-seed</DefaultRepositoryUrl>
+    <DefaultPrivateUrl>git@github.com:eejai42/eapi-airtable-android-seed</DefaultPrivateUrl>
+    <PrivateUrl>git@github.com:eejai42/eapi-airtable-android-seed</PrivateUrl>
+    <IsClient>checked</IsClient>
+    <IsAirtable>checked</IsAirtable>
+    <IsAndroid>checked</IsAndroid>
+    <SeedReplacements>eapi-airtable-android-seed_REPLACE_ej-tictactoe-demo_WITH_$EffortlessAPIProject.Alias$,eapi-airtable-android-seed_REPLACE_ejtictactoedemo_WITH_$EffortlessAPIProject.AliasToken$,eapi-airtable-android-seed_REPLACE_app123abc321_WITH_$EffortlessAPIProject.AirtableId$</SeedReplacements>
+    <SeedReplacementsText>REPLACE_ej-tictactoe-demo_WITH_$EffortlessAPIProject.Alias$, REPLACE_ejtictactoedemo_WITH_$EffortlessAPIProject.AliasToken$, REPLACE_app123abc321_WITH_$EffortlessAPIProject.AirtableId$</SeedReplacementsText>
+    <CreatedTime>12/20/2019 9:50pm</CreatedTime>
+    <ModifiedTime>1/21/2021 6:57pm</ModifiedTime>
+    <TechnologyLogos>client (https://dl.airtable.com/.attachments/a0bccf95ddcb941f216b0dddf48ebf95/4d6effdc/Client_App__Pike13),airtable (https://dl.airtable.com/.attachments/a90c9ccbfb7ec257d423835925be54f7/a49f4e4d/I_Finally_Understand_Databases_Because_of_the_Free_Airtable_App_...),android (https://dl.airtable.com/.attachments/e86b827e158acb30410427e71a0695c6/a27037f7/FileAndroid_logo_2019.svg_-_Wikipedia.svg-Wikipedia)</TechnologyLogos>
+    <TechnologyNames>Client, Airtable, Android</TechnologyNames>
+  </SeedRepository>
+  <SeedRepository>
+    <Name>eapi-airtable-ios-seed</Name>
+    <SortOrder>19</SortOrder>
+    <SeedStatus>Beta</SeedStatus>
+    <ShortName>airtable-ios</ShortName>
+    <DisplayName>Airtable iOS Native App</DisplayName>
+    <SeedTechnologies>Client,Airtable,iOS</SeedTechnologies>
+    <RepositoryUrl>https://github.com/effortlessapi/eapi-airtable-ios-seed</RepositoryUrl>
+    <DefaultRepositoryUrl>https://github.com/effortlessapi/eapi-airtable-ios-seed</DefaultRepositoryUrl>
+    <DefaultPrivateUrl>git@github.com:eejai42/eapi-airtable-ios-seed</DefaultPrivateUrl>
+    <PrivateUrl>git@github.com:eejai42/eapi-airtable-ios-seed</PrivateUrl>
+    <IsClient>checked</IsClient>
+    <IsAirtable>checked</IsAirtable>
+    <IsIOS>checked</IsIOS>
+    <CreatedTime>12/20/2019 9:50pm</CreatedTime>
+    <ModifiedTime>1/21/2021 6:57pm</ModifiedTime>
+    <TechnologyLogos>client (https://dl.airtable.com/.attachments/a0bccf95ddcb941f216b0dddf48ebf95/4d6effdc/Client_App__Pike13),airtable (https://dl.airtable.com/.attachments/a90c9ccbfb7ec257d423835925be54f7/a49f4e4d/I_Finally_Understand_Databases_Because_of_the_Free_Airtable_App_...),ios (https://dl.airtable.com/.attachments/822225515dc27784a0e5e80be2737a30/1f58be74/web-ios-logo__Cardiac_Exercise_Research_Group)</TechnologyLogos>
+    <TechnologyNames>Client, Airtable, iOS</TechnologyNames>
+  </SeedRepository>
+  <SeedRepository>
+    <Name>eapi-airtable-dotnet-seed</Name>
+    <SortOrder>20</SortOrder>
+    <SeedStatus>Beta</SeedStatus>
+    <ShortName>airtable-dotnet</ShortName>
+    <DisplayName>Airtable .Net Core Console app</DisplayName>
+    <SeedTechnologies>Airtable,DotNet,CLI</SeedTechnologies>
+    <RepositoryUrl>https://github.com/effortlessapi/eapi-airtable-dotnet-seed</RepositoryUrl>
+    <DefaultRepositoryUrl>https://github.com/effortlessapi/eapi-airtable-dotnet-seed</DefaultRepositoryUrl>
+    <DefaultPrivateUrl>git@github.com:eejai42/eapi-airtable-dotnet-seed</DefaultPrivateUrl>
+    <PrivateUrl>git@github.com:eejai42/eapi-airtable-dotnet-seed</PrivateUrl>
+    <Notes>.Net Console Application
+
+Implement business logic in .net, and publish it to a docker container for ongoing back end support.</Notes>
+    <IsActive>checked</IsActive>
+    <IsServer>checked</IsServer>
+    <IsAirtable>checked</IsAirtable>
+    <IsDotNet>checked</IsDotNet>
+    <CreatedTime>12/7/2019 9:50pm</CreatedTime>
+    <ModifiedTime>1/21/2021 7:32pm</ModifiedTime>
+    <TechnologyLogos>airtable (https://dl.airtable.com/.attachments/a90c9ccbfb7ec257d423835925be54f7/a49f4e4d/I_Finally_Understand_Databases_Because_of_the_Free_Airtable_App_...),dotnet (https://dl.airtable.com/.attachments/4d53255d56338e7cb21ca9680449a275/89661d40/Dotnet_Vector_Logo_-_Download_Free_SVG_Icon__Worldvectorlogo),cli (https://dl.airtable.com/.attachments/90c96913529680ba9e94fcd7edd08aaf/127b5526/Azure_CLI_-_Docker_Hub)</TechnologyLogos>
+    <TechnologyNames>Airtable, DotNet, CLI</TechnologyNames>
+  </SeedRepository>
+  <SeedRepository>
+    <Name>eapi-airtable-python-seed</Name>
+    <SortOrder>21</SortOrder>
+    <SeedStatus>Beta</SeedStatus>
+    <ShortName>airtable-python</ShortName>
+    <DisplayName>Airtable Python Console App</DisplayName>
+    <SeedTechnologies>Airtable,Python,CLI</SeedTechnologies>
+    <RepositoryUrl>https://github.com/effortlessapi/eapi-airtable-python-seed</RepositoryUrl>
+    <DefaultRepositoryUrl>https://github.com/effortlessapi/eapi-airtable-python-seed</DefaultRepositoryUrl>
+    <DefaultPrivateUrl>git@github.com:eejai42/eapi-airtable-python-seed</DefaultPrivateUrl>
+    <PrivateUrl>git@github.com:eejai42/eapi-airtable-python-seed</PrivateUrl>
+    <Notes>Python Console Application
+
+Implement business logic in .net, and publish it to a docker container for ongoing back end support.</Notes>
+    <IsActive>checked</IsActive>
+    <IsServer>checked</IsServer>
+    <IsAirtable>checked</IsAirtable>
+    <IsPython>checked</IsPython>
+    <CreatedTime>11/5/2019 5:35pm</CreatedTime>
+    <ModifiedTime>1/21/2021 7:32pm</ModifiedTime>
+    <TechnologyLogos>airtable (https://dl.airtable.com/.attachments/a90c9ccbfb7ec257d423835925be54f7/a49f4e4d/I_Finally_Understand_Databases_Because_of_the_Free_Airtable_App_...),python (https://dl.airtable.com/.attachments/3a78ff1f17ea9b05c4e329665b9cd876/77307f95/FilePython-logo-notext.svg_-_Wikimedia_Commons.svg-WikimediaCommons),cli (https://dl.airtable.com/.attachments/90c96913529680ba9e94fcd7edd08aaf/127b5526/Azure_CLI_-_Docker_Hub)</TechnologyLogos>
+    <TechnologyNames>Airtable, Python, CLI</TechnologyNames>
+  </SeedRepository>
+  <SeedRepository>
+    <Name>eapi-sqlserver-django-coordinator-seed</Name>
+    <SortOrder>4</SortOrder>
+    <SeedStatus>Closed Beta</SeedStatus>
+    <ShortName>sqlserver-django-coordinator</ShortName>
+    <DisplayName>SQL Server Python-Django Coordinator</DisplayName>
+    <SeedTechnologies>Server,Django,WebApp,SqlServer,Python</SeedTechnologies>
+    <RepositoryUrl>https://github.com/effortlessapi/eapi-sqlserver-django-coordinator-seed</RepositoryUrl>
+    <DefaultRepositoryUrl>https://github.com/effortlessapi/eapi-sqlserver-django-coordinator-seed</DefaultRepositoryUrl>
+    <DefaultPrivateUrl>git@github.com:eejai42/eapi-sqlserver-django-coordinator-seed</DefaultPrivateUrl>
+    <PrivateUrl>git@github.com:eejai42/eapi-sqlserver-django-coordinator-seed</PrivateUrl>
+    <IsServer>checked</IsServer>
+    <IsDjango>checked</IsDjango>
+    <IsAirtable>checked</IsAirtable>
+    <IsPython>checked</IsPython>
+    <IsWebApp>checked</IsWebApp>
+    <CreatedTime>1/12/2021 10:25pm</CreatedTime>
+    <ModifiedTime>1/21/2021 7:12pm</ModifiedTime>
+    <TechnologyLogos>server (https://dl.airtable.com/.attachments/9e89e187e98b322b31a1c8dde48f7764/9efd933c/Learn_Microservices_-_2021_Best_Microservices_Tutorials),django (https://dl.airtable.com/.attachments/7e218464d50598652b785fe337d572ac/2e2d89e3/django-python-logo_-_OPENGIS.ch.ch),webapp (https://dl.airtable.com/.attachments/803868516607111421ccb044de723d01/b5ef8a4d/Whats_the_Operating_System_of_my_Webapp__All_Things_Cloud),sqlserver (https://dl.airtable.com/.attachments/50fdc3bd590ac8142ef57d48639fea18/c15b096e/SQL_Server_Logo_-_Microsoft_Vector_Free_Download__Sql_server_...),python (https://dl.airtable.com/.attachments/3a78ff1f17ea9b05c4e329665b9cd876/77307f95/FilePython-logo-notext.svg_-_Wikimedia_Commons.svg-WikimediaCommons)</TechnologyLogos>
+    <TechnologyNames>Server, Django, WebApp, Sql Server, Python</TechnologyNames>
+  </SeedRepository>
+  <SeedRepository>
+    <Name>eapi-postgres-python-django-seed</Name>
+    <SortOrder>6</SortOrder>
+    <SeedStatus>Closed Beta</SeedStatus>
+    <ShortName>postgres-python-django</ShortName>
+    <DisplayName>Postgres Python-Django Coordinator</DisplayName>
+    <SeedTechnologies>Server,Python,Django,Postgres,WebApp</SeedTechnologies>
+    <RepositoryUrl>https://github.com/effortlessapi/eapi-postgres-python-django-seed</RepositoryUrl>
+    <DefaultRepositoryUrl>https://github.com/effortlessapi/eapi-postgres-python-django-seed</DefaultRepositoryUrl>
+    <DefaultPrivateUrl>git@github.com:eejai42/eapi-postgres-python-django-seed</DefaultPrivateUrl>
+    <PrivateUrl>git@github.com:eejai42/eapi-postgres-python-django-seed</PrivateUrl>
+    <IsActive>checked</IsActive>
+    <IsDjango>checked</IsDjango>
+    <IsPython>checked</IsPython>
+    <CreatedTime>1/20/2021 7:04pm</CreatedTime>
+    <ModifiedTime>1/21/2021 7:12pm</ModifiedTime>
+    <TechnologyLogos>server (https://dl.airtable.com/.attachments/9e89e187e98b322b31a1c8dde48f7764/9efd933c/Learn_Microservices_-_2021_Best_Microservices_Tutorials),python (https://dl.airtable.com/.attachments/3a78ff1f17ea9b05c4e329665b9cd876/77307f95/FilePython-logo-notext.svg_-_Wikimedia_Commons.svg-WikimediaCommons),django (https://dl.airtable.com/.attachments/7e218464d50598652b785fe337d572ac/2e2d89e3/django-python-logo_-_OPENGIS.ch.ch),postgres (https://dl.airtable.com/.attachments/cf1b6f89cb83bfb9700e1e0304382145/c9aad147/PostgreSQL_-_Wikipedia),webapp (https://dl.airtable.com/.attachments/803868516607111421ccb044de723d01/b5ef8a4d/Whats_the_Operating_System_of_my_Webapp__All_Things_Cloud)</TechnologyLogos>
+    <TechnologyNames>Server, Python, Django, Postgres, WebApp</TechnologyNames>
+  </SeedRepository>
+  <SeedRepository>
+    <Name>eapi-airtable-angular-seed</Name>
+    <SortOrder>7</SortOrder>
+    <SeedStatus>Closed Beta</SeedStatus>
+    <ShortName>airtable-angular</ShortName>
+    <DisplayName>Airtable Angular Web App</DisplayName>
+    <SeedTechnologies>Client,Airtable,Angular,WebApp</SeedTechnologies>
+    <RepositoryUrl>https://github.com/effortlessapi/eapi-airtable-angular-seed</RepositoryUrl>
+    <DefaultRepositoryUrl>https://github.com/effortlessapi/eapi-airtable-angular-seed</DefaultRepositoryUrl>
+    <DefaultPrivateUrl>git@github.com:eejai42/eapi-airtable-angular-seed</DefaultPrivateUrl>
+    <PrivateUrl>git@github.com:eejai42/eapi-airtable-angular-seed</PrivateUrl>
+    <IsActive>checked</IsActive>
+    <IsClient>checked</IsClient>
+    <IsAirtable>checked</IsAirtable>
+    <IsAngular>checked</IsAngular>
+    <IsWebApp>checked</IsWebApp>
+    <CreatedTime>11/5/2019 5:30pm</CreatedTime>
+    <ModifiedTime>1/21/2021 6:56pm</ModifiedTime>
+    <TechnologyLogos>client (https://dl.airtable.com/.attachments/a0bccf95ddcb941f216b0dddf48ebf95/4d6effdc/Client_App__Pike13),airtable (https://dl.airtable.com/.attachments/a90c9ccbfb7ec257d423835925be54f7/a49f4e4d/I_Finally_Understand_Databases_Because_of_the_Free_Airtable_App_...),angular (https://dl.airtable.com/.attachments/2dbcd160b85bd6c6ea5a748bac3eaebf/2a5531ae/Angular_-_PRESS_KIT),webapp (https://dl.airtable.com/.attachments/803868516607111421ccb044de723d01/b5ef8a4d/Whats_the_Operating_System_of_my_Webapp__All_Things_Cloud)</TechnologyLogos>
+    <TechnologyNames>Client, Airtable, Angular, WebApp</TechnologyNames>
+  </SeedRepository>
+  <SeedRepository>
+    <Name>eapi-sqlserver-akveo-seed</Name>
+    <SortOrder>8</SortOrder>
+    <SeedStatus>Closed Beta</SeedStatus>
+    <ShortName>sqlserver-akveo</ShortName>
+    <DisplayName>SQL Akveo Administrative Web App</DisplayName>
+    <SeedTechnologies>Client,SqlServer,Akveo,Angular,WebApp</SeedTechnologies>
+    <RepositoryUrl>https://github.com/effortlessapi/eapi-sqlserver-akveo-seed</RepositoryUrl>
+    <DefaultRepositoryUrl>https://github.com/effortlessapi/eapi-sqlserver-akveo-seed</DefaultRepositoryUrl>
+    <DefaultPrivateUrl>git@github.com:eejai42/eapi-sqlserver-akveo-seed</DefaultPrivateUrl>
+    <PrivateUrl>git@github.com:eejai42/eapi-sqlserver-akveo-seed</PrivateUrl>
+    <IsClient>checked</IsClient>
+    <IsSqlServer>checked</IsSqlServer>
+    <IsAkveo>checked</IsAkveo>
+    <IsAngular>checked</IsAngular>
+    <IsWebApp>checked</IsWebApp>
+    <AdditionalDeploymentCommands>npm install
+ng serve</AdditionalDeploymentCommands>
+    <CreatedTime>12/20/2019 9:50pm</CreatedTime>
+    <ModifiedTime>1/21/2021 6:56pm</ModifiedTime>
+    <TechnologyLogos>client (https://dl.airtable.com/.attachments/a0bccf95ddcb941f216b0dddf48ebf95/4d6effdc/Client_App__Pike13),sqlserver (https://dl.airtable.com/.attachments/50fdc3bd590ac8142ef57d48639fea18/c15b096e/SQL_Server_Logo_-_Microsoft_Vector_Free_Download__Sql_server_...),akveo (https://dl.airtable.com/.attachments/093ad64ed2274c8a4d0b1a78ad72092a/27ece74b/Ngx-admin_-_Guideline_to_install.),angular (https://dl.airtable.com/.attachments/2dbcd160b85bd6c6ea5a748bac3eaebf/2a5531ae/Angular_-_PRESS_KIT),webapp (https://dl.airtable.com/.attachments/803868516607111421ccb044de723d01/b5ef8a4d/Whats_the_Operating_System_of_my_Webapp__All_Things_Cloud)</TechnologyLogos>
+    <TechnologyNames>Client, Sql Server, Akveo, Angular, WebApp</TechnologyNames>
+  </SeedRepository>
+  <SeedRepository>
+    <Name>eapi-airtable-monaca-seed</Name>
+    <SortOrder>9</SortOrder>
+    <SeedStatus>Closed Beta</SeedStatus>
+    <ShortName>airtable-monaca</ShortName>
+    <DisplayName>Monaca Cordova Seed</DisplayName>
+    <SeedTechnologies>Client,Airtable,iOS,Android,WebApp,Monaca,WinApp,MacOS</SeedTechnologies>
+    <RepositoryUrl>https://github.com/effortlessapi/eapi-airtable-monaca-seed</RepositoryUrl>
+    <DefaultRepositoryUrl>https://github.com/effortlessapi/eapi-airtable-monaca-seed</DefaultRepositoryUrl>
+    <DefaultPrivateUrl>git@github.com:eejai42/eapi-airtable-monaca-seed</DefaultPrivateUrl>
+    <PrivateUrl>git@github.com:eejai42/eapi-airtable-monaca-seed</PrivateUrl>
+    <Notes>Cross Platform Cordova Project</Notes>
+    <IsClient>checked</IsClient>
+    <IsAirtable>checked</IsAirtable>
+    <IsIonic>checked</IsIonic>
+    <IsDotNet>checked</IsDotNet>
+    <IsIOS>checked</IsIOS>
+    <IsAndroid>checked</IsAndroid>
+    <IsWebApp>checked</IsWebApp>
+    <CreatedTime>3/9/2020 2:24am</CreatedTime>
+    <ModifiedTime>1/21/2021 7:03pm</ModifiedTime>
+    <TechnologyLogos>client (https://dl.airtable.com/.attachments/a0bccf95ddcb941f216b0dddf48ebf95/4d6effdc/Client_App__Pike13),airtable (https://dl.airtable.com/.attachments/a90c9ccbfb7ec257d423835925be54f7/a49f4e4d/I_Finally_Understand_Databases_Because_of_the_Free_Airtable_App_...),ios (https://dl.airtable.com/.attachments/822225515dc27784a0e5e80be2737a30/1f58be74/web-ios-logo__Cardiac_Exercise_Research_Group),android (https://dl.airtable.com/.attachments/e86b827e158acb30410427e71a0695c6/a27037f7/FileAndroid_logo_2019.svg_-_Wikipedia.svg-Wikipedia),webapp (https://dl.airtable.com/.attachments/803868516607111421ccb044de723d01/b5ef8a4d/Whats_the_Operating_System_of_my_Webapp__All_Things_Cloud),monaca (https://dl.airtable.com/.attachments/a566cd7d3b393781c738277e4f0643e8/783d60b6/Monaca_Logo_image_download_logo__LogoWiki.net.net),winapp (https://dl.airtable.com/.attachments/994d7b4fb6a610328db8b60b84c49f7a/a565342a/Windows_Phone_App_Store_Icon_Download_-_Window_Square_Png_Clipart_...),macos (https://dl.airtable.com/.attachments/da7876d2943d89a3a444c7905ee3a4f7/e903015d/The_Branding_Source_The_Finder_icon_at_twenty)</TechnologyLogos>
+    <TechnologyNames>Client, Airtable, iOS, Android, WebApp, Monaca, WinApp, MacOS</TechnologyNames>
+  </SeedRepository>
+  <SeedRepository>
+    <Name>eapi-sqlserver-angular-seed</Name>
+    <SortOrder>12</SortOrder>
+    <SeedStatus>Closed Beta</SeedStatus>
+    <ShortName>sqlserver-angular</ShortName>
+    <DisplayName>SQL Angular Web App</DisplayName>
+    <SeedTechnologies>Client,SqlServer,Angular</SeedTechnologies>
+    <RepositoryUrl>https://github.com/effortlessapi/eapi-sqlserver-angular-seed</RepositoryUrl>
+    <DefaultRepositoryUrl>https://github.com/effortlessapi/eapi-sqlserver-angular-seed</DefaultRepositoryUrl>
+    <DefaultPrivateUrl>git@github.com:eejai42/eapi-sqlserver-angular-seed</DefaultPrivateUrl>
+    <PrivateUrl>git@github.com:eejai42/eapi-sqlserver-angular-seed</PrivateUrl>
+    <IsClient>checked</IsClient>
+    <IsSqlServer>checked</IsSqlServer>
+    <IsAngular>checked</IsAngular>
+    <CreatedTime>12/20/2019 9:51pm</CreatedTime>
+    <ModifiedTime>1/21/2021 6:56pm</ModifiedTime>
+    <TechnologyLogos>client (https://dl.airtable.com/.attachments/a0bccf95ddcb941f216b0dddf48ebf95/4d6effdc/Client_App__Pike13),sqlserver (https://dl.airtable.com/.attachments/50fdc3bd590ac8142ef57d48639fea18/c15b096e/SQL_Server_Logo_-_Microsoft_Vector_Free_Download__Sql_server_...),angular (https://dl.airtable.com/.attachments/2dbcd160b85bd6c6ea5a748bac3eaebf/2a5531ae/Angular_-_PRESS_KIT)</TechnologyLogos>
+    <TechnologyNames>Client, Sql Server, Angular</TechnologyNames>
+  </SeedRepository>
+  <SeedRepository>
+    <Name>eapi-react-admin-webapp-seed</Name>
+    <SortOrder>12</SortOrder>
+    <SeedStatus>Closed Beta</SeedStatus>
+    <ShortName>react-admin-webapp</ShortName>
+    <DisplayName>React Administrative Web App</DisplayName>
+    <SeedTechnologies>Client,REACT,WebApp</SeedTechnologies>
+    <RepositoryUrl>https://github.com/effortlessapi/eapi-react-admin-webapp-seed</RepositoryUrl>
+    <DefaultRepositoryUrl>https://github.com/effortlessapi/eapi-react-admin-webapp-seed</DefaultRepositoryUrl>
+    <DefaultPrivateUrl>git@github.com:eejai42/eapi-react-admin-webapp-seed</DefaultPrivateUrl>
+    <PrivateUrl>git@github.com:eejai42/eapi-react-admin-webapp-seed</PrivateUrl>
+    <IsClient>checked</IsClient>
+    <IsReact>checked</IsReact>
+    <IsWebApp>checked</IsWebApp>
+    <CreatedTime>1/12/2021 10:26pm</CreatedTime>
+    <ModifiedTime>1/21/2021 6:56pm</ModifiedTime>
+    <TechnologyLogos>client (https://dl.airtable.com/.attachments/a0bccf95ddcb941f216b0dddf48ebf95/4d6effdc/Client_App__Pike13),react (https://dl.airtable.com/.attachments/ba9dd87a6f1e9824a8bf44a5372ea2de/61cb04cd/Ensocore__React-developer),webapp (https://dl.airtable.com/.attachments/803868516607111421ccb044de723d01/b5ef8a4d/Whats_the_Operating_System_of_my_Webapp__All_Things_Cloud)</TechnologyLogos>
+    <TechnologyNames>Client, REACT, WebApp</TechnologyNames>
+  </SeedRepository>
+  <SeedRepository>
+    <Name>eapi-sqlserver-ionic-seed</Name>
+    <SortOrder>13</SortOrder>
+    <SeedStatus>Closed Beta</SeedStatus>
+    <ShortName>sqlserver-ionic</ShortName>
+    <DisplayName>SQL Ionic cross-platform Mobile App</DisplayName>
+    <SeedTechnologies>Client,SqlServer,Angular,Ionic,iOS,Android,WebApp</SeedTechnologies>
+    <RepositoryUrl>https://github.com/effortlessapi/eapi-sqlserver-ionic-seed</RepositoryUrl>
+    <DefaultRepositoryUrl>https://github.com/effortlessapi/eapi-sqlserver-ionic-seed</DefaultRepositoryUrl>
+    <DefaultPrivateUrl>git@github.com:eejai42/eapi-sqlserver-ionic-seed</DefaultPrivateUrl>
+    <PrivateUrl>git@github.com:eejai42/eapi-sqlserver-ionic-seed</PrivateUrl>
+    <Notes>Administrative Web Application
+
+Starts with authenticated web app which provides data access to all information available through the API.</Notes>
+    <IsActive>checked</IsActive>
+    <IsClient>checked</IsClient>
+    <IsSqlServer>checked</IsSqlServer>
+    <IsAngular>checked</IsAngular>
+    <IsIonic>checked</IsIonic>
+    <IsIOS>checked</IsIOS>
+    <IsAndroid>checked</IsAndroid>
+    <IsWebApp>checked</IsWebApp>
+    <CreatedTime>12/20/2019 9:55pm</CreatedTime>
+    <ModifiedTime>1/21/2021 6:56pm</ModifiedTime>
+    <TechnologyLogos>client (https://dl.airtable.com/.attachments/a0bccf95ddcb941f216b0dddf48ebf95/4d6effdc/Client_App__Pike13),sqlserver (https://dl.airtable.com/.attachments/50fdc3bd590ac8142ef57d48639fea18/c15b096e/SQL_Server_Logo_-_Microsoft_Vector_Free_Download__Sql_server_...),angular (https://dl.airtable.com/.attachments/2dbcd160b85bd6c6ea5a748bac3eaebf/2a5531ae/Angular_-_PRESS_KIT),ionic (https://dl.airtable.com/.attachments/38e3ad64cc0999648f0440ba04e30248/1dc46d40/Ionic_-_Cross-Platform_Mobile_App_Development),ios (https://dl.airtable.com/.attachments/822225515dc27784a0e5e80be2737a30/1f58be74/web-ios-logo__Cardiac_Exercise_Research_Group),android (https://dl.airtable.com/.attachments/e86b827e158acb30410427e71a0695c6/a27037f7/FileAndroid_logo_2019.svg_-_Wikipedia.svg-Wikipedia),webapp (https://dl.airtable.com/.attachments/803868516607111421ccb044de723d01/b5ef8a4d/Whats_the_Operating_System_of_my_Webapp__All_Things_Cloud)</TechnologyLogos>
+    <TechnologyNames>Client, Sql Server, Angular, Ionic, iOS, Android, WebApp</TechnologyNames>
+  </SeedRepository>
+  <SeedRepository>
+    <Name>eapi-firebase-dotnet-coordinator-seed</Name>
+    <SortOrder>13</SortOrder>
+    <SeedStatus>Closed Beta</SeedStatus>
+    <ShortName>firebase-dotnet-coordinator</ShortName>
+    <DisplayName>Firebase Coordinator</DisplayName>
+    <SeedTechnologies>Server,DotNet,Firebase</SeedTechnologies>
+    <RepositoryUrl>https://github.com/effortlessapi/eapi-firebase-dotnet-coordinator-seed</RepositoryUrl>
+    <DefaultRepositoryUrl>https://github.com/effortlessapi/eapi-firebase-dotnet-coordinator-seed</DefaultRepositoryUrl>
+    <DefaultPrivateUrl>git@github.com:eejai42/eapi-firebase-dotnet-coordinator-seed</DefaultPrivateUrl>
+    <PrivateUrl>git@github.com:eejai42/eapi-firebase-dotnet-coordinator-seed</PrivateUrl>
+    <IsFirebase>checked</IsFirebase>
+    <IsServer>checked</IsServer>
+    <IsDotNet>checked</IsDotNet>
+    <CreatedTime>1/12/2021 10:26pm</CreatedTime>
+    <ModifiedTime>1/21/2021 6:56pm</ModifiedTime>
+    <TechnologyLogos>server (https://dl.airtable.com/.attachments/9e89e187e98b322b31a1c8dde48f7764/9efd933c/Learn_Microservices_-_2021_Best_Microservices_Tutorials),dotnet (https://dl.airtable.com/.attachments/4d53255d56338e7cb21ca9680449a275/89661d40/Dotnet_Vector_Logo_-_Download_Free_SVG_Icon__Worldvectorlogo),firebase (https://dl.airtable.com/.attachments/d73176b0bf5f5327008319c3c249100f/91fcfe1d/Firebase_-_Agile_nearshore_software_development_company)</TechnologyLogos>
+    <TechnologyNames>Server, DotNet, Firebase</TechnologyNames>
+  </SeedRepository>
+  <SeedRepository>
+    <Name>eapi-sqlserver-android-seed</Name>
+    <SortOrder>14</SortOrder>
+    <SeedStatus>Closed Beta</SeedStatus>
+    <ShortName>sqlserver-android</ShortName>
+    <DisplayName>SQL Android Native App</DisplayName>
+    <SeedTechnologies>Client,SqlServer,Android</SeedTechnologies>
+    <RepositoryUrl>https://github.com/effortlessapi/eapi-sqlserver-android-seed</RepositoryUrl>
+    <DefaultRepositoryUrl>https://github.com/effortlessapi/eapi-sqlserver-android-seed</DefaultRepositoryUrl>
+    <DefaultPrivateUrl>git@github.com:eejai42/eapi-sqlserver-android-seed</DefaultPrivateUrl>
+    <PrivateUrl>git@github.com:eejai42/eapi-sqlserver-android-seed</PrivateUrl>
+    <IsClient>checked</IsClient>
+    <IsSqlServer>checked</IsSqlServer>
+    <IsAndroid>checked</IsAndroid>
+    <CreatedTime>12/20/2019 9:51pm</CreatedTime>
+    <ModifiedTime>1/21/2021 6:56pm</ModifiedTime>
+    <TechnologyLogos>client (https://dl.airtable.com/.attachments/a0bccf95ddcb941f216b0dddf48ebf95/4d6effdc/Client_App__Pike13),sqlserver (https://dl.airtable.com/.attachments/50fdc3bd590ac8142ef57d48639fea18/c15b096e/SQL_Server_Logo_-_Microsoft_Vector_Free_Download__Sql_server_...),android (https://dl.airtable.com/.attachments/e86b827e158acb30410427e71a0695c6/a27037f7/FileAndroid_logo_2019.svg_-_Wikipedia.svg-Wikipedia)</TechnologyLogos>
+    <TechnologyNames>Client, Sql Server, Android</TechnologyNames>
+  </SeedRepository>
+  <SeedRepository>
+    <Name>eapi-sqlserver-ios-seed</Name>
+    <SortOrder>15</SortOrder>
+    <SeedStatus>Closed Beta</SeedStatus>
+    <ShortName>sqlserver-ios</ShortName>
+    <DisplayName>SQL iOS Native App</DisplayName>
+    <SeedTechnologies>Client,SqlServer,iOS</SeedTechnologies>
+    <RepositoryUrl>https://github.com/effortlessapi/eapi-sqlserver-ios-seed</RepositoryUrl>
+    <DefaultRepositoryUrl>https://github.com/effortlessapi/eapi-sqlserver-ios-seed</DefaultRepositoryUrl>
+    <DefaultPrivateUrl>git@github.com:eejai42/eapi-sqlserver-ios-seed</DefaultPrivateUrl>
+    <PrivateUrl>git@github.com:eejai42/eapi-sqlserver-ios-seed</PrivateUrl>
+    <IsClient>checked</IsClient>
+    <IsSqlServer>checked</IsSqlServer>
+    <IsIOS>checked</IsIOS>
+    <CreatedTime>12/20/2019 9:51pm</CreatedTime>
+    <ModifiedTime>1/21/2021 6:56pm</ModifiedTime>
+    <TechnologyLogos>client (https://dl.airtable.com/.attachments/a0bccf95ddcb941f216b0dddf48ebf95/4d6effdc/Client_App__Pike13),sqlserver (https://dl.airtable.com/.attachments/50fdc3bd590ac8142ef57d48639fea18/c15b096e/SQL_Server_Logo_-_Microsoft_Vector_Free_Download__Sql_server_...),ios (https://dl.airtable.com/.attachments/822225515dc27784a0e5e80be2737a30/1f58be74/web-ios-logo__Cardiac_Exercise_Research_Group)</TechnologyLogos>
+    <TechnologyNames>Client, Sql Server, iOS</TechnologyNames>
+  </SeedRepository>
+  <SeedRepository>
+    <Name>eapi-sqlserver-dotnet-seed</Name>
+    <SortOrder>16</SortOrder>
+    <SeedStatus>Closed Beta</SeedStatus>
+    <ShortName>sqlserver-dotnet</ShortName>
+    <DisplayName>SQL .Net Core Console app</DisplayName>
+    <SeedTechnologies>SqlServer,DotNet,CLI,Client</SeedTechnologies>
+    <RepositoryUrl>https://github.com/effortlessapi/eapi-sqlserver-dotnet-seed</RepositoryUrl>
+    <DefaultRepositoryUrl>https://github.com/effortlessapi/eapi-sqlserver-dotnet-seed</DefaultRepositoryUrl>
+    <DefaultPrivateUrl>git@github.com:eejai42/eapi-sqlserver-dotnet-seed</DefaultPrivateUrl>
+    <PrivateUrl>git@github.com:eejai42/eapi-sqlserver-dotnet-seed</PrivateUrl>
+    <IsServer>checked</IsServer>
+    <IsSqlServer>checked</IsSqlServer>
+    <IsDotNet>checked</IsDotNet>
+    <CreatedTime>12/20/2019 9:51pm</CreatedTime>
+    <ModifiedTime>1/21/2021 7:23pm</ModifiedTime>
+    <TechnologyLogos>sqlserver (https://dl.airtable.com/.attachments/50fdc3bd590ac8142ef57d48639fea18/c15b096e/SQL_Server_Logo_-_Microsoft_Vector_Free_Download__Sql_server_...),dotnet (https://dl.airtable.com/.attachments/4d53255d56338e7cb21ca9680449a275/89661d40/Dotnet_Vector_Logo_-_Download_Free_SVG_Icon__Worldvectorlogo),cli (https://dl.airtable.com/.attachments/90c96913529680ba9e94fcd7edd08aaf/127b5526/Azure_CLI_-_Docker_Hub),client (https://dl.airtable.com/.attachments/a0bccf95ddcb941f216b0dddf48ebf95/4d6effdc/Client_App__Pike13)</TechnologyLogos>
+    <TechnologyNames>Sql Server, DotNet, CLI, Client</TechnologyNames>
+  </SeedRepository>
+  <SeedRepository>
+    <Name>eapi-sqlserver-python-seed</Name>
+    <SortOrder>17</SortOrder>
+    <SeedStatus>Closed Beta</SeedStatus>
+    <ShortName>sqlserver-python</ShortName>
+    <DisplayName>SQL Python Console App</DisplayName>
+    <SeedTechnologies>SqlServer,Python,CLI</SeedTechnologies>
+    <RepositoryUrl>https://github.com/effortlessapi/eapi-sqlserver-python-seed</RepositoryUrl>
+    <DefaultRepositoryUrl>https://github.com/effortlessapi/eapi-sqlserver-python-seed</DefaultRepositoryUrl>
+    <DefaultPrivateUrl>git@github.com:eejai42/eapi-sqlserver-python-seed</DefaultPrivateUrl>
+    <PrivateUrl>git@github.com:eejai42/eapi-sqlserver-python-seed</PrivateUrl>
+    <IsServer>checked</IsServer>
+    <IsSqlServer>checked</IsSqlServer>
+    <IsPython>checked</IsPython>
+    <CreatedTime>12/20/2019 9:51pm</CreatedTime>
+    <ModifiedTime>1/21/2021 7:23pm</ModifiedTime>
+    <TechnologyLogos>sqlserver (https://dl.airtable.com/.attachments/50fdc3bd590ac8142ef57d48639fea18/c15b096e/SQL_Server_Logo_-_Microsoft_Vector_Free_Download__Sql_server_...),python (https://dl.airtable.com/.attachments/3a78ff1f17ea9b05c4e329665b9cd876/77307f95/FilePython-logo-notext.svg_-_Wikimedia_Commons.svg-WikimediaCommons),cli (https://dl.airtable.com/.attachments/90c96913529680ba9e94fcd7edd08aaf/127b5526/Azure_CLI_-_Docker_Hub)</TechnologyLogos>
+    <TechnologyNames>Sql Server, Python, CLI</TechnologyNames>
   </SeedRepository>
 </SeedRepositories>

@@ -1,0 +1,142 @@
+<SeedTechnologies>
+  <SeedTechnology>
+    <Name>Airtable</Name>
+    <DisplayName>Airtable</DisplayName>
+    <Attachments>airtable (https://dl.airtable.com/.attachments/a90c9ccbfb7ec257d423835925be54f7/a49f4e4d/I_Finally_Understand_Databases_Because_of_the_Free_Airtable_App_...)</Attachments>
+    <SeedRepositories>eapi-project-cli-seed,eapi-airtable-python-django-seed,eapi-airtable-angular-seed,eapi-airtable-monaca-seed,eapi-airtable-winapp-seed,eapi-airtable-akveo-seed,eapi-airtable-android-seed,eapi-airtable-ios-seed,eapi-airtable-ionic-seed,eapi-airtable-dotnet-seed,eapi-airtable-python-seed</SeedRepositories>
+  </SeedTechnology>
+  <SeedTechnology>
+    <Name>SqlServer</Name>
+    <DisplayName>Sql Server</DisplayName>
+    <Attachments>sqlserver (https://dl.airtable.com/.attachments/50fdc3bd590ac8142ef57d48639fea18/c15b096e/SQL_Server_Logo_-_Microsoft_Vector_Free_Download__Sql_server_...)</Attachments>
+    <SeedRepositories>eapi-sqlserver-coordinator-seed,eapi-sqlserver-akveo-seed,eapi-sqlserver-angular-seed,eapi-sqlserver-ionic-seed,eapi-sqlserver-android-seed,eapi-sqlserver-ios-seed,eapi-sqlserver-dotnet-seed,eapi-sqlserver-python-seed</SeedRepositories>
+  </SeedTechnology>
+  <SeedTechnology>
+    <Name>Akveo</Name>
+    <DisplayName>Akveo</DisplayName>
+    <Attachments>akveo (https://dl.airtable.com/.attachments/093ad64ed2274c8a4d0b1a78ad72092a/27ece74b/Ngx-admin_-_Guideline_to_install.)</Attachments>
+    <SeedRepositories>eapi-sqlserver-akveo-seed,eapi-airtable-akveo-seed</SeedRepositories>
+  </SeedTechnology>
+  <SeedTechnology>
+    <Name>Angular</Name>
+    <DisplayName>Angular</DisplayName>
+    <Attachments>angular (https://dl.airtable.com/.attachments/2dbcd160b85bd6c6ea5a748bac3eaebf/2a5531ae/Angular_-_PRESS_KIT)</Attachments>
+    <SeedRepositories>eapi-airtable-angular-seed,eapi-sqlserver-akveo-seed,eapi-airtable-akveo-seed,eapi-sqlserver-angular-seed,eapi-sqlserver-ionic-seed,eapi-airtable-ionic-seed</SeedRepositories>
+  </SeedTechnology>
+  <SeedTechnology>
+    <Name>REACT</Name>
+    <DisplayName>REACT</DisplayName>
+    <Attachments>react (https://dl.airtable.com/.attachments/ba9dd87a6f1e9824a8bf44a5372ea2de/61cb04cd/Ensocore__React-developer)</Attachments>
+    <SeedRepositories>eapi-react-admin-webapp-seed</SeedRepositories>
+  </SeedTechnology>
+  <SeedTechnology>
+    <Name>Ionic</Name>
+    <DisplayName>Ionic</DisplayName>
+    <Attachments>ionic (https://dl.airtable.com/.attachments/38e3ad64cc0999648f0440ba04e30248/1dc46d40/Ionic_-_Cross-Platform_Mobile_App_Development)</Attachments>
+    <SeedRepositories>eapi-airtable-monaca-seed,eapi-sqlserver-ionic-seed,eapi-airtable-ionic-seed</SeedRepositories>
+  </SeedTechnology>
+  <SeedTechnology>
+    <Name>Python</Name>
+    <DisplayName>Python</DisplayName>
+    <Attachments>python (https://dl.airtable.com/.attachments/3a78ff1f17ea9b05c4e329665b9cd876/77307f95/FilePython-logo-notext.svg_-_Wikimedia_Commons.svg-WikimediaCommons)</Attachments>
+    <SeedRepositories>eapi-airtable-python-django-seed,eapi-mysql-python-django-seed,eapi-sqlserver-python-seed,eapi-airtable-python-seed,eapi-postgres-python-django-seed</SeedRepositories>
+  </SeedTechnology>
+  <SeedTechnology>
+    <Name>DotNet</Name>
+    <DisplayName>DotNet</DisplayName>
+    <Attachments>dotnet (https://dl.airtable.com/.attachments/4d53255d56338e7cb21ca9680449a275/89661d40/Dotnet_Vector_Logo_-_Download_Free_SVG_Icon__Worldvectorlogo)</Attachments>
+    <SeedRepositories>eapi-project-cli-seed,eapi-sqlserver-coordinator-seed,eapi-firebase-dotnet-coordinator-seed,eapi-airtable-monaca-seed,eapi-airtable-winapp-seed,eapi-sqlserver-dotnet-seed,eapi-airtable-dotnet-seed</SeedRepositories>
+  </SeedTechnology>
+  <SeedTechnology>
+    <Name>iOS</Name>
+    <DisplayName>iOS</DisplayName>
+    <Attachments>ios (https://dl.airtable.com/.attachments/822225515dc27784a0e5e80be2737a30/1f58be74/web-ios-logo__Cardiac_Exercise_Research_Group)</Attachments>
+    <SeedRepositories>eapi-airtable-monaca-seed,eapi-sqlserver-ionic-seed,eapi-sqlserver-ios-seed,eapi-airtable-ios-seed,eapi-airtable-ionic-seed</SeedRepositories>
+  </SeedTechnology>
+  <SeedTechnology>
+    <Name>Android</Name>
+    <DisplayName>Android</DisplayName>
+    <Attachments>android (https://dl.airtable.com/.attachments/e86b827e158acb30410427e71a0695c6/a27037f7/FileAndroid_logo_2019.svg_-_Wikipedia.svg-Wikipedia)</Attachments>
+    <SeedRepositories>eapi-airtable-monaca-seed,eapi-sqlserver-ionic-seed,eapi-sqlserver-android-seed,eapi-airtable-android-seed,eapi-airtable-ionic-seed</SeedRepositories>
+  </SeedTechnology>
+  <SeedTechnology>
+    <Name>WebApp</Name>
+    <DisplayName>WebApp</DisplayName>
+    <Attachments>webapp (https://dl.airtable.com/.attachments/803868516607111421ccb044de723d01/b5ef8a4d/Whats_the_Operating_System_of_my_Webapp__All_Things_Cloud)</Attachments>
+    <SeedRepositories>eapi-react-admin-webapp-seed,eapi-airtable-python-django-seed,eapi-airtable-angular-seed,eapi-sqlserver-akveo-seed,eapi-airtable-monaca-seed,eapi-airtable-akveo-seed,eapi-sqlserver-ionic-seed,eapi-airtable-ionic-seed</SeedRepositories>
+  </SeedTechnology>
+  <SeedTechnology>
+    <Name>WinApp</Name>
+    <DisplayName>WinApp</DisplayName>
+    <Attachments>winapp (https://dl.airtable.com/.attachments/994d7b4fb6a610328db8b60b84c49f7a/a565342a/Windows_Phone_App_Store_Icon_Download_-_Window_Square_Png_Clipart_...)</Attachments>
+    <SeedRepositories>eapi-airtable-winapp-seed</SeedRepositories>
+  </SeedTechnology>
+  <SeedTechnology>
+    <Name>MacOS</Name>
+    <DisplayName>MacOS</DisplayName>
+    <Attachments>macos (https://dl.airtable.com/.attachments/da7876d2943d89a3a444c7905ee3a4f7/e903015d/The_Branding_Source_The_Finder_icon_at_twenty)</Attachments>
+  </SeedTechnology>
+  <SeedTechnology>
+    <Name>Vue</Name>
+    <DisplayName>Vue</DisplayName>
+    <Attachments>vuejs (https://dl.airtable.com/.attachments/69cfe7cc983b62072debc7e1f0549771/cccdd024/Vuejs_original_wordmark_logo_Free_Icon_of_Devicon)</Attachments>
+  </SeedTechnology>
+  <SeedTechnology>
+    <Name>JQuery</Name>
+    <DisplayName>JQuery</DisplayName>
+    <Attachments>jquery (https://dl.airtable.com/.attachments/dac41b69b12397c319997ebf209696b9/1b2b3b23/jquery-logo-vertical_large_square_-_OpenJS_Foundation)</Attachments>
+  </SeedTechnology>
+  <SeedTechnology>
+    <Name>Postgres</Name>
+    <DisplayName>Postgres</DisplayName>
+    <Attachments>postgres (https://dl.airtable.com/.attachments/cf1b6f89cb83bfb9700e1e0304382145/c9aad147/PostgreSQL_-_Wikipedia)</Attachments>
+    <SeedRepositories>eapi-postgres-python-django-seed</SeedRepositories>
+  </SeedTechnology>
+  <SeedTechnology>
+    <Name>NoSQL</Name>
+    <DisplayName>NoSQL</DisplayName>
+    <Attachments>nosql (https://dl.airtable.com/.attachments/b29ffe1381d1bd9a29ab911357dae15b/4bcd36ea/Machine_Learning_-_NoSQL_Style)</Attachments>
+  </SeedTechnology>
+  <SeedTechnology>
+    <Name>AWSLambda</Name>
+    <DisplayName>AWSLambda</DisplayName>
+    <Attachments>awslambda (https://dl.airtable.com/.attachments/e02dd4c338c2f8c16cc0146637984498/cf3d05ba/FileHalf-Life_lambda_logo.svg_-_Wikimedia_Commons.svg-WikimediaCommons)</Attachments>
+  </SeedTechnology>
+  <SeedTechnology>
+    <Name>CLI</Name>
+    <DisplayName>CLI</DisplayName>
+    <Attachments>cli (https://dl.airtable.com/.attachments/90c96913529680ba9e94fcd7edd08aaf/127b5526/Azure_CLI_-_Docker_Hub)</Attachments>
+    <SeedRepositories>eapi-project-cli-seed</SeedRepositories>
+  </SeedTechnology>
+  <SeedTechnology>
+    <Name>Firebase</Name>
+    <DisplayName>Firebase</DisplayName>
+    <Attachments>firebase (https://dl.airtable.com/.attachments/d73176b0bf5f5327008319c3c249100f/91fcfe1d/Firebase_-_Agile_nearshore_software_development_company)</Attachments>
+    <SeedRepositories>eapi-firebase-dotnet-coordinator-seed</SeedRepositories>
+  </SeedTechnology>
+  <SeedTechnology>
+    <Name>Server</Name>
+    <DisplayName>Server</DisplayName>
+    <Notes>General notion of a server</Notes>
+    <Attachments>server (https://dl.airtable.com/.attachments/9e89e187e98b322b31a1c8dde48f7764/9efd933c/Learn_Microservices_-_2021_Best_Microservices_Tutorials)</Attachments>
+    <SeedRepositories>eapi-sqlserver-coordinator-seed,eapi-airtable-python-django-seed,eapi-mysql-python-django-seed,eapi-sqlserver-dotnet-seed,eapi-airtable-dotnet-seed,eapi-airtable-python-seed,eapi-firebase-dotnet-coordinator-seed,eapi-sqlserver-python-seed</SeedRepositories>
+  </SeedTechnology>
+  <SeedTechnology>
+    <Name>Client</Name>
+    <DisplayName>Client</DisplayName>
+    <Attachments>client (https://dl.airtable.com/.attachments/a0bccf95ddcb941f216b0dddf48ebf95/4d6effdc/Client_App__Pike13)</Attachments>
+    <SeedRepositories>eapi-react-admin-webapp-seed,eapi-project-cli-seed,eapi-airtable-angular-seed,eapi-sqlserver-akveo-seed,eapi-sqlserver-angular-seed,eapi-airtable-monaca-seed,eapi-airtable-winapp-seed,eapi-airtable-akveo-seed,eapi-airtable-android-seed,eapi-airtable-ios-seed,eapi-airtable-ionic-seed,eapi-sqlserver-ionic-seed,eapi-sqlserver-android-seed,eapi-sqlserver-ios-seed</SeedRepositories>
+  </SeedTechnology>
+  <SeedTechnology>
+    <Name>Django</Name>
+    <DisplayName>Django</DisplayName>
+    <Attachments>django (https://dl.airtable.com/.attachments/7e218464d50598652b785fe337d572ac/2e2d89e3/django-python-logo_-_OPENGIS.ch.ch)</Attachments>
+    <SeedRepositories>eapi-airtable-python-django-seed,eapi-mysql-python-django-seed,eapi-postgres-python-django-seed</SeedRepositories>
+  </SeedTechnology>
+  <SeedTechnology>
+    <Name>MySQL</Name>
+    <DisplayName>MySQL</DisplayName>
+    <Attachments>mysql (https://dl.airtable.com/.attachments/379890e2ec4defa36547ad896c6bba04/0a3924bf/MySQL_logo_PNG)</Attachments>
+    <SeedRepositories>eapi-mysql-python-django-seed</SeedRepositories>
+  </SeedTechnology>
+</SeedTechnologies>
