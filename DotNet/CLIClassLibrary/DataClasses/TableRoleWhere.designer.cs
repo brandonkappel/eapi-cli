@@ -107,6 +107,9 @@ namespace EAPI.CLI.Lib.DataClasses
         [JsonProperty(DefaultValueHandling = DefaultValueHandling.IgnoreAndPopulate, PropertyName = "WhereClause")]
         public String WhereClause { get; set; }
     
+        [JsonProperty(DefaultValueHandling = DefaultValueHandling.IgnoreAndPopulate, PropertyName = "DefaultCallCRUD")]
+        public String DefaultCallCRUD { get; set; }
+    
 
         
 

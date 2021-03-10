@@ -53,6 +53,7 @@ namespace YP.SassyMQ.Lib.RabbitMQ
         public string WhoAreYouRelativeUrl { get; set; }
         public string WhoAreYouTextFileContents { get; set; }
         public byte[] WhoAreYouBinaryFileContents { get; set; }
+        public int MaxPages { get; set; }
 
         public void SetActor(SMQActorBase actor) 
         {

@@ -159,6 +159,7 @@ namespace CLIClassLibrary.RoleHandlers
             payload.SetActor(this.SMQActor);
             payload.AccessToken = this.SMQActor.AccessToken;
             payload.AirtableWhere = where;
+            payload.MaxPages = 99;
 
             switch (invokeRequest.ToLower())
             {

@@ -7,6 +7,7 @@ invoke,Invoke a method,string,TRUE,FALSE,,AddCell,4,
 bodyData,Raw data provided,string,TRUE,FALSE,,{'cell…},5,
 bodyFile,Path to file to use,string,TRUE,FALSE,,Cell.json,6,
 runas,Who to run as,string,FALSE,FALSE,Guest,Admin,7,as
+maxPages,How many pages of results should be returned,Int32,TRUE,FALSE,,-maxPages 25
 amqps,AMQPS Connection String,string,FALSE,FALSE,amqps://smqPublic:smqPublic@effortlessapi-rmq.ssot.me/ej-tictactoe-demo,amqps://smqPublic:smqPublic@effortlessapi-rmq.ssot.me/ej-tictactoe-demo,8,
 where,Limit the where clause,string,TRUE,FALSE,,IsActive=1,9,
 output,Output file name,string,TRUE,FALSE,,output.json,10,

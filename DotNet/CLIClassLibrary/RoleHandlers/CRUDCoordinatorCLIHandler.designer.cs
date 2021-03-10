@@ -4677,6 +4677,7 @@ namespace CLIClassLibrary.RoleHandlers
                     sb.AppendLine($"CRUD      - RoleDefaultCRUD");
                     sb.AppendLine($"CRUD      - RoleDefaultHasAccess");
                     sb.AppendLine($"CRUD      - WhereClause");
+                    sb.AppendLine($"CRUD      - DefaultCallCRUD");
                 
             
         }
@@ -4717,6 +4718,7 @@ namespace CLIClassLibrary.RoleHandlers
                     sb.AppendLine($"CRUD      - RoleDefaultCRUD");
                     sb.AppendLine($"CRUD      - RoleDefaultHasAccess");
                     sb.AppendLine($"CRUD      - WhereClause");
+                    sb.AppendLine($"CRUD      - DefaultCallCRUD");
                 
             
         }
@@ -4757,6 +4759,7 @@ namespace CLIClassLibrary.RoleHandlers
                     sb.AppendLine($"CRUD      - RoleDefaultCRUD");
                     sb.AppendLine($"CRUD      - RoleDefaultHasAccess");
                     sb.AppendLine($"CRUD      - WhereClause");
+                    sb.AppendLine($"CRUD      - DefaultCallCRUD");
                 
             
         }

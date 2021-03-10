@@ -19,6 +19,9 @@ Options
     public partial class EAPICLIHandler
     {
         
+        [CommandLineOption(Description = "How many pages of results should be returned", MinOccurs = 0, Aliases = "")]
+        public Int32 maxPages { get; set; }
+        
         [CommandLineOption(Description = "Authenticate as a user", MinOccurs = 0, Aliases = "")]
         public string authenticate { get; set; }
         

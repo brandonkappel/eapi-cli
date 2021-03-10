@@ -2,8 +2,8 @@
   "profiles": {
     "EAPICLI": {
       "commandName": "Project",
-      "commandLineArgs": "-cloneEAPISeed airtable-akveo sd2-admin demo-sd2 -betaRepo",
-      "workingDirectory": "C:\\Users\\auto1\\go\\src\\github.com\\effortlessapi\\steve\\"
+      "commandLineArgs": "getprojecttables -maxpages 15",
+      "workingDirectory": "C:\\Users\\auto1\\go\\src\\github.com\\eejai42\\eapi-cli\\PowerShell"
     }
   }
 }

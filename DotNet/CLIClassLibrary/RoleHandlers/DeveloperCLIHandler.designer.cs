@@ -682,13 +682,14 @@ namespace CLIClassLibrary.RoleHandlers
             }
         }
 
-        private string HandlerFactory(string invokeRequest, string payloadString, string where)
+        private string HandlerFactory(string invokeRequest, string payloadString, string where, int maxPages)
         {
             var result = "";
             var payload = JsonConvert.DeserializeObject<StandardPayload>(payloadString);
             payload.SetActor(this.SMQActor);
             payload.AccessToken = this.SMQActor.AccessToken;
             payload.AirtableWhere = where;
+            payload.MaxPages = maxPages;
 
             switch (invokeRequest.ToLower())
             {
@@ -2657,6 +2658,7 @@ namespace CLIClassLibrary.RoleHandlers
                     sb.AppendLine($"CRUD      - RoleDefaultCRUD");
                     sb.AppendLine($"CRUD      - RoleDefaultHasAccess");
                     sb.AppendLine($"CRUD      - WhereClause");
+                    sb.AppendLine($"CRUD      - DefaultCallCRUD");
                 
             
         }
@@ -2697,6 +2699,7 @@ namespace CLIClassLibrary.RoleHandlers
                     sb.AppendLine($"CRUD      - RoleDefaultCRUD");
                     sb.AppendLine($"CRUD      - RoleDefaultHasAccess");
                     sb.AppendLine($"CRUD      - WhereClause");
+                    sb.AppendLine($"CRUD      - DefaultCallCRUD");
                 
             
         }
@@ -2737,6 +2740,7 @@ namespace CLIClassLibrary.RoleHandlers
                     sb.AppendLine($"CRUD      - RoleDefaultCRUD");
                     sb.AppendLine($"CRUD      - RoleDefaultHasAccess");
                     sb.AppendLine($"CRUD      - WhereClause");
+                    sb.AppendLine($"CRUD      - DefaultCallCRUD");
                 
             
         }

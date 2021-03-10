@@ -75,6 +75,14 @@
     <Aliases>as</Aliases>
   </CommandLineArg>
   <CommandLineArg>
+    <Name>maxPages</Name>
+    <Description>How many pages of results should be returned</Description>
+    <DataType>Int32</DataType>
+    <IsOptional>TRUE</IsOptional>
+    <IsList>FALSE</IsList>
+    <ExampleValue>-maxPages 25</ExampleValue>
+  </CommandLineArg>
+  <CommandLineArg>
     <Name>amqps</Name>
     <Description>AMQPS Connection String</Description>
     <DataType>string</DataType>
