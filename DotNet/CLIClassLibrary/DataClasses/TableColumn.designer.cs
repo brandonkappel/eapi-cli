@@ -170,6 +170,9 @@ namespace EAPI.CLI.Lib.DataClasses
         [JsonProperty(DefaultValueHandling = DefaultValueHandling.IgnoreAndPopulate, PropertyName = "OverrideIsCollection")]
         public Nullable<Boolean> OverrideIsCollection { get; set; }
     
+        [JsonProperty(DefaultValueHandling = DefaultValueHandling.IgnoreAndPopulate, PropertyName = "CRCCount")]
+        public Nullable<Int32> CRCCount { get; set; }
+    
 
         
 

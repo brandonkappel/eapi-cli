@@ -152,14 +152,14 @@ namespace CLIClassLibrary.RoleHandlers
             }
         }
 
-        private string HandlerFactory(string invokeRequest, string payloadString, string where)
+        private string HandlerFactory(string invokeRequest, string payloadString, string where, Int32 maxPages)
         {
             var result = "";
             var payload = JsonConvert.DeserializeObject<StandardPayload>(payloadString);
             payload.SetActor(this.SMQActor);
             payload.AccessToken = this.SMQActor.AccessToken;
             payload.AirtableWhere = where;
-            payload.MaxPages = 99;
+            payload.MaxPages = maxPages;
 
             switch (invokeRequest.ToLower())
             {

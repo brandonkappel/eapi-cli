@@ -682,7 +682,7 @@ namespace CLIClassLibrary.RoleHandlers
             }
         }
 
-        private string HandlerFactory(string invokeRequest, string payloadString, string where, int maxPages)
+        private string HandlerFactory(string invokeRequest, string payloadString, string where, Int32 maxPages)
         {
             var result = "";
             var payload = JsonConvert.DeserializeObject<StandardPayload>(payloadString);
@@ -2495,6 +2495,7 @@ namespace CLIClassLibrary.RoleHandlers
                     sb.AppendLine($"CRUD      - SymmetricTableColumnName");
                     sb.AppendLine($"CRUD      - OverrideLength");
                     sb.AppendLine($"CRUD      - OverrideIsCollection");
+                    sb.AppendLine($"CRUD      - CRCCount");
                 
             
         }
@@ -2554,6 +2555,7 @@ namespace CLIClassLibrary.RoleHandlers
                     sb.AppendLine($"CRUD      - SymmetricTableColumnName");
                     sb.AppendLine($"CRUD      - OverrideLength");
                     sb.AppendLine($"CRUD      - OverrideIsCollection");
+                    sb.AppendLine($"CRUD      - CRCCount");
                 
             
         }
@@ -2613,6 +2615,7 @@ namespace CLIClassLibrary.RoleHandlers
                     sb.AppendLine($"CRUD      - SymmetricTableColumnName");
                     sb.AppendLine($"CRUD      - OverrideLength");
                     sb.AppendLine($"CRUD      - OverrideIsCollection");
+                    sb.AppendLine($"CRUD      - CRCCount");
                 
             
         }
@@ -2659,6 +2662,9 @@ namespace CLIClassLibrary.RoleHandlers
                     sb.AppendLine($"CRUD      - RoleDefaultHasAccess");
                     sb.AppendLine($"CRUD      - WhereClause");
                     sb.AppendLine($"CRUD      - DefaultCallCRUD");
+                    sb.AppendLine($"CRUD      - LastModifiedTime");
+                    sb.AppendLine($"CRUD      - DefaultCRUD_legacy");
+                    sb.AppendLine($"CRUD      - CallCRUD");
                 
             
         }
@@ -2700,6 +2706,9 @@ namespace CLIClassLibrary.RoleHandlers
                     sb.AppendLine($"CRUD      - RoleDefaultHasAccess");
                     sb.AppendLine($"CRUD      - WhereClause");
                     sb.AppendLine($"CRUD      - DefaultCallCRUD");
+                    sb.AppendLine($"CRUD      - LastModifiedTime");
+                    sb.AppendLine($"CRUD      - DefaultCRUD_legacy");
+                    sb.AppendLine($"CRUD      - CallCRUD");
                 
             
         }
@@ -2741,6 +2750,9 @@ namespace CLIClassLibrary.RoleHandlers
                     sb.AppendLine($"CRUD      - RoleDefaultHasAccess");
                     sb.AppendLine($"CRUD      - WhereClause");
                     sb.AppendLine($"CRUD      - DefaultCallCRUD");
+                    sb.AppendLine($"CRUD      - LastModifiedTime");
+                    sb.AppendLine($"CRUD      - DefaultCRUD_legacy");
+                    sb.AppendLine($"CRUD      - CallCRUD");
                 
             
         }
@@ -2813,6 +2825,7 @@ namespace CLIClassLibrary.RoleHandlers
                     sb.AppendLine($"CRUD      - CustomMaxPages");
                     sb.AppendLine($"CRUD      - AccountDefaultMaxPages");
                     sb.AppendLine($"CRUD      - MaxPages");
+                    sb.AppendLine($"CRUD      - Description");
                 
             
         }
@@ -2880,6 +2893,7 @@ namespace CLIClassLibrary.RoleHandlers
                     sb.AppendLine($"CRUD      - CustomMaxPages");
                     sb.AppendLine($"CRUD      - AccountDefaultMaxPages");
                     sb.AppendLine($"CRUD      - MaxPages");
+                    sb.AppendLine($"CRUD      - Description");
                 
             
         }
@@ -2947,6 +2961,7 @@ namespace CLIClassLibrary.RoleHandlers
                     sb.AppendLine($"CRUD      - CustomMaxPages");
                     sb.AppendLine($"CRUD      - AccountDefaultMaxPages");
                     sb.AppendLine($"CRUD      - MaxPages");
+                    sb.AppendLine($"CRUD      - Description");
                 
             
         }
@@ -2988,6 +3003,7 @@ namespace CLIClassLibrary.RoleHandlers
                     sb.AppendLine($"CRUD      - RoleName");
                     sb.AppendLine($"CRUD      - TableColumn");
                     sb.AppendLine($"CRUD      - TableName");
+                    sb.AppendLine($"CRUD      - IsOrphan");
                 
             
         }
@@ -3024,6 +3040,7 @@ namespace CLIClassLibrary.RoleHandlers
                     sb.AppendLine($"CRUD      - RoleName");
                     sb.AppendLine($"CRUD      - TableColumn");
                     sb.AppendLine($"CRUD      - TableName");
+                    sb.AppendLine($"CRUD      - IsOrphan");
                 
             
         }
@@ -3060,6 +3077,7 @@ namespace CLIClassLibrary.RoleHandlers
                     sb.AppendLine($"CRUD      - RoleName");
                     sb.AppendLine($"CRUD      - TableColumn");
                     sb.AppendLine($"CRUD      - TableName");
+                    sb.AppendLine($"CRUD      - IsOrphan");
                 
             
         }

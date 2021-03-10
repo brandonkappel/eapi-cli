@@ -106,7 +106,7 @@ function AddLexiconTerms{
 
 function WriteXlsxFile() {
     Write-Host "Writing to project";
-    $global:eapiProject|select Name,Description,AirtableId,GuestRole,UserRole,AdminRole,Alias|export-xlsx -path "./$global:xlsxName" -worksheet "EffortlessAPI Project"
+    $global:eapiProject|select Name,Description,AirtableId,GuestRole,UserRole,AdminRole,Alias|export-xlsx -path "./$global:xlsxName" -worksheet "EffortlessAPIProject"
     
     $projectRoles = $global:projectRoles
     $global:projectRoles|export-xlsx -path "./$global:xlsxName" -worksheet Roles    
@@ -115,7 +115,7 @@ function WriteXlsxFile() {
     $projectTables|export-xlsx -path "./$global:xlsxName" -worksheet Tables
     Write-Host "Those were the" $global:projectTables.length " tables..."
     $tableColumns = $global:tableColumns
-    $tableColumns|export-xlsx -path "./$global:xlsxName" -worksheet TableColumns
+    $tableColumns|export-xlsx -path "./$global:xlsxName" -worksheet Columns
     Write-Host "Adding columns to the project.... " $tableColumns.length
     $lexiconTerms = $global:lexiconTerms
     $lexiconTerms|export-xlsx -path "./$global:xlsxName" -worksheet LexiconTerms

@@ -110,6 +110,15 @@ namespace EAPI.CLI.Lib.DataClasses
         [JsonProperty(DefaultValueHandling = DefaultValueHandling.IgnoreAndPopulate, PropertyName = "DefaultCallCRUD")]
         public String DefaultCallCRUD { get; set; }
     
+        [JsonProperty(DefaultValueHandling = DefaultValueHandling.IgnoreAndPopulate, PropertyName = "LastModifiedTime")]
+        public Nullable<DateTime> LastModifiedTime { get; set; }
+    
+        [JsonProperty(DefaultValueHandling = DefaultValueHandling.IgnoreAndPopulate, PropertyName = "DefaultCRUD_legacy")]
+        public String DefaultCRUD_legacy { get; set; }
+    
+        [JsonProperty(DefaultValueHandling = DefaultValueHandling.IgnoreAndPopulate, PropertyName = "CallCRUD")]
+        public String CallCRUD { get; set; }
+    
 
         
 

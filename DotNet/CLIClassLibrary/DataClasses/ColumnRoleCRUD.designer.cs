@@ -99,6 +99,9 @@ namespace EAPI.CLI.Lib.DataClasses
         [RemoteIsCollection]
         public String TableName { get; set; }
     
+        [JsonProperty(DefaultValueHandling = DefaultValueHandling.IgnoreAndPopulate, PropertyName = "IsOrphan")]
+        public Nullable<Int32> IsOrphan { get; set; }
+    
 
         
 

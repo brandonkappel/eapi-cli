@@ -1,5 +1,6 @@
 Write-Host "Selecting project with Alias=" $args[0]
 rm .\qbo-demo.xlsx
+# rm ".\EffortlessAPI - DB.xlsx"
 
 $proj = $eapiProjects|where Alias -eq $args[0]
 if ($proj -eq $null) {
