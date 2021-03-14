@@ -6,7 +6,11 @@ $proj = $eapiProjects|where Alias -eq $args[0]
 if ($proj -eq $null) {
     Write-Host "ERROR: Project" $args[0] "not found"
 } else {
-    $global:eapiProject = $proj
+
+    $where = "RECORD_ID()='$($proj.EffortlessAPIProjectId)'";
+    $updatedProjectPayload = eapi GetEffortlessAPIProjects -where $where
+    $updatedProject = $updatedProjectPayload|convertfrom-json|select -expand EffortlessAPIProjects
+    $global:eapiProject = $updatedProject
     $projectName = $global:eapiProject.Name;
     $global:xlsxName = "$projectName.xlsx";
 

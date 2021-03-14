@@ -5,7 +5,7 @@ function AddRoles() {
     $versionName = $global:headVersion.Name;
     $where = "ProjectVersion='$versionName'" -replace " ","\ "
     Write-Host "Downloading project roles: " $where
-    $global:projectRoles = eapi GetProjectRoles -MaxPages 99 -where $where|convertfrom-json|select -expand ProjectRoles|sort-object -property SortOrder|select Name,DefaultHasAccess,DefaultCRUD,DefaultAirtableWhere,ProjectRoleId
+    $global:projectRoles = eapi GetProjectRoles -MaxPages 99 -where $where|convertfrom-json|select -expand ProjectRoles|sort-object -property SortOrder|select Name,DefaultHasAccess,DefaultCRUD,DefaultAirtableWhere
 }
 
 function AddTableCRUD([Parameter(ValueFromPipeline)]
@@ -18,7 +18,7 @@ function AddTableCRUD([Parameter(ValueFromPipeline)]
         foreach ($role in $global:projectRoles) {
             $roleName = $role.Name;
             # Write-host " ::: PROJECT TABLEID: " $table.ProjectTableId
-            $trw = $global:tableRoleWheres|where {($_.ProjectTable -eq $table.ProjectTableId) -and ($_.ProjectRole -eq $role.ProjectRoleId)}|select -first 1
+            $trw = $global:tableRoleWheres|where {($_.TableName -eq $table.ToName) -and ($_.RoleName -eq $role.Name)}|select -first 1
             $callCRUD = "";
             $defaultCRUD = "";
             $airtableWhere = "";
@@ -30,6 +30,7 @@ function AddTableCRUD([Parameter(ValueFromPipeline)]
                 $airtableWhere = $role|select -expand DefaultAirtableWhere
                 # Write-Host $callRUD " - " $defaultCRUD " - WHERE " $airtableWhere "   --- TABLE ROLE WHERE ---  " $trw|convertto-json
                 if ($trw -ne $null) {
+                    Write-Host "TABLE ROLE CRUD: " $trw
                     $callCRUD = $trw.DefaultCallCRUD;
                     $defaultCRUD = $trw.DefaultCRUD;
                     $airtableWhere = $trw.AirtableWhereClause;
@@ -53,7 +54,7 @@ function AddTables() {
     WRite-host "Downloading CRCs" $where
     $global:columnRoleCRUDs = eapi GetColumnRoleCRUDs -MaxPages 99 -where $where|convertfrom-json|select -expand ColumnRoleCRUDs
     Write-Host "TABLE ROLE WHEREs..." $global:tableRoleWheres.length
-    $global:projectTables = eapi GetProjectTables -where $where|convertfrom-json|select -expand ProjectTables|sort-object -property SortOrder|select Name,ToName,Description,PluralName,DisplayName,AirtableName,TableGroup,SortOrder,ProjectTableId|AddTableCRUD
+    $global:projectTables = eapi GetProjectTables -where $where|convertfrom-json|select -expand ProjectTables|sort-object -property SortOrder|select Name,ToName,Description,PluralName,DisplayName,AirtableName,TableGroup,SortOrder|AddTableCRUD
 }
 
 function AddColumnCRUD([Parameter(ValueFromPipeline)]
@@ -66,9 +67,9 @@ function AddColumnCRUD([Parameter(ValueFromPipeline)]
 
             $crud = "";
 
-            $crc = $global:columnRoleCRUDs|where {($_.TableColumn -eq $tableColumn.TableColumnId) -and ($_.ProjectRole -eq $role.ProjectRoleId)}|select -first 1
+            $crc = $global:columnRoleCRUDs|where {($_.TableName -eq $tableColumn.TableName) -and ($_.ColumnName -eq $tableColumn.ToName) -and ($_.RoleName -eq $role.Name)}|select -first 1
             if ($crc -eq $null) {
-                $trw = $global:tableRoleWheres|where {($_.ProjectTable -eq $tableColumn.ProjectTable) -and ($_.ProjectRole -eq $role.ProjectRoleId)}|select -first 1
+                $trw = $global:tableRoleWheres|where {($_.TableName -eq $tableColumn.TableName) -and ($_.RoleName -eq $role.Name)}|select -first 1
                 if ($trw -eq $null) {
                     $crud = $role.DefaultCRUD;
                     # Write-Host "ROLE COLUMN CRUD: " $tableColumn.Name $role.Name $crud
@@ -78,7 +79,7 @@ function AddColumnCRUD([Parameter(ValueFromPipeline)]
                 }
             } else {
                 $crud = $crc.CRUD;
-                # Write-Host "CRC CRUD: " $tableColumn.Name $role.Name $crud
+                Write-Host "CRC CRUD: " $tableColumn.Name $role.Name $crud
             }
 
 
@@ -93,7 +94,7 @@ function AddColumns {
     $versionName = $global:headVersion.Name;
     $where = "ProjectVersion='$versionName'" -replace " ","\ "
     Write-Host "Downloading project columns: " $where
-    $global:tableColumns = eapi GetTableColumns -MaxPages 99 -where $where|convertfrom-json|select -expand TableColumns|sort-object -property TableName,SortOrder|select TableName,Name,ToName,DisplayName,RelationshipType,Description,DefaultValue,SortOrder,IsCollection,IsObsolete,IsRequired,IsReadonly,IsUnique,DataType,Length,ProjectTable,TableColumnId|AddColumnCRUD
+    $global:tableColumns = eapi GetTableColumns -MaxPages 99 -where $where|convertfrom-json|select -expand TableColumns|sort-object -property TableName,SortOrder|select TableName,Name,ToName,DisplayName,RelationshipType,Description,DefaultValue,SortOrder,IsCollection,IsObsolete,IsRequired,IsReadonly,IsUnique,DataType,Length|AddColumnCRUD
 }
 
 
@@ -101,12 +102,12 @@ function AddLexiconTerms{
     $versionName = $global:headVersion.Name;
     $where = "ProjectVersion='$versionName'" -replace " ","\ "
     Write-Host "Downloading project lexiconTerms: " $where
-    $global:lexiconTerms = eapi GetProjectLexiconTerms -where $where|convertfrom-json|select -expand ProjectLexiconTerms|sort-object -property SortOrder|select FromRole,Message,ToRole,IsDirectMessage,ProjectLexiconTermId
+    $global:lexiconTerms = eapi GetProjectLexiconTerms -where $where|convertfrom-json|select -expand ProjectLexiconTerms|sort-object -property SortOrder|select From,Message,To,IsDirectMessage
 }
 
 function WriteXlsxFile() {
     Write-Host "Writing to project";
-    $global:eapiProject|select Name,Description,AirtableId,GuestRole,UserRole,AdminRole,Alias|export-xlsx -path "./$global:xlsxName" -worksheet "EffortlessAPIProject"
+    $global:eapiProject|select Name,Description,AirtableId,UserTable,EmailColumnName,RoleColumnName,GuestRole,UserRole,AdminRole,Alias|export-xlsx -path "./$global:xlsxName" -worksheet "EffortlessAPIProject"
     
     $projectRoles = $global:projectRoles
     $global:projectRoles|export-xlsx -path "./$global:xlsxName" -worksheet Roles    

@@ -321,7 +321,6 @@ namespace CLIClassLibrary.RoleHandlers
                     sb.AppendLine($"R      - MaxMemory");
                     sb.AppendLine($"R      - Name");
                     sb.AppendLine($"R      - Notes");
-                    sb.AppendLine($"R      - ProjectTasks");
                     sb.AppendLine($"R      - IsEAPIEndpoint");
                 
             

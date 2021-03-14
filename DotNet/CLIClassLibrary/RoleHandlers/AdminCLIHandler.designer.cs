@@ -4597,6 +4597,8 @@ namespace CLIClassLibrary.RoleHandlers
                     sb.AppendLine($"CRUD      - LastModifiedTime");
                     sb.AppendLine($"CRUD      - DefaultCRUD_legacy");
                     sb.AppendLine($"CRUD      - CallCRUD");
+                    sb.AppendLine($"CRUD      - TableName");
+                    sb.AppendLine($"CRUD      - RoleName");
                 
             
         }
@@ -4641,6 +4643,8 @@ namespace CLIClassLibrary.RoleHandlers
                     sb.AppendLine($"CRUD      - LastModifiedTime");
                     sb.AppendLine($"CRUD      - DefaultCRUD_legacy");
                     sb.AppendLine($"CRUD      - CallCRUD");
+                    sb.AppendLine($"CRUD      - TableName");
+                    sb.AppendLine($"CRUD      - RoleName");
                 
             
         }
@@ -4685,6 +4689,8 @@ namespace CLIClassLibrary.RoleHandlers
                     sb.AppendLine($"CRUD      - LastModifiedTime");
                     sb.AppendLine($"CRUD      - DefaultCRUD_legacy");
                     sb.AppendLine($"CRUD      - CallCRUD");
+                    sb.AppendLine($"CRUD      - TableName");
+                    sb.AppendLine($"CRUD      - RoleName");
                 
             
         }

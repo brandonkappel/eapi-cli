@@ -119,6 +119,14 @@ namespace EAPI.CLI.Lib.DataClasses
         [JsonProperty(DefaultValueHandling = DefaultValueHandling.IgnoreAndPopulate, PropertyName = "CallCRUD")]
         public String CallCRUD { get; set; }
     
+        [JsonProperty(DefaultValueHandling = DefaultValueHandling.IgnoreAndPopulate, PropertyName = "TableName")]
+        [RemoteIsCollection]
+        public String TableName { get; set; }
+    
+        [JsonProperty(DefaultValueHandling = DefaultValueHandling.IgnoreAndPopulate, PropertyName = "RoleName")]
+        [RemoteIsCollection]
+        public String RoleName { get; set; }
+    
 
         
 
