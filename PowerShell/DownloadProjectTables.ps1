@@ -107,7 +107,7 @@ function AddLexiconTerms{
 
 function WriteXlsxFile() {
     Write-Host "Writing to project";
-    $global:eapiProject|select Name,Description,AirtableId,UserTable,EmailColumnName,RoleColumnName,GuestRole,UserRole,AdminRole,Alias|export-xlsx -path "./$global:xlsxName" -worksheet "EffortlessAPIProject"
+    $global:eapiProject|select Name,Description,AirtableId,UserTable,EmailColumnName,RoleColumnName,GuestRole,UserRole,AdminRole,RoleTable,Alias|export-xlsx -path "./$global:xlsxName" -worksheet "EffortlessAPIProject"
     
     $projectRoles = $global:projectRoles
     $global:projectRoles|export-xlsx -path "./$global:xlsxName" -worksheet Roles    
