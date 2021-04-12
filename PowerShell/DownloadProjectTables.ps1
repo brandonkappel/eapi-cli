@@ -54,7 +54,7 @@ function AddTables() {
     WRite-host "Downloading CRCs" $where
     $global:columnRoleCRUDs = eapi GetColumnRoleCRUDs -MaxPages 99 -where $where|convertfrom-json|select -expand ColumnRoleCRUDs
     Write-Host "TABLE ROLE WHEREs..." $global:tableRoleWheres.length
-    $global:projectTables = eapi GetProjectTables -where $where|convertfrom-json|select -expand ProjectTables|sort-object -property SortOrder|select Name,ToName,Description,PluralName,DisplayName,AirtableName,TableGroup,SortOrder,ProjectTableId|AddTableCRUD
+    $global:projectTables = eapi GetProjectTables -where $where|convertfrom-json|select -expand ProjectTables|sort-object -property SortOrder|select Name,ToName,Description,PluralName,DisplayName,AirtableName,TableGroup,SortOrder|AddTableCRUD
 }
 
 function AddColumnCRUD([Parameter(ValueFromPipeline)]
