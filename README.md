@@ -11,6 +11,11 @@ Creating a CLI for your project involves the following steps:
    
 See below for further help/instructions.
 
+## Potential Errors
+If you run into the following errors while installing the NPM package follow these steps.
+https://stackoverflow.com/questions/52376567/how-to-resolve-unable-to-find-package-nuget-error
+https://stackoverflow.com/questions/1421862/metadata-file-dll-could-not-be-found
+
 ## Usage
 The following behaviors are common across all CLI's.  The specifics beyond what
 is described here will depend on the specific EffortlessAPI project being
