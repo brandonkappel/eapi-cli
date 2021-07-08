@@ -61,16 +61,6 @@ namespace EAPI.CLI.Lib.DataClasses
 
         
         
-        private static string CreateRemoteEndpointWhere(IEnumerable<RemoteEndpoint> remoteEndpoints, String forignKeyFieldName = "RemoteEndpointId")
-        {
-            if (!remoteEndpoints.Any()) return "1=1";
-            else 
-            {
-                var idList = remoteEndpoints.Select(selectRemoteEndpoint => String.Format("'{0}'", selectRemoteEndpoint.RemoteEndpointId));
-                var csIdList = String.Join(",", idList);
-                return String.Format("{0} in ({1})", forignKeyFieldName, csIdList);
-            }
-        }
         
     }
 }

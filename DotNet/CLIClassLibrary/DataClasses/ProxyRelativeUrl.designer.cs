@@ -48,16 +48,6 @@ namespace EAPI.CLI.Lib.DataClasses
 
         
         
-        private static string CreateProxyRelativeUrlWhere(IEnumerable<ProxyRelativeUrl> proxyRelativeUrls, String forignKeyFieldName = "ProxyRelativeUrlId")
-        {
-            if (!proxyRelativeUrls.Any()) return "1=1";
-            else 
-            {
-                var idList = proxyRelativeUrls.Select(selectProxyRelativeUrl => String.Format("'{0}'", selectProxyRelativeUrl.ProxyRelativeUrlId));
-                var csIdList = String.Join(",", idList);
-                return String.Format("{0} in ({1})", forignKeyFieldName, csIdList);
-            }
-        }
         
     }
 }

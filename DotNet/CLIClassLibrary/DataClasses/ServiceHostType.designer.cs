@@ -46,16 +46,6 @@ namespace EAPI.CLI.Lib.DataClasses
 
         
         
-        private static string CreateServiceHostTypeWhere(IEnumerable<ServiceHostType> serviceHostTypes, String forignKeyFieldName = "ServiceHostTypeId")
-        {
-            if (!serviceHostTypes.Any()) return "1=1";
-            else 
-            {
-                var idList = serviceHostTypes.Select(selectServiceHostType => String.Format("'{0}'", selectServiceHostType.ServiceHostTypeId));
-                var csIdList = String.Join(",", idList);
-                return String.Format("{0} in ({1})", forignKeyFieldName, csIdList);
-            }
-        }
         
     }
 }

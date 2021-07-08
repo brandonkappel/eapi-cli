@@ -56,16 +56,6 @@ namespace EAPI.CLI.Lib.DataClasses
 
         
         
-        private static string CreateServiceKeyWhere(IEnumerable<ServiceKey> serviceKeys, String forignKeyFieldName = "ServiceKeyId")
-        {
-            if (!serviceKeys.Any()) return "1=1";
-            else 
-            {
-                var idList = serviceKeys.Select(selectServiceKey => String.Format("'{0}'", selectServiceKey.ServiceKeyId));
-                var csIdList = String.Join(",", idList);
-                return String.Format("{0} in ({1})", forignKeyFieldName, csIdList);
-            }
-        }
         
     }
 }

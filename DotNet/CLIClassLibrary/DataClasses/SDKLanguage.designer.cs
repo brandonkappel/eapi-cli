@@ -39,16 +39,6 @@ namespace EAPI.CLI.Lib.DataClasses
 
         
         
-        private static string CreateSDKLanguageWhere(IEnumerable<SDKLanguage> sDKLanguages, String forignKeyFieldName = "SDKLanguageId")
-        {
-            if (!sDKLanguages.Any()) return "1=1";
-            else 
-            {
-                var idList = sDKLanguages.Select(selectSDKLanguage => String.Format("'{0}'", selectSDKLanguage.SDKLanguageId));
-                var csIdList = String.Join(",", idList);
-                return String.Format("{0} in ({1})", forignKeyFieldName, csIdList);
-            }
-        }
         
     }
 }

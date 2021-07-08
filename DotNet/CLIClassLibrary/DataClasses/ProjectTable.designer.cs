@@ -101,16 +101,6 @@ namespace EAPI.CLI.Lib.DataClasses
 
         
         
-        private static string CreateProjectTableWhere(IEnumerable<ProjectTable> projectTables, String forignKeyFieldName = "ProjectTableId")
-        {
-            if (!projectTables.Any()) return "1=1";
-            else 
-            {
-                var idList = projectTables.Select(selectProjectTable => String.Format("'{0}'", selectProjectTable.ProjectTableId));
-                var csIdList = String.Join(",", idList);
-                return String.Format("{0} in ({1})", forignKeyFieldName, csIdList);
-            }
-        }
         
     }
 }

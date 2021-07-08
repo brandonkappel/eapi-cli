@@ -67,16 +67,6 @@ namespace EAPI.CLI.Lib.DataClasses
 
         
         
-        private static string CreateColumnValueWhere(IEnumerable<ColumnValue> columnValues, String forignKeyFieldName = "ColumnValueId")
-        {
-            if (!columnValues.Any()) return "1=1";
-            else 
-            {
-                var idList = columnValues.Select(selectColumnValue => String.Format("'{0}'", selectColumnValue.ColumnValueId));
-                var csIdList = String.Join(",", idList);
-                return String.Format("{0} in ({1})", forignKeyFieldName, csIdList);
-            }
-        }
         
     }
 }

@@ -167,16 +167,6 @@ namespace EAPI.CLI.Lib.DataClasses
 
         
         
-        private static string CreateServiceHostEndpointWhere(IEnumerable<ServiceHostEndpoint> serviceHostEndpoints, String forignKeyFieldName = "ServiceHostEndpointId")
-        {
-            if (!serviceHostEndpoints.Any()) return "1=1";
-            else 
-            {
-                var idList = serviceHostEndpoints.Select(selectServiceHostEndpoint => String.Format("'{0}'", selectServiceHostEndpoint.ServiceHostEndpointId));
-                var csIdList = String.Join(",", idList);
-                return String.Format("{0} in ({1})", forignKeyFieldName, csIdList);
-            }
-        }
         
     }
 }

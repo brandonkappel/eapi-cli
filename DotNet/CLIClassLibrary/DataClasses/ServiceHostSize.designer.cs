@@ -43,16 +43,6 @@ namespace EAPI.CLI.Lib.DataClasses
 
         
         
-        private static string CreateServiceHostSizeWhere(IEnumerable<ServiceHostSize> serviceHostSizes, String forignKeyFieldName = "ServiceHostSizeId")
-        {
-            if (!serviceHostSizes.Any()) return "1=1";
-            else 
-            {
-                var idList = serviceHostSizes.Select(selectServiceHostSize => String.Format("'{0}'", selectServiceHostSize.ServiceHostSizeId));
-                var csIdList = String.Join(",", idList);
-                return String.Format("{0} in ({1})", forignKeyFieldName, csIdList);
-            }
-        }
         
     }
 }

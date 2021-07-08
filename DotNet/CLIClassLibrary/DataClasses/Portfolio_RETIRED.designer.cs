@@ -52,16 +52,6 @@ namespace EAPI.CLI.Lib.DataClasses
 
         
         
-        private static string CreatePortfolio_RETIREDWhere(IEnumerable<Portfolio_RETIRED> portfolios_RETIRED, String forignKeyFieldName = "Portfolio_RETIREDId")
-        {
-            if (!portfolios_RETIRED.Any()) return "1=1";
-            else 
-            {
-                var idList = portfolios_RETIRED.Select(selectPortfolio_RETIRED => String.Format("'{0}'", selectPortfolio_RETIRED.Portfolio_RETIREDId));
-                var csIdList = String.Join(",", idList);
-                return String.Format("{0} in ({1})", forignKeyFieldName, csIdList);
-            }
-        }
         
     }
 }

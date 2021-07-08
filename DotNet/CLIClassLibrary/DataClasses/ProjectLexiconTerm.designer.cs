@@ -64,7 +64,7 @@ namespace EAPI.CLI.Lib.DataClasses
     
         [JsonProperty(DefaultValueHandling = DefaultValueHandling.IgnoreAndPopulate, PropertyName = "ProjectEmails")]
         [RemoteIsCollection]
-        public String ProjectEmails { get; set; }
+        public String[] ProjectEmails { get; set; }
     
         [JsonProperty(DefaultValueHandling = DefaultValueHandling.IgnoreAndPopulate, PropertyName = "To")]
         [RemoteIsCollection]
@@ -82,16 +82,6 @@ namespace EAPI.CLI.Lib.DataClasses
 
         
         
-        private static string CreateProjectLexiconTermWhere(IEnumerable<ProjectLexiconTerm> projectLexiconTerms, String forignKeyFieldName = "ProjectLexiconTermId")
-        {
-            if (!projectLexiconTerms.Any()) return "1=1";
-            else 
-            {
-                var idList = projectLexiconTerms.Select(selectProjectLexiconTerm => String.Format("'{0}'", selectProjectLexiconTerm.ProjectLexiconTermId));
-                var csIdList = String.Join(",", idList);
-                return String.Format("{0} in ({1})", forignKeyFieldName, csIdList);
-            }
-        }
         
     }
 }

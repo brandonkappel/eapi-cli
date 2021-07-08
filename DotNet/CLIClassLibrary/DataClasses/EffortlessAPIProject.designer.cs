@@ -123,7 +123,7 @@ namespace EAPI.CLI.Lib.DataClasses
     
         [JsonProperty(DefaultValueHandling = DefaultValueHandling.IgnoreAndPopulate, PropertyName = "ProjectLexiconTerms")]
         [RemoteIsCollection]
-        public String[] ProjectLexiconTerms { get; set; }
+        public String ProjectLexiconTerms { get; set; }
     
         [JsonProperty(DefaultValueHandling = DefaultValueHandling.IgnoreAndPopulate, PropertyName = "ProjectRequestSummary")]
         [RemoteIsCollection]
@@ -209,16 +209,6 @@ namespace EAPI.CLI.Lib.DataClasses
 
         
         
-        private static string CreateEffortlessAPIProjectWhere(IEnumerable<EffortlessAPIProject> effortlessAPIProjects, String forignKeyFieldName = "EffortlessAPIProjectId")
-        {
-            if (!effortlessAPIProjects.Any()) return "1=1";
-            else 
-            {
-                var idList = effortlessAPIProjects.Select(selectEffortlessAPIProject => String.Format("'{0}'", selectEffortlessAPIProject.EffortlessAPIProjectId));
-                var csIdList = String.Join(",", idList);
-                return String.Format("{0} in ({1})", forignKeyFieldName, csIdList);
-            }
-        }
         
     }
 }

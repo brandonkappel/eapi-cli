@@ -133,16 +133,6 @@ namespace EAPI.CLI.Lib.DataClasses
 
         
         
-        private static string CreatePlanProductWhere(IEnumerable<PlanProduct> planProducts, String forignKeyFieldName = "PlanProductId")
-        {
-            if (!planProducts.Any()) return "1=1";
-            else 
-            {
-                var idList = planProducts.Select(selectPlanProduct => String.Format("'{0}'", selectPlanProduct.PlanProductId));
-                var csIdList = String.Join(",", idList);
-                return String.Format("{0} in ({1})", forignKeyFieldName, csIdList);
-            }
-        }
         
     }
 }

@@ -107,16 +107,6 @@ namespace EAPI.CLI.Lib.DataClasses
 
         
         
-        private static string CreateColumnRoleCRUDWhere(IEnumerable<ColumnRoleCRUD> columnRoleCRUDs, String forignKeyFieldName = "ColumnRoleCRUDId")
-        {
-            if (!columnRoleCRUDs.Any()) return "1=1";
-            else 
-            {
-                var idList = columnRoleCRUDs.Select(selectColumnRoleCRUD => String.Format("'{0}'", selectColumnRoleCRUD.ColumnRoleCRUDId));
-                var csIdList = String.Join(",", idList);
-                return String.Format("{0} in ({1})", forignKeyFieldName, csIdList);
-            }
-        }
         
     }
 }

@@ -132,16 +132,6 @@ namespace EAPI.CLI.Lib.DataClasses
 
         
         
-        private static string CreateTableRoleWhereWhere(IEnumerable<TableRoleWhere> tableRoleWheres, String forignKeyFieldName = "TableRoleWhereId")
-        {
-            if (!tableRoleWheres.Any()) return "1=1";
-            else 
-            {
-                var idList = tableRoleWheres.Select(selectTableRoleWhere => String.Format("'{0}'", selectTableRoleWhere.TableRoleWhereId));
-                var csIdList = String.Join(",", idList);
-                return String.Format("{0} in ({1})", forignKeyFieldName, csIdList);
-            }
-        }
         
     }
 }

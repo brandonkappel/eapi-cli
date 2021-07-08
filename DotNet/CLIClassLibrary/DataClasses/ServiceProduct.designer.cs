@@ -67,16 +67,6 @@ namespace EAPI.CLI.Lib.DataClasses
 
         
         
-        private static string CreateServiceProductWhere(IEnumerable<ServiceProduct> serviceProducts, String forignKeyFieldName = "ServiceProductId")
-        {
-            if (!serviceProducts.Any()) return "1=1";
-            else 
-            {
-                var idList = serviceProducts.Select(selectServiceProduct => String.Format("'{0}'", selectServiceProduct.ServiceProductId));
-                var csIdList = String.Join(",", idList);
-                return String.Format("{0} in ({1})", forignKeyFieldName, csIdList);
-            }
-        }
         
     }
 }

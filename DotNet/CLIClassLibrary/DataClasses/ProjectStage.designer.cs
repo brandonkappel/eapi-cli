@@ -288,16 +288,6 @@ namespace EAPI.CLI.Lib.DataClasses
 
         
         
-        private static string CreateProjectStageWhere(IEnumerable<ProjectStage> projectStages, String forignKeyFieldName = "ProjectStageId")
-        {
-            if (!projectStages.Any()) return "1=1";
-            else 
-            {
-                var idList = projectStages.Select(selectProjectStage => String.Format("'{0}'", selectProjectStage.ProjectStageId));
-                var csIdList = String.Join(",", idList);
-                return String.Format("{0} in ({1})", forignKeyFieldName, csIdList);
-            }
-        }
         
     }
 }

@@ -115,16 +115,6 @@ namespace EAPI.CLI.Lib.DataClasses
 
         
         
-        private static string CreateProjectRoleWhere(IEnumerable<ProjectRole> projectRoles, String forignKeyFieldName = "ProjectRoleId")
-        {
-            if (!projectRoles.Any()) return "1=1";
-            else 
-            {
-                var idList = projectRoles.Select(selectProjectRole => String.Format("'{0}'", selectProjectRole.ProjectRoleId));
-                var csIdList = String.Join(",", idList);
-                return String.Format("{0} in ({1})", forignKeyFieldName, csIdList);
-            }
-        }
         
     }
 }

@@ -2869,6 +2869,8 @@ namespace CLIClassLibrary.RoleHandlers
                     sb.AppendLine($"CRUD      - Notes");
                     sb.AppendLine($"CRUD      - Project");
                     sb.AppendLine($"CRUD      - ProjectVersion");
+                    sb.AppendLine($"CRUD      - CreatedOn");
+                    sb.AppendLine($"CRUD      - BuildYearMonth");
                 
             
         }
@@ -2895,6 +2897,8 @@ namespace CLIClassLibrary.RoleHandlers
                     sb.AppendLine($"CRUD      - Notes");
                     sb.AppendLine($"CRUD      - Project");
                     sb.AppendLine($"CRUD      - ProjectVersion");
+                    sb.AppendLine($"CRUD      - CreatedOn");
+                    sb.AppendLine($"CRUD      - BuildYearMonth");
                 
             
         }
@@ -2921,6 +2925,8 @@ namespace CLIClassLibrary.RoleHandlers
                     sb.AppendLine($"CRUD      - Notes");
                     sb.AppendLine($"CRUD      - Project");
                     sb.AppendLine($"CRUD      - ProjectVersion");
+                    sb.AppendLine($"CRUD      - CreatedOn");
+                    sb.AppendLine($"CRUD      - BuildYearMonth");
                 
             
         }
@@ -3669,6 +3675,7 @@ namespace CLIClassLibrary.RoleHandlers
                     sb.AppendLine($"CRUD      - ProjectService");
                     sb.AppendLine($"CRUD      - ProjectServiceLogo");
                     sb.AppendLine($"CRUD      - ProjectServiceName");
+                    sb.AppendLine($"CRUD      - ProjectLexiconTerms");
                 
             
         }
@@ -3705,6 +3712,7 @@ namespace CLIClassLibrary.RoleHandlers
                     sb.AppendLine($"CRUD      - ProjectService");
                     sb.AppendLine($"CRUD      - ProjectServiceLogo");
                     sb.AppendLine($"CRUD      - ProjectServiceName");
+                    sb.AppendLine($"CRUD      - ProjectLexiconTerms");
                 
             
         }
@@ -3741,6 +3749,7 @@ namespace CLIClassLibrary.RoleHandlers
                     sb.AppendLine($"CRUD      - ProjectService");
                     sb.AppendLine($"CRUD      - ProjectServiceLogo");
                     sb.AppendLine($"CRUD      - ProjectServiceName");
+                    sb.AppendLine($"CRUD      - ProjectLexiconTerms");
                 
             
         }

@@ -84,16 +84,6 @@ namespace EAPI.CLI.Lib.DataClasses
 
         
         
-        private static string CreateServicePlanWhere(IEnumerable<ServicePlan> servicePlans, String forignKeyFieldName = "ServicePlanId")
-        {
-            if (!servicePlans.Any()) return "1=1";
-            else 
-            {
-                var idList = servicePlans.Select(selectServicePlan => String.Format("'{0}'", selectServicePlan.ServicePlanId));
-                var csIdList = String.Join(",", idList);
-                return String.Format("{0} in ({1})", forignKeyFieldName, csIdList);
-            }
-        }
         
     }
 }

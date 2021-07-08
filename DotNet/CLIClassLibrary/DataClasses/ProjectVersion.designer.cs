@@ -101,21 +101,15 @@ namespace EAPI.CLI.Lib.DataClasses
         [RemoteIsCollection]
         public String ProjectServiceName { get; set; }
     
+        [JsonProperty(DefaultValueHandling = DefaultValueHandling.IgnoreAndPopulate, PropertyName = "ProjectLexiconTerms")]
+        [RemoteIsCollection]
+        public String[] ProjectLexiconTerms { get; set; }
+    
 
         
 
         
         
-        private static string CreateProjectVersionWhere(IEnumerable<ProjectVersion> projectVersions, String forignKeyFieldName = "ProjectVersionId")
-        {
-            if (!projectVersions.Any()) return "1=1";
-            else 
-            {
-                var idList = projectVersions.Select(selectProjectVersion => String.Format("'{0}'", selectProjectVersion.ProjectVersionId));
-                var csIdList = String.Join(",", idList);
-                return String.Format("{0} in ({1})", forignKeyFieldName, csIdList);
-            }
-        }
         
     }
 }

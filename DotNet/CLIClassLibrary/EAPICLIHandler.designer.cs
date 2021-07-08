@@ -9,13 +9,9 @@ using System.Threading.Tasks;
 namespace SSoTme.Default.Lib.CLIHandler
 {
 
-    [CommandLineManager(ApplicationName = "SSOT.me Command Line Request",
-                        Copyright = "Copyright (c) EJ Alexandra, CODEiverse.com",
-                        Description = @"
-SYNTAX: ssotme {command} [...{additional_args}] [options]
-
-Options
-")]
+    [CommandLineManager(ApplicationName = "-p application=Command Line Tool",
+                        Copyright = "-p copyright=Copyright (c) 2021, EJ Alexandra",
+                        Description = @"")]
     public partial class EAPICLIHandler
     {
         

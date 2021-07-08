@@ -58,16 +58,6 @@ namespace EAPI.CLI.Lib.DataClasses
 
         
         
-        private static string CreateProjectEmailWhere(IEnumerable<ProjectEmail> projectEmails, String forignKeyFieldName = "ProjectEmailId")
-        {
-            if (!projectEmails.Any()) return "1=1";
-            else 
-            {
-                var idList = projectEmails.Select(selectProjectEmail => String.Format("'{0}'", selectProjectEmail.ProjectEmailId));
-                var csIdList = String.Join(",", idList);
-                return String.Format("{0} in ({1})", forignKeyFieldName, csIdList);
-            }
-        }
         
     }
 }

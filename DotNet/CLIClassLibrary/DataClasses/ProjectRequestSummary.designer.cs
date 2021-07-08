@@ -52,16 +52,6 @@ namespace EAPI.CLI.Lib.DataClasses
 
         
         
-        private static string CreateProjectRequestSummaryWhere(IEnumerable<ProjectRequestSummary> projectRequestSummaries, String forignKeyFieldName = "ProjectRequestSummaryId")
-        {
-            if (!projectRequestSummaries.Any()) return "1=1";
-            else 
-            {
-                var idList = projectRequestSummaries.Select(selectProjectRequestSummary => String.Format("'{0}'", selectProjectRequestSummary.ProjectRequestSummaryId));
-                var csIdList = String.Join(",", idList);
-                return String.Format("{0} in ({1})", forignKeyFieldName, csIdList);
-            }
-        }
         
     }
 }

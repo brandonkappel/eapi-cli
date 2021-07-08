@@ -73,16 +73,6 @@ namespace EAPI.CLI.Lib.DataClasses
 
         
         
-        private static string CreateEffortlessAPIAccountWhere(IEnumerable<EffortlessAPIAccount> effortlessAPIAccounts, String forignKeyFieldName = "EffortlessAPIAccountId")
-        {
-            if (!effortlessAPIAccounts.Any()) return "1=1";
-            else 
-            {
-                var idList = effortlessAPIAccounts.Select(selectEffortlessAPIAccount => String.Format("'{0}'", selectEffortlessAPIAccount.EffortlessAPIAccountId));
-                var csIdList = String.Join(",", idList);
-                return String.Format("{0} in ({1})", forignKeyFieldName, csIdList);
-            }
-        }
         
     }
 }

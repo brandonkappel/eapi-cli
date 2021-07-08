@@ -60,21 +60,17 @@ namespace EAPI.CLI.Lib.DataClasses
         [RemoteIsCollection]
         public String ProjectVersion { get; set; }
     
+        [JsonProperty(DefaultValueHandling = DefaultValueHandling.IgnoreAndPopulate, PropertyName = "CreatedOn")]
+        public Nullable<DateTime> CreatedOn { get; set; }
+    
+        [JsonProperty(DefaultValueHandling = DefaultValueHandling.IgnoreAndPopulate, PropertyName = "BuildYearMonth")]
+        public String BuildYearMonth { get; set; }
+    
 
         
 
         
         
-        private static string CreateProjectVersionBuildWhere(IEnumerable<ProjectVersionBuild> projectVersionBuilds, String forignKeyFieldName = "ProjectVersionBuildId")
-        {
-            if (!projectVersionBuilds.Any()) return "1=1";
-            else 
-            {
-                var idList = projectVersionBuilds.Select(selectProjectVersionBuild => String.Format("'{0}'", selectProjectVersionBuild.ProjectVersionBuildId));
-                var csIdList = String.Join(",", idList);
-                return String.Format("{0} in ({1})", forignKeyFieldName, csIdList);
-            }
-        }
         
     }
 }

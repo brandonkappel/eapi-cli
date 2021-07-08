@@ -178,16 +178,6 @@ namespace EAPI.CLI.Lib.DataClasses
 
         
         
-        private static string CreateTableColumnWhere(IEnumerable<TableColumn> tableColumns, String forignKeyFieldName = "TableColumnId")
-        {
-            if (!tableColumns.Any()) return "1=1";
-            else 
-            {
-                var idList = tableColumns.Select(selectTableColumn => String.Format("'{0}'", selectTableColumn.TableColumnId));
-                var csIdList = String.Join(",", idList);
-                return String.Format("{0} in ({1})", forignKeyFieldName, csIdList);
-            }
-        }
         
     }
 }

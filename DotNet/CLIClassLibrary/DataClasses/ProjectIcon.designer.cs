@@ -42,16 +42,6 @@ namespace EAPI.CLI.Lib.DataClasses
 
         
         
-        private static string CreateProjectIconWhere(IEnumerable<ProjectIcon> projectIcons, String forignKeyFieldName = "ProjectIconId")
-        {
-            if (!projectIcons.Any()) return "1=1";
-            else 
-            {
-                var idList = projectIcons.Select(selectProjectIcon => String.Format("'{0}'", selectProjectIcon.ProjectIconId));
-                var csIdList = String.Join(",", idList);
-                return String.Format("{0} in ({1})", forignKeyFieldName, csIdList);
-            }
-        }
         
     }
 }

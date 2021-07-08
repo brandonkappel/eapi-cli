@@ -48,16 +48,6 @@ namespace EAPI.CLI.Lib.DataClasses
 
         
         
-        private static string CreateCustomerTypeWhere(IEnumerable<CustomerType> customerTypes, String forignKeyFieldName = "CustomerTypeId")
-        {
-            if (!customerTypes.Any()) return "1=1";
-            else 
-            {
-                var idList = customerTypes.Select(selectCustomerType => String.Format("'{0}'", selectCustomerType.CustomerTypeId));
-                var csIdList = String.Join(",", idList);
-                return String.Format("{0} in ({1})", forignKeyFieldName, csIdList);
-            }
-        }
         
     }
 }

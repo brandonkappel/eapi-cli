@@ -75,16 +75,6 @@ namespace EAPI.CLI.Lib.DataClasses
 
         
         
-        private static string CreateEffortlessAPIServiceWhere(IEnumerable<EffortlessAPIService> effortlessAPIServices, String forignKeyFieldName = "EffortlessAPIServiceId")
-        {
-            if (!effortlessAPIServices.Any()) return "1=1";
-            else 
-            {
-                var idList = effortlessAPIServices.Select(selectEffortlessAPIService => String.Format("'{0}'", selectEffortlessAPIService.EffortlessAPIServiceId));
-                var csIdList = String.Join(",", idList);
-                return String.Format("{0} in ({1})", forignKeyFieldName, csIdList);
-            }
-        }
         
     }
 }

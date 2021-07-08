@@ -1670,6 +1670,8 @@ namespace CLIClassLibrary.RoleHandlers
                     sb.AppendLine($"CRU      - Notes");
                     sb.AppendLine($"CRU      - Project");
                     sb.AppendLine($"CRU      - ProjectVersion");
+                    sb.AppendLine($"CRU      - CreatedOn");
+                    sb.AppendLine($"CRU      - BuildYearMonth");
                 
             
         }
@@ -1696,6 +1698,8 @@ namespace CLIClassLibrary.RoleHandlers
                     sb.AppendLine($"CRU      - Notes");
                     sb.AppendLine($"CRU      - Project");
                     sb.AppendLine($"CRU      - ProjectVersion");
+                    sb.AppendLine($"CRU      - CreatedOn");
+                    sb.AppendLine($"CRU      - BuildYearMonth");
                 
             
         }
@@ -1722,6 +1726,8 @@ namespace CLIClassLibrary.RoleHandlers
                     sb.AppendLine($"CRU      - Notes");
                     sb.AppendLine($"CRU      - Project");
                     sb.AppendLine($"CRU      - ProjectVersion");
+                    sb.AppendLine($"CRU      - CreatedOn");
+                    sb.AppendLine($"CRU      - BuildYearMonth");
                 
             
         }
@@ -2216,6 +2222,7 @@ namespace CLIClassLibrary.RoleHandlers
                     sb.AppendLine($"CRU      - ProjectService");
                     sb.AppendLine($"CRU      - ProjectServiceLogo");
                     sb.AppendLine($"CRU      - ProjectServiceName");
+                    sb.AppendLine($"CRU      - ProjectLexiconTerms");
                 
             
         }
@@ -2252,6 +2259,7 @@ namespace CLIClassLibrary.RoleHandlers
                     sb.AppendLine($"CRU      - ProjectService");
                     sb.AppendLine($"CRU      - ProjectServiceLogo");
                     sb.AppendLine($"CRU      - ProjectServiceName");
+                    sb.AppendLine($"CRU      - ProjectLexiconTerms");
                 
             
         }
@@ -2288,6 +2296,7 @@ namespace CLIClassLibrary.RoleHandlers
                     sb.AppendLine($"CRU      - ProjectService");
                     sb.AppendLine($"CRU      - ProjectServiceLogo");
                     sb.AppendLine($"CRU      - ProjectServiceName");
+                    sb.AppendLine($"CRU      - ProjectLexiconTerms");
                 
             
         }
