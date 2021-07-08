@@ -8,3 +8,4 @@
 /PowerShell/**/*.json
 /PowerShell/**/*.xlsx
 /PowerShell/**/*.txt
+/DotNet/EAPICLI/Properties/launchSettings.json
