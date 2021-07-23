@@ -53,11 +53,15 @@ help will provide a detailed description of the method/payload, response, etc.
 
 ### Options
    -amqps                      AMQPS Connection String
+   
    -appId                      application.id of the airtable project to add.
+   
    -authenticate               Authenticate as a user
       > eapi -authenticate (yourEmail) -demopassword (yourPassword) -as Developer
    -betaRepo                   Use the beta repository for this seed?
+   
    -bodyData                   Raw data provided
+   
    -bodyFile                   Path to file to use
    -cloneEAPISeed              Clone the given seed
       > eapi -cloneEAPISeed (seedName) (folder) (project)
