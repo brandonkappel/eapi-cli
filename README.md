@@ -51,6 +51,33 @@ This will list any commands which the given user can access.
 Because this matches a specific method that Developer can reference, the
 help will provide a detailed description of the method/payload, response, etc.
 
+### Options
+   -amqps                      AMQPS Connection String
+   -appId                      application.id of the airtable project to add.
+   -authenticate               Authenticate as a user
+      > eapi -authenticate (yourEmail) -demopassword (yourPassword) -as Developer
+   -betaRepo                   Use the beta repository for this seed?
+   -bodyData                   Raw data provided
+   -bodyFile                   Path to file to use
+   -cloneEAPISeed              Clone the given seed
+      > eapi -cloneEAPISeed (seedName) (folder) (project)
+   -createAirtableProject      Create an EffortlessAPI for Airtable Project
+                               based on an airtable.json application.
+   -demoPassword               the user's password
+   -help                       Get help on a given topic
+   -invoke                     Invoke a method
+   -listSeeds                  List all available seeds
+   -maxPages                   How many pages of results should be returned
+   -name                       Name for the new project.
+   -output                     Output file name
+   -reloadCache                Reload cache of project types, plans and such
+   -repoUrl                    Override the default URL
+                               specified bythe seed repository
+   -runas, -as                 Who to run as
+   -where                      Limit the where clause
+   -whoami                     Check who you are currently operating as
+
+
 ```Help for Developer.
 
 Available Actions Matching: getcustomers
